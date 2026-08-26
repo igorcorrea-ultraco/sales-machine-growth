@@ -7,6 +7,9 @@ export const sections = [
   { id: "metodologia", label: "Metodologia" },
   { id: "fundador", label: "Fundador" },
   { id: "depoimentos", label: "Depoimentos" },
+  { id: "para-quem", label: "Para quem é" },
+  { id: "faq", label: "FAQ" },
+
 ] as const;
 
 export function scrollToSection(id: string) {

@@ -4,6 +4,9 @@ import { ArrowUpRight, LineChart, Quote, Star, Target, Workflow } from "lucide-r
 import founderAsset from "@/assets/igor-founder.png.asset.json";
 import { CTA, scrollToSection } from "@/components/site/SiteNav";
 import { MethodologyShowcase } from "@/components/site/Methodology";
+import { FitSection } from "@/components/site/Fit";
+import { FaqSection } from "@/components/site/Faq";
+
 import { Counter, ProgressBar, Reveal } from "@/components/site/animate";
 
 import { GrowthChart } from "@/components/site/charts";
@@ -356,7 +359,12 @@ function Home() {
         </div>
       </section>
 
+      <FitSection />
+
+      <FaqSection />
+
       {/* DIAGNÓSTICO — captação de lead */}
+
       <section
         id="diagnostico"
         className="relative scroll-mt-20 border-t border-border py-24"
