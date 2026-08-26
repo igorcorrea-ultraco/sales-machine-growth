@@ -84,10 +84,15 @@ export function MethodologyShowcase({
   return (
     <div className="mx-auto max-w-7xl px-6">
       <Reveal>
-        <div className="grid gap-6 lg:grid-cols-2 lg:items-end">
-          <Heading className="display-xl text-3xl sm:text-4xl lg:text-5xl">{heading}</Heading>
-          <p className="max-w-lg text-sm leading-relaxed text-muted-foreground">{intro}</p>
+        <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
+          <Heading className="display-xl max-w-[10ch] text-3xl sm:text-4xl lg:text-[3.4rem]">
+            {heading}
+          </Heading>
+          <p className="max-w-lg text-sm leading-relaxed text-muted-foreground lg:ml-auto lg:text-base">
+            {intro}
+          </p>
         </div>
+
       </Reveal>
 
       <div className="mt-16 grid gap-14 lg:grid-cols-2 lg:items-start">
