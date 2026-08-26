@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Check } from "lucide-react";
 import { Counter, Reveal } from "@/components/site/animate";
+import { MethodologyMark } from "@/components/site/MethodologyMark";
 
 export const methodologyTabs = [
   {
