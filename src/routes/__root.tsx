@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { Logo, SiteNav } from "../components/site/SiteNav";
 
 function NotFoundComponent() {
   return (
@@ -77,16 +78,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Ultra Company — Assessoria de Receita" },
+      {
+        name: "description",
+        content:
+          "Máquina de vendas que gera crescimento e previsibilidade, conectando Marketing, Vendas e Modelo de Negócio.",
+      },
+      { name: "author", content: "Ultra Company" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap",
+      },
       {
         rel: "stylesheet",
         href: appCss,
@@ -102,7 +110,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <head>
         <HeadContent />
       </head>
@@ -114,13 +122,50 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
+function SiteFooter() {
+  return (
+    <footer className="border-t border-border bg-card/40 py-14">
+      <div className="mx-auto flex max-w-7xl flex-col gap-8 px-6 md:flex-row md:items-center md:justify-between">
+        <div>
+          <Logo />
+          <p className="mt-4 max-w-xs text-xs leading-relaxed text-muted-foreground">
+            Assessoria de Receita. Marketing, Vendas e Modelo de Negócio conectados em uma única
+            máquina de crescimento.
+          </p>
+        </div>
+        <nav className="flex flex-wrap gap-6 text-sm text-muted-foreground">
+          <Link to="/" className="hover:text-foreground">
+            Início
+          </Link>
+          <Link to="/metodologia" className="hover:text-foreground">
+            Metodologia
+          </Link>
+          <Link to="/fundador" className="hover:text-foreground">
+            Fundador
+          </Link>
+          <Link to="/depoimentos" className="hover:text-foreground">
+            Depoimentos
+          </Link>
+        </nav>
+        <p className="text-xs text-muted-foreground">
+          © {new Date().getFullYear()} Ultra Company
+        </p>
+      </div>
+    </footer>
+  );
+}
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <SiteNav />
+      <main className="pb-24 md:pb-0">
+        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+        <Outlet />
+      </main>
+      <SiteFooter />
     </QueryClientProvider>
   );
 }

@@ -131,6 +131,7 @@ function Metodologia() {
                     <Counter
                       key={current.key}
                       to={current.metric}
+                      decimals={current.metric % 1 === 0 ? 0 : 1}
                       className="font-display text-4xl font-bold text-primary"
                     />
                     <span className="text-sm text-muted-foreground">{current.metricLabel}</span>
