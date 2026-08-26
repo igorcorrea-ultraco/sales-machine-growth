@@ -65,9 +65,9 @@ const niches: string[] = [
 ];
 
 const founderMarks = [
-  { v: 180, s: "+", d: "Operações comerciais estruturadas" },
-  { v: 12, s: " anos", d: "Liderando times de receita" },
-  { v: 9, s: " setores", d: "B2B, serviços, indústria e tech" },
+  { v: 100, s: "+", d: "Operações tracionadas" },
+  { v: 10, s: " anos", d: "Liderando times de receita" },
+  { v: 50, s: "M", d: "Em receita gerada (R$)" },
 ];
 
 const quotes = [
