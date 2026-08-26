@@ -5,7 +5,6 @@ import founderAsset from "@/assets/igor-founder.png.asset.json";
 import { CTA, scrollToSection } from "@/components/site/SiteNav";
 import { MethodologyShowcase } from "@/components/site/Methodology";
 import { Counter, ProgressBar, Reveal } from "@/components/site/animate";
-import { ConnectionShape } from "@/components/site/ConnectionShape";
 import { MethodologyMark } from "@/components/site/MethodologyMark";
 import { GrowthChart } from "@/components/site/charts";
 
