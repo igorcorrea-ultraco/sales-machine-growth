@@ -103,13 +103,7 @@ function Home() {
       {/* HERO */}
       <section id="inicio" className="relative scroll-mt-24 pt-28 pb-24 md:pt-36">
         <div className="grid-lines absolute inset-0 opacity-25" />
-        <img
-          src={heroImage}
-          alt="Estrutura luminosa representando uma máquina de vendas em crescimento"
-          width={1408}
-          height={1408}
-          className="pointer-events-none absolute top-0 right-[-14%] h-full max-w-none opacity-35 mix-blend-screen md:right-0 md:w-[56%]"
-        />
+        <div className="veil absolute inset-0" />
         <div className="relative mx-auto max-w-7xl px-6">
           <span className="text-[11px] tracking-[0.35em] text-muted-foreground uppercase">
             Consultoria de receita de alta performance
@@ -140,25 +134,9 @@ function Home() {
               <ArrowUpRight className="size-4" />
             </a>
           </div>
-
-          <div className="mt-16 grid max-w-3xl grid-cols-2 gap-px overflow-hidden rounded-lg border border-border bg-border lg:grid-cols-4">
-            {[
-              { p: "+R$ ", v: 50, s: "M", d: "gerados em receita" },
-              { v: 10, s: " anos", d: "de experiência" },
-              { p: "+", v: 100, s: "", d: "operações tracionadas" },
-              { pre: "NPS ", v: 8.9, s: "", d: "satisfação dos clientes", dec: 1 },
-            ].map((k) => (
-              <div key={k.d} className="flex flex-col justify-start bg-background/85 p-5 backdrop-blur">
-                <div className="font-display flex items-baseline text-xl font-bold sm:text-2xl">
-                  {k.pre && <span className="text-sm text-muted-foreground">{k.pre}</span>}
-                  <Counter to={k.v} prefix={k.p ?? ""} suffix={k.s} decimals={k.dec ?? 0} />
-                </div>
-                <p className="mt-1.5 text-[11px] leading-snug text-muted-foreground">{k.d}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
+
 
       {/* METODOLOGIA */}
       <section
