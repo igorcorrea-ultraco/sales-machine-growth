@@ -356,7 +356,12 @@ function Home() {
         </div>
       </section>
 
+      <FitSection />
+
+      <FaqSection />
+
       {/* DIAGNÓSTICO — captação de lead */}
+
       <section
         id="diagnostico"
         className="relative scroll-mt-20 border-t border-border py-24"
