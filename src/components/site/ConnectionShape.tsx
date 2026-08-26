@@ -34,11 +34,8 @@ export function ConnectionShape() {
         {[0, 1, 2].map((i) => (
           <div
             key={i}
-            className="absolute top-1/2 left-1/2 size-2.5 rounded-full bg-primary"
-            style={{
-              transform: `rotateY(${i * 120}deg) translateZ(calc(50% + 0px)) translate(-50%, -50%) translateX(${i === 0 ? 0 : 0}px)`,
-              marginLeft: "0",
-            }}
+            className="absolute top-1/2 left-1/2 -mt-[5px] -ml-[5px] size-2.5 rounded-full bg-primary"
+            style={{ transform: `rotateY(${i * 120}deg) translateZ(150px)` }}
           />
         ))}
       </div>
