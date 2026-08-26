@@ -174,22 +174,21 @@ function Home() {
 
       {/* TESE */}
       <section className="relative py-24">
-        <div className="mx-auto max-w-7xl px-6">
+        <div className="mx-auto max-w-7xl px-6 text-center">
           <Reveal>
             <span className="text-[11px] tracking-[0.3em] text-primary uppercase">Nossa tese</span>
           </Reveal>
-          <div className="mt-8 grid gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-            <Reveal>
-              <h2 className="max-w-2xl text-2xl leading-snug font-semibold sm:text-3xl lg:text-4xl">
-                Receita não se resolve com ações isoladas de um departamento, mas nasce da{" "}
-                <span className="text-primary">conexão entre marketing, vendas</span> e{" "}
-                <span className="text-primary">modelo de negócio</span>.
-              </h2>
-            </Reveal>
-            <Reveal delay={120}>
-              <ConnectionShape />
-            </Reveal>
-          </div>
+          <Reveal>
+            <h2 className="mx-auto mt-8 max-w-3xl text-2xl leading-snug font-semibold sm:text-3xl lg:text-4xl">
+              Receita não se resolve com ações isoladas de um departamento, mas nasce da{" "}
+              <span className="text-primary">conexão entre marketing, vendas</span> e{" "}
+              <span className="text-primary">modelo de negócio</span>.
+            </h2>
+          </Reveal>
+          <Reveal delay={120} className="mt-14">
+            <ConnectionShape />
+          </Reveal>
+
 
           <div className="mt-16 grid gap-6 md:grid-cols-3">
             {pillars.map((p, i) => (
