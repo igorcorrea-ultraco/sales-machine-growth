@@ -49,6 +49,21 @@ const pillars = [
   },
 ];
 
+/** Contabilidade aparece com peso maior que os demais nichos. */
+const niches: string[] = [
+  "Contabilidade",
+  "Advogados",
+  "Contabilidade",
+  "Médicos",
+  "Contabilidade",
+  "Indústria",
+  "Contabilidade",
+  "Biomédicos",
+  "Contabilidade",
+  "Agências",
+  "Contabilidade",
+];
+
 const founderMarks = [
   { v: 180, s: "+", d: "Operações comerciais estruturadas" },
   { v: 12, s: " anos", d: "Liderando times de receita" },
