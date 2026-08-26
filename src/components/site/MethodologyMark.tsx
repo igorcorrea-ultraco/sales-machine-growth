@@ -1,7 +1,7 @@
 const vertices = [
   { key: "marketing", label: "Marketing", x: 160, y: 30 },
   { key: "vendas", label: "Vendas", x: 268, y: 240 },
-  { key: "modelo", label: "Modelo", x: 52, y: 240 },
+  { key: "modelo", label: "Negócio", x: 52, y: 240 },
 ] as const;
 
 export function MethodologyMark({
