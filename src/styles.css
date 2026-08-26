@@ -48,7 +48,7 @@
   --card-foreground: oklch(0.97 0.005 20);
   --popover: oklch(0.17 0.018 25);
   --popover-foreground: oklch(0.97 0.005 20);
-  --primary: oklch(0.58 0.24 27);
+  --primary: oklch(0.55 0.2 27);
   --primary-foreground: oklch(0.99 0.004 20);
   --secondary: oklch(0.22 0.03 25);
   --secondary-foreground: oklch(0.97 0.005 20);
@@ -60,7 +60,7 @@
   --destructive-foreground: oklch(0.99 0.004 20);
   --border: oklch(0.28 0.03 27);
   --input: oklch(0.28 0.03 27);
-  --ring: oklch(0.58 0.24 27);
+  --ring: oklch(0.55 0.2 27);
   --ember: oklch(0.7 0.19 40);
   --chart-1: oklch(0.58 0.24 27);
   --chart-2: oklch(0.7 0.19 40);
@@ -71,12 +71,16 @@
   --gradient-ember: linear-gradient(135deg, oklch(0.58 0.24 27), oklch(0.72 0.19 42));
   --gradient-veil: radial-gradient(
     ellipse 80% 60% at 50% 0%,
-    color-mix(in oklab, var(--primary) 26%, transparent),
+    color-mix(in oklab, var(--primary) 14%, transparent),
     transparent 70%
   );
-  --shadow-glow: 0 0 0 1px color-mix(in oklab, var(--primary) 40%, transparent),
-    0 18px 50px -12px color-mix(in oklab, var(--primary) 55%, transparent);
-  --shadow-panel: 0 30px 80px -40px oklch(0 0 0 / 0.9);
+  --shadow-glow: 0 0 0 1px color-mix(in oklab, var(--primary) 28%, transparent),
+    0 18px 44px -22px color-mix(in oklab, var(--primary) 35%, transparent);
+  --shadow-panel: 0 24px 60px -40px oklch(0 0 0 / 0.75);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 @layer base {
