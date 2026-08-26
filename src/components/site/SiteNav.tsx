@@ -142,10 +142,15 @@ export function Logo() {
   );
 }
 
-export function CTA({ label = "Falar com especialista" }: { label?: string }) {
+/** Todo CTA do site leva para a captação de lead do Diagnóstico. */
+export function CTA({ label = "Quero meu diagnóstico" }: { label?: string }) {
   return (
     <a
-      href="mailto:contato@ultracompany.com.br?subject=Quero%20uma%20m%C3%A1quina%20de%20vendas"
+      href="#diagnostico"
+      onClick={(e) => {
+        e.preventDefault();
+        scrollToSection("diagnostico");
+      }}
       className="group inline-flex items-center gap-2 rounded-full border border-primary/60 bg-primary/95 px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary"
     >
       {label}
