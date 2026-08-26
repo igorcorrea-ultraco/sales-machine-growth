@@ -61,10 +61,6 @@ function Home() {
           className="pointer-events-none absolute top-0 right-[-10%] h-full max-w-none opacity-70 mix-blend-screen md:right-0 md:w-[62%]"
         />
         <div className="relative mx-auto max-w-7xl px-6">
-          <div className="animate-rise inline-flex items-center gap-2 rounded-full border border-border bg-card/70 px-4 py-1.5 text-xs tracking-widest uppercase backdrop-blur">
-            <span className="animate-pulse-glow size-1.5 rounded-full bg-primary" />
-            Assessoria de Receita
-          </div>
 
           <h1 className="display-xl animate-rise mt-8 max-w-4xl text-5xl sm:text-6xl lg:text-7xl">
             Seu negócio pode ter uma máquina de vendas que{" "}
