@@ -84,41 +84,43 @@ export function MethodologyShowcase({
   return (
     <div className="mx-auto max-w-7xl px-6">
       <Reveal>
-        <div className="grid gap-6 lg:grid-cols-2 lg:items-end">
-          <Heading className="display-xl text-3xl sm:text-4xl lg:text-5xl">{heading}</Heading>
-          <p className="max-w-lg text-sm leading-relaxed text-muted-foreground">{intro}</p>
+        <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
+          <Heading className="display-xl max-w-[10ch] text-3xl sm:text-4xl lg:text-[3.4rem]">
+            {heading}
+          </Heading>
+          <p className="max-w-lg text-sm leading-relaxed text-muted-foreground lg:ml-auto lg:text-base">
+            {intro}
+          </p>
         </div>
+
       </Reveal>
 
-      <div className="mt-14 grid gap-14 lg:grid-cols-2 lg:items-start">
+      <div className="mt-16 grid gap-14 lg:grid-cols-2 lg:items-start">
         {/* Símbolo da metodologia */}
         <Reveal className="relative hidden lg:block">
           <div className="flex flex-col items-center gap-8">
             <MethodologyMark active={current.key} onSelect={setActive} />
-            <div className="panel w-full rounded-2xl p-6">
-              <p className="text-xs tracking-[0.2em] text-muted-foreground uppercase">
-                {current.subtitle}
-              </p>
-              <div className="mt-2 flex items-baseline gap-2">
-                <Counter
-                  key={current.key}
-                  to={current.metric}
-                  decimals={current.metric % 1 === 0 ? 0 : 1}
-                  className="font-display text-4xl font-bold text-primary"
-                />
-                <span className="text-sm text-muted-foreground">{current.metricLabel}</span>
-              </div>
+            <div className="flex w-full items-baseline justify-center gap-3 border-t border-border pt-6">
+              <Counter
+                key={current.key}
+                to={current.metric}
+                decimals={current.metric % 1 === 0 ? 0 : 1}
+                className="font-display text-4xl font-bold text-primary"
+              />
+              <span className="max-w-[220px] text-sm text-muted-foreground">
+                {current.metricLabel}
+              </span>
             </div>
           </div>
         </Reveal>
 
         <div>
-          <div className="flex gap-2 overflow-x-auto border-b border-border pb-px">
+          <div className="flex border-b border-border pb-px">
             {methodologyTabs.map((t) => (
               <button
                 key={t.key}
                 onClick={() => setActive(t.key)}
-                className={`relative shrink-0 px-4 py-3 text-xs font-semibold tracking-wide uppercase transition-colors sm:px-5 sm:text-sm ${
+                className={`relative flex-1 px-2 py-3 text-xs font-semibold tracking-wide uppercase transition-colors sm:text-sm ${
                   active === t.key
                     ? "text-foreground"
                     : "text-muted-foreground hover:text-foreground"
@@ -126,11 +128,12 @@ export function MethodologyShowcase({
               >
                 {t.label}
                 {active === t.key && (
-                  <span className="absolute inset-x-3 -bottom-px h-0.5 rounded-full bg-primary" />
+                  <span className="absolute inset-x-2 -bottom-px h-0.5 rounded-full bg-primary" />
                 )}
               </button>
             ))}
           </div>
+
 
           <div className="panel mt-6 flex items-baseline gap-2 rounded-2xl p-5 lg:hidden">
             <Counter
