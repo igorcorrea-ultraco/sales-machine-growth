@@ -152,22 +152,27 @@ function Home() {
         <MethodologyShowcase />
       </section>
 
-      {/* MARQUEE */}
+      {/* NICHOS — MARQUEE */}
       <section className="border-y border-border bg-card/40 py-5">
+        <p className="mb-4 text-center text-[10px] tracking-[0.3em] text-muted-foreground uppercase">
+          Entregáveis rodando hoje em
+        </p>
         <div className="marquee-track flex w-max">
           {[0, 1].map((dup) => (
             <div key={dup} className="flex shrink-0 items-center">
-              {["Growth", "Funis", "Estrutura Comercial", "Previsibilidade", "Margem", "7P's"].map(
-                (w) => (
+              {niches.map((w, i) => (
+                <span
+                  key={`${dup}-${i}-${w}`}
+                  className="font-display flex items-center text-base font-semibold tracking-tight uppercase md:text-xl"
+                >
                   <span
-                    key={w}
-                    className="font-display flex items-center text-lg font-semibold tracking-tight uppercase md:text-2xl"
+                    className={`px-7 ${w === "Contabilidade" ? "text-foreground" : "text-muted-foreground"}`}
                   >
-                    <span className="px-8 text-muted-foreground">{w}</span>
-                    <span className="text-primary/70">///</span>
+                    {w}
                   </span>
-                ),
-              )}
+                  <span className="text-primary/70">///</span>
+                </span>
+              ))}
             </div>
           ))}
         </div>
@@ -178,14 +183,21 @@ function Home() {
         <div className="mx-auto max-w-7xl px-6">
           <Reveal>
             <span className="text-[11px] tracking-[0.3em] text-primary uppercase">Nossa tese</span>
-            <h2 className="mt-6 max-w-4xl text-2xl leading-snug font-semibold sm:text-3xl lg:text-4xl">
-              Receita não se resolve em um departamento. Nasce da{" "}
-              <span className="text-primary">conexão entre marketing, vendas</span> e{" "}
-              <span className="text-primary">modelo de negócio</span>.
-            </h2>
           </Reveal>
+          <div className="mt-8 grid gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            <Reveal>
+              <h2 className="max-w-2xl text-2xl leading-snug font-semibold sm:text-3xl lg:text-4xl">
+                Receita não se resolve com ações isoladas de um departamento, mas nasce da{" "}
+                <span className="text-primary">conexão entre marketing, vendas</span> e{" "}
+                <span className="text-primary">modelo de negócio</span>.
+              </h2>
+            </Reveal>
+            <Reveal delay={120}>
+              <ConnectionShape />
+            </Reveal>
+          </div>
 
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
+          <div className="mt-16 grid gap-6 md:grid-cols-3">
             {pillars.map((p, i) => (
               <Reveal key={p.title} delay={i * 120}>
                 <article className="panel group h-full rounded-2xl p-8 transition-colors hover:border-primary/50">
