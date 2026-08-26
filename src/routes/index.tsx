@@ -5,8 +5,9 @@ import founderAsset from "@/assets/igor-founder.png.asset.json";
 import { CTA, scrollToSection } from "@/components/site/SiteNav";
 import { MethodologyShowcase } from "@/components/site/Methodology";
 import { Counter, ProgressBar, Reveal } from "@/components/site/animate";
-import { ConnectionShape } from "@/components/site/ConnectionShape";
-import { FunnelChart, GrowthChart, PillarsRadar } from "@/components/site/charts";
+import { MethodologyMark } from "@/components/site/MethodologyMark";
+import { GrowthChart } from "@/components/site/charts";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -186,10 +187,12 @@ function Home() {
             </h2>
           </Reveal>
           <Reveal delay={120} className="mt-14">
-            <ConnectionShape />
+            <MethodologyMark active="marketing" />
           </Reveal>
 
+
           <div className="mt-16 grid gap-6 text-left md:grid-cols-3">
+
 
             {pillars.map((p, i) => (
               <Reveal key={p.title} delay={i * 120}>
@@ -232,25 +235,7 @@ function Home() {
                 <GrowthChart />
               </div>
             </Reveal>
-            <Reveal delay={120} className="lg:col-span-2">
-              <div className="panel h-full rounded-2xl p-6">
-                <h3 className="text-base font-bold">Funil sob controle</h3>
-                <p className="mt-1 mb-6 text-xs text-muted-foreground">
-                  Conversão por etapa após redesenho de funil e cadência.
-                </p>
-                <FunnelChart />
-              </div>
-            </Reveal>
-            <Reveal delay={80} className="lg:col-span-2">
-              <div className="panel h-full rounded-2xl p-6">
-                <h3 className="text-base font-bold">Maturidade comercial</h3>
-                <p className="mt-1 mb-6 text-xs text-muted-foreground">
-                  Diagnóstico antes x depois nos seis eixos do sistema.
-                </p>
-                <PillarsRadar />
-              </div>
-            </Reveal>
-            <Reveal delay={160} className="lg:col-span-3">
+            <Reveal delay={160} className="lg:col-span-2">
               <div className="panel flex h-full flex-col justify-center gap-7 rounded-2xl p-8">
                 <ProgressBar label="Aumento de ticket médio" value={37} />
                 <ProgressBar label="Redução do ciclo de vendas" value={44} />
@@ -260,39 +245,6 @@ function Home() {
             </Reveal>
           </div>
 
-          <Reveal delay={120}>
-            <div className="mt-6 grid gap-6 lg:grid-cols-5">
-              <div className="panel rounded-2xl p-6 lg:col-span-2">
-                <div className="relative mx-auto aspect-[9/16] w-full max-w-[380px] overflow-hidden rounded-xl border border-border bg-black">
-                  <iframe
-                    src="https://www.instagram.com/reel/DXHZYJlke6n/embed/?autoplay=1&muted=1"
-                    title="Resultado de cliente Ultra Company"
-                    allow="autoplay; encrypted-media; fullscreen"
-                    allowFullScreen
-                    scrolling="no"
-                    className="absolute -top-[54px] left-0 w-full border-0"
-                    style={{ height: "calc(100% + 200px)" }}
-                  />
-                </div>
-              </div>
-
-              <div className="panel flex flex-col justify-center rounded-2xl p-8 lg:col-span-3">
-                <span className="text-[11px] tracking-[0.3em] text-primary uppercase">
-                  Resultado na prática
-                </span>
-                <h3 className="display-xl mt-4 text-xl sm:text-2xl">
-                  O sistema de receita explicado em 60 segundos
-                </h3>
-                <p className="mt-4 max-w-md text-sm text-muted-foreground">
-                  Como a conexão entre Marketing, Vendas e Modelo de Negócio transforma esforço
-                  isolado em crescimento com margem — com números reais de operações tracionadas.
-                </p>
-                <div className="mt-8">
-                  <CTA label="Quero esse resultado no meu negócio" />
-                </div>
-              </div>
-            </div>
-          </Reveal>
         </div>
       </section>
 
@@ -309,8 +261,25 @@ function Home() {
             </div>
           </Reveal>
 
-          <div className="mt-16 grid gap-12 lg:grid-cols-[1fr_420px] lg:items-start">
+          <div className="mt-16 grid gap-10 lg:grid-cols-[240px_1fr] lg:items-start">
             <Reveal>
+              <figure className="relative overflow-hidden rounded-2xl border border-border">
+                <img
+                  src={founderAsset.url}
+                  alt="Igor Corrêa, fundador da Ultra Company"
+                  width={912}
+                  height={1200}
+                  loading="lazy"
+                  className="aspect-[3/4] w-full object-cover grayscale contrast-110"
+                />
+              </figure>
+              <p className="font-display mt-4 text-lg font-bold">Igor Corrêa</p>
+              <p className="text-[11px] tracking-[0.2em] text-muted-foreground uppercase">
+                Fundador · Ultra Company
+              </p>
+            </Reveal>
+
+            <Reveal delay={120}>
               <span className="text-[11px] tracking-[0.3em] text-primary uppercase">
                 Fundador · Ultra Company
               </span>
@@ -337,48 +306,23 @@ function Home() {
                   </li>
                 ))}
               </ul>
+
+              <div className="mt-10 flex flex-wrap gap-x-12 gap-y-6">
+                {founderMarks.map((m) => (
+                  <div key={m.d}>
+                    <Counter to={m.v} suffix={m.s} className="font-display text-3xl font-bold" />
+                    <p className="mt-1 text-xs text-muted-foreground">{m.d}</p>
+                  </div>
+                ))}
+              </div>
+
               <div className="mt-10">
                 <CTA label="Quero meu diagnóstico gratuito" />
               </div>
             </Reveal>
-
-            <Reveal delay={120}>
-              <figure className="relative overflow-hidden rounded-2xl border border-border">
-                <img
-                  src={founderAsset.url}
-                  alt="Igor Corrêa, fundador da Ultra Company"
-                  width={912}
-                  height={1200}
-                  loading="lazy"
-                  className="aspect-[3/4] w-full object-cover grayscale contrast-110"
-                />
-                <div
-                  className="pointer-events-none absolute inset-0"
-                  style={{
-                    background:
-                      "linear-gradient(to top, color-mix(in oklab, var(--background) 92%, transparent), transparent 55%)",
-                  }}
-                />
-                <figcaption className="absolute inset-x-0 bottom-0 p-6">
-                  <p className="font-display text-lg font-bold">Igor Corrêa</p>
-                  <p className="text-[11px] tracking-[0.2em] text-muted-foreground uppercase">
-                    Fundador · Ultra Company
-                  </p>
-                </figcaption>
-              </figure>
-            </Reveal>
           </div>
         </div>
 
-
-        <div className="mx-auto mt-20 grid max-w-6xl gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-3">
-          {founderMarks.map((m) => (
-            <div key={m.d} className="bg-background/85 p-8">
-              <Counter to={m.v} suffix={m.s} className="font-display text-3xl font-bold" />
-              <p className="mt-2 text-xs text-muted-foreground">{m.d}</p>
-            </div>
-          ))}
-        </div>
       </section>
 
       {/* DEPOIMENTOS */}
