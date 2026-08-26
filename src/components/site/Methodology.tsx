@@ -92,25 +92,26 @@ export function MethodologyShowcase({
             {intro}
           </p>
         </div>
-
       </Reveal>
 
-      <div className="mt-16 grid gap-14 lg:grid-cols-2 lg:items-start">
-        {/* Símbolo da metodologia */}
-        <Reveal className="relative hidden lg:block">
-          <div className="flex flex-col items-center gap-8">
-            <MethodologyMark active={current.key} onSelect={setActive} />
-            <div className="flex w-full items-baseline justify-center gap-3 border-t border-border pt-6">
-              <Counter
-                key={current.key}
-                to={current.metric}
-                decimals={current.metric % 1 === 0 ? 0 : 1}
-                className="font-display text-4xl font-bold text-primary"
-              />
-              <span className="max-w-[220px] text-sm text-muted-foreground">
-                {current.metricLabel}
-              </span>
-            </div>
+      {/* Símbolo da metodologia — visível em todos os tamanhos */}
+      <Reveal className="mt-10 flex justify-center" delay={80}>
+        <MethodologyMark active={current.key} onSelect={setActive} />
+      </Reveal>
+
+      <div className="mt-12 grid gap-6 lg:grid-cols-2 lg:items-start">
+        {/* Métrica do eixo ativo */}
+        <Reveal>
+          <div className="flex items-baseline gap-3 border-t border-border pt-6">
+            <Counter
+              key={current.key}
+              to={current.metric}
+              decimals={current.metric % 1 === 0 ? 0 : 1}
+              className="font-display text-4xl font-bold text-primary"
+            />
+            <span className="max-w-[220px] text-sm text-muted-foreground">
+              {current.metricLabel}
+            </span>
           </div>
         </Reveal>
 
@@ -132,17 +133,6 @@ export function MethodologyShowcase({
                 )}
               </button>
             ))}
-          </div>
-
-
-          <div className="panel mt-6 flex items-baseline gap-2 rounded-2xl p-5 lg:hidden">
-            <Counter
-              key={`m-${current.key}`}
-              to={current.metric}
-              decimals={current.metric % 1 === 0 ? 0 : 1}
-              className="font-display text-3xl font-bold text-primary"
-            />
-            <span className="text-xs text-muted-foreground">{current.metricLabel}</span>
           </div>
 
           <div className="mt-6 space-y-4">

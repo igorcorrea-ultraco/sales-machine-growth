@@ -5,7 +5,7 @@ import founderAsset from "@/assets/igor-founder.png.asset.json";
 import { CTA, scrollToSection } from "@/components/site/SiteNav";
 import { MethodologyShowcase } from "@/components/site/Methodology";
 import { Counter, ProgressBar, Reveal } from "@/components/site/animate";
-import { MethodologyMark } from "@/components/site/MethodologyMark";
+
 import { GrowthChart } from "@/components/site/charts";
 
 
@@ -181,15 +181,11 @@ function Home() {
           </Reveal>
           <Reveal>
             <h2 className="mx-auto mt-8 max-w-3xl text-2xl leading-snug font-semibold sm:text-3xl lg:text-4xl">
-              Receita não se resolve com ações isoladas de um departamento, mas nasce da{" "}
-              <span className="text-primary">conexão entre marketing, vendas</span> e{" "}
-              <span className="text-primary">modelo de negócio</span>.
+              Um sistema único de receita, construído sobre a{" "}
+              <span className="text-primary">conexão entre Marketing, Vendas</span> e{" "}
+              <span className="text-primary">Modelo de Negócio</span>.
             </h2>
           </Reveal>
-          <Reveal delay={120} className="mt-14">
-            <MethodologyMark active="marketing" />
-          </Reveal>
-
 
           <div className="mt-16 grid gap-6 text-left md:grid-cols-3">
 
