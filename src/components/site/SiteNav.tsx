@@ -112,7 +112,7 @@ export function SiteNav() {
             ))}
           </nav>
           <div className="mt-5">
-            <CTA label="Falar com especialista" />
+            <CTA label="Quero meu diagnóstico" />
           </div>
         </div>
       )}
