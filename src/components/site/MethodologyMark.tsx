@@ -10,7 +10,7 @@ function Triangle({
   ghost = false,
 }: {
   active: string;
-  onSelect?: (key: string) => void;
+  onSelect?: ((key: string) => void) | undefined;
   ghost?: boolean;
 }) {
   return (
