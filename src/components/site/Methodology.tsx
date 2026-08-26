@@ -29,8 +29,8 @@ export const methodologyTabs = [
     key: "vendas",
     label: "Vendas",
     subtitle: "Estrutura Comercial",
-    metric: 44,
-    metricLabel: "% de redução no ciclo de vendas",
+    metric: 63,
+    metricLabel: "% de aumento na taxa de conversão",
     items: [
       {
         title: "Estrutura Comercial em Alta Performance",
