@@ -109,7 +109,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <head>
         <HeadContent />
       </head>
@@ -121,13 +121,50 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
+function SiteFooter() {
+  return (
+    <footer className="border-t border-border bg-card/40 py-14">
+      <div className="mx-auto flex max-w-7xl flex-col gap-8 px-6 md:flex-row md:items-center md:justify-between">
+        <div>
+          <Logo />
+          <p className="mt-4 max-w-xs text-xs leading-relaxed text-muted-foreground">
+            Assessoria de Receita. Marketing, Vendas e Modelo de Negócio conectados em uma única
+            máquina de crescimento.
+          </p>
+        </div>
+        <nav className="flex flex-wrap gap-6 text-sm text-muted-foreground">
+          <Link to="/" className="hover:text-foreground">
+            Início
+          </Link>
+          <Link to="/metodologia" className="hover:text-foreground">
+            Metodologia
+          </Link>
+          <Link to="/fundador" className="hover:text-foreground">
+            Fundador
+          </Link>
+          <Link to="/depoimentos" className="hover:text-foreground">
+            Depoimentos
+          </Link>
+        </nav>
+        <p className="text-xs text-muted-foreground">
+          © {new Date().getFullYear()} Ultra Company
+        </p>
+      </div>
+    </footer>
+  );
+}
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <SiteNav />
+      <main className="pb-24 md:pb-0">
+        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+        <Outlet />
+      </main>
+      <SiteFooter />
     </QueryClientProvider>
   );
 }
