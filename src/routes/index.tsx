@@ -189,8 +189,8 @@ function Home() {
             <ConnectionShape />
           </Reveal>
 
+          <div className="mt-16 grid gap-6 text-left md:grid-cols-3">
 
-          <div className="mt-16 grid gap-6 md:grid-cols-3">
             {pillars.map((p, i) => (
               <Reveal key={p.title} delay={i * 120}>
                 <article className="panel group h-full rounded-2xl p-8 transition-colors hover:border-primary/50">
