@@ -380,7 +380,9 @@ function Home() {
           </p>
           <div className="mt-10 flex justify-center">
             <a
-              href="mailto:contato@ultracompany.com.br?subject=Quero%20meu%20Diagn%C3%B3stico%20de%20Receita&body=Nome%3A%0AEmpresa%3A%0ASegmento%3A%0AFaturamento%20mensal%3A%0AWhatsApp%3A"
+              href="https://form.respondi.app/oidXVJVB"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group inline-flex items-center gap-2 rounded-full border border-primary/60 bg-primary/95 px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary"
             >
               Solicitar meu diagnóstico gratuito
