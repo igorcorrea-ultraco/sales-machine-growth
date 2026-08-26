@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
+import logoAsset from "@/assets/ultra-logo.png.asset.json";
 
 const links = [
   { to: "/", label: "Início" },
@@ -56,11 +57,14 @@ export function SiteNav() {
 
 export function Logo() {
   return (
-    <Link to="/" className="flex items-center gap-2">
-      <span className="grid size-7 place-items-center rounded-md bg-primary text-[13px] font-bold text-primary-foreground">
-        U
-      </span>
-      <span className="font-display text-lg font-bold tracking-[0.22em] uppercase">Ultra</span>
+    <Link to="/" className="flex items-center" aria-label="Ultra Company">
+      <img
+        src={logoAsset.url}
+        alt="Ultra Company"
+        width={640}
+        height={146}
+        className="h-7 w-auto sm:h-8"
+      />
     </Link>
   );
 }
