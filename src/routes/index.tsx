@@ -285,20 +285,16 @@ function Home() {
               </span>
               <h3 className="display-xl mt-4 text-2xl sm:text-3xl">Igor Corrêa</h3>
               <p className="mt-7 max-w-xl text-sm leading-relaxed text-muted-foreground">
-                A Ultra Company nasceu na operação, não na teoria. São mais de uma década liderando
-                áreas de marketing e vendas, montando estruturas comerciais do zero e reconstruindo
-                modelos de negócio que cresciam sem gerar margem.
+                +10 anos construindo estratégias de crescimento e escala para negócios, com
+                aproximadamente R$ 50 milhões em receita gerada para parceiros a partir de estratégia
+                de RevOps. Formado em Marketing e MBA PUC em Estratégia data-driven.
               </p>
-              <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
-                Dessa vivência veio a tese que sustenta a consultoria: receita é consequência da
-                conexão entre Growth, Estrutura Comercial e Modelo de Negócio sustentável. Quando um
-                desses eixos falha, o crescimento vira volume sem lucro.
-              </p>
-              <ul className="mt-8 space-y-4 text-sm text-muted-foreground">
+              <ul className="mt-6 space-y-4 text-sm text-muted-foreground">
                 {[
-                  "Diagnóstico honesto: onde a receita trava hoje e quanto isso custa por mês.",
-                  "Construção conjunta com o time interno — transferência real de método.",
-                  "Indicadores acordados no início e revisados em cadência semanal.",
+                  "Ex-CEO e cofundador da Seren — EdTech premiada internacionalmente por 3 anos consecutivos.",
+                  "Captação de mais de R$ 1,2 milhão em investimentos para expansão com estratégia de geração de receita.",
+                  "Entre os investidores esteve o Dr. Augusto Cury, reforçando a solidez e credibilidade do projeto.",
+                  "Ex-oficial do Exército e atleta — disciplina, liderança e execução sob pressão em ambientes de crescimento e escala.",
                 ].map((t) => (
                   <li key={t} className="flex gap-3">
                     <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
