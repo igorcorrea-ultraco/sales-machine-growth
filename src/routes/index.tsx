@@ -263,17 +263,19 @@ function Home() {
           <Reveal delay={120}>
             <div className="mt-6 grid gap-6 lg:grid-cols-5">
               <div className="panel rounded-2xl p-6 lg:col-span-2">
-                <div className="mx-auto w-full max-w-[400px] overflow-hidden rounded-xl border border-border bg-background">
+                <div className="relative mx-auto aspect-[9/16] w-full max-w-[380px] overflow-hidden rounded-xl border border-border bg-black">
                   <iframe
-                    src="https://www.instagram.com/p/DXHZYJlke6n/embed"
+                    src="https://www.instagram.com/reel/DXHZYJlke6n/embed/?autoplay=1&muted=1"
                     title="Resultado de cliente Ultra Company"
-                    loading="lazy"
+                    allow="autoplay; encrypted-media; fullscreen"
                     allowFullScreen
                     scrolling="no"
-                    className="h-[560px] w-full border-0"
+                    className="absolute -top-[54px] left-0 w-full border-0"
+                    style={{ height: "calc(100% + 200px)" }}
                   />
                 </div>
               </div>
+
               <div className="panel flex flex-col justify-center rounded-2xl p-8 lg:col-span-3">
                 <span className="text-[11px] tracking-[0.3em] text-primary uppercase">
                   Resultado na prática
