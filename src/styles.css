@@ -189,3 +189,16 @@ html {
 @utility animate-pulse-glow {
   animation: pulse-glow 3.4s ease-in-out infinite;
 }
+
+@keyframes spin3d {
+  from {
+    transform: rotateX(-18deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(-18deg) rotateY(360deg);
+  }
+}
+
+@utility animate-spin3d {
+  animation: spin3d 22s linear infinite;
+}
