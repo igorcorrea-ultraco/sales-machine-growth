@@ -1,7 +1,8 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight, LineChart, Target, Workflow } from "lucide-react";
+import { createFileRoute } from "@tanstack/react-router";
+import { ArrowUpRight, LineChart, Quote, Star, Target, Workflow } from "lucide-react";
 import heroImage from "@/assets/hero-machine.jpg";
-import { CTA } from "@/components/site/SiteNav";
+import founderAsset from "@/assets/igor-founder.png.asset.json";
+import { CTA, scrollToSection } from "@/components/site/SiteNav";
 import { MethodologyShowcase } from "@/components/site/Methodology";
 import { Counter, ProgressBar, Reveal } from "@/components/site/animate";
 import { FunnelChart, GrowthChart, PillarsRadar } from "@/components/site/charts";
@@ -13,7 +14,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Assessoria de Receita que conecta Marketing, Vendas e Modelo de Negócio para construir crescimento com previsibilidade e margem.",
+          "Consultoria de receita de alta performance: Marketing, Vendas e Modelo de Negócio conectados para gerar crescimento previsível com margem.",
       },
       { property: "og:title", content: "Ultra Company — Máquina de Vendas com Margem" },
       {
@@ -47,26 +48,61 @@ const pillars = [
   },
 ];
 
+const founderMarks = [
+  { v: 180, s: "+", d: "Operações comerciais estruturadas" },
+  { v: 12, s: " anos", d: "Liderando times de receita" },
+  { v: 9, s: " setores", d: "B2B, serviços, indústria e tech" },
+];
+
+const quotes = [
+  {
+    name: "Rafael Menezes",
+    role: "CEO — Indústria de embalagens",
+    text: "Saímos da dependência de dois vendedores. Hoje o processo está documentado e o pipeline é previsível — o crescimento parou de ser sorte.",
+    kpi: "+38% receita em 7 meses",
+  },
+  {
+    name: "Carla Bittencourt",
+    role: "Sócia — Serviços contábeis",
+    text: "A revisão do modelo de negócio foi o ponto de virada. Vendemos o mesmo volume com margem muito maior e time menos sobrecarregado.",
+    kpi: "+19 p.p. de margem",
+  },
+  {
+    name: "Diego Andrade",
+    role: "Diretor Comercial — SaaS",
+    text: "Funis redesenhados por estágio de consciência mudaram nossa taxa de reunião. Foi a primeira vez que marketing e vendas falaram a mesma língua.",
+    kpi: "2,6x oportunidades qualificadas",
+  },
+  {
+    name: "Marina Prado",
+    role: "Fundadora — Educação corporativa",
+    text: "Cadência de gestão semanal e indicadores claros. Em três meses eu já sabia prever o fechamento do trimestre com margem de erro pequena.",
+    kpi: "92% de acurácia no forecast",
+  },
+];
+
 function Home() {
   return (
     <div className="overflow-hidden">
       {/* HERO */}
-      <section className="relative min-h-[92vh] pt-28 pb-24">
-        <div className="veil absolute inset-0" />
-        <div className="grid-lines absolute inset-0 opacity-40" />
+      <section id="inicio" className="relative scroll-mt-24 pt-28 pb-24 md:pt-36">
+        <div className="grid-lines absolute inset-0 opacity-25" />
         <img
           src={heroImage}
           alt="Estrutura luminosa representando uma máquina de vendas em crescimento"
           width={1408}
           height={1408}
-          className="pointer-events-none absolute top-0 right-[-10%] h-full max-w-none opacity-70 mix-blend-screen md:right-0 md:w-[62%]"
+          className="pointer-events-none absolute top-0 right-[-14%] h-full max-w-none opacity-35 mix-blend-screen md:right-0 md:w-[56%]"
         />
         <div className="relative mx-auto max-w-7xl px-6">
+          <span className="text-[11px] tracking-[0.35em] text-muted-foreground uppercase">
+            Consultoria de receita de alta performance
+          </span>
 
-          <h1 className="display-xl animate-rise mt-8 max-w-4xl text-5xl sm:text-6xl lg:text-7xl">
+          <h1 className="display-xl animate-rise mt-7 max-w-3xl text-[2rem] leading-[1.06] sm:text-[2.6rem] lg:text-[3.4rem]">
             Seu negócio pode ter uma máquina de vendas que{" "}
-            <span className="text-gradient-ember">vende mais</span> e{" "}
-            <span className="text-gradient-ember">gera margem</span>.
+            <span className="text-primary">vende mais</span> e{" "}
+            <span className="text-primary">gera margem</span>.
           </h1>
 
           <p className="animate-rise mt-8 max-w-xl text-base leading-relaxed text-muted-foreground">
@@ -76,28 +112,32 @@ function Home() {
 
           <div className="animate-rise mt-10 flex flex-wrap items-center gap-4">
             <CTA label="Quero minha máquina de vendas" />
-            <Link
-              to="/metodologia"
+            <a
+              href="#metodologia"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("metodologia");
+              }}
               className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium transition-colors hover:bg-accent"
             >
               Ver a metodologia
               <ArrowUpRight className="size-4" />
-            </Link>
+            </a>
           </div>
 
-          <div className="mt-20 grid max-w-4xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border lg:grid-cols-4">
+          <div className="mt-20 grid max-w-4xl grid-cols-2 gap-px overflow-hidden rounded-xl border border-border bg-border lg:grid-cols-4">
             {[
               { v: 3.2, s: "x", d: "Receita média em 12 meses", dec: 1 },
               { v: 41, s: "%", d: "Ganho de margem operacional" },
               { v: 92, s: "%", d: "Previsibilidade de pipeline" },
               { v: 180, s: "+", d: "Operações comerciais estruturadas" },
             ].map((k) => (
-              <div key={k.d} className="bg-background/80 p-6 backdrop-blur">
+              <div key={k.d} className="bg-background/85 p-6 backdrop-blur">
                 <Counter
                   to={k.v}
                   suffix={k.s}
                   decimals={k.dec ?? 0}
-                  className="font-display text-4xl font-bold"
+                  className="font-display text-3xl font-bold"
                 />
                 <p className="mt-2 text-xs leading-snug text-muted-foreground">{k.d}</p>
               </div>
@@ -107,23 +147,26 @@ function Home() {
       </section>
 
       {/* METODOLOGIA */}
-      <section id="metodologia" className="border-t border-border py-20 md:py-28">
+      <section
+        id="metodologia"
+        className="scroll-mt-20 border-t border-border py-20 md:py-28"
+      >
         <MethodologyShowcase />
       </section>
 
       {/* MARQUEE */}
-      <section className="border-y border-border bg-card/40 py-6">
-        <div className="flex w-max marquee-track">
+      <section className="border-y border-border bg-card/40 py-5">
+        <div className="marquee-track flex w-max">
           {[0, 1].map((dup) => (
             <div key={dup} className="flex shrink-0 items-center">
               {["Growth", "Funis", "Estrutura Comercial", "Previsibilidade", "Margem", "7P's"].map(
                 (w) => (
                   <span
                     key={w}
-                    className="font-display flex items-center text-2xl font-bold tracking-tight uppercase md:text-4xl"
+                    className="font-display flex items-center text-lg font-semibold tracking-tight uppercase md:text-2xl"
                   >
-                    <span className="px-8">{w}</span>
-                    <span className="text-primary">///</span>
+                    <span className="px-8 text-muted-foreground">{w}</span>
+                    <span className="text-primary/70">///</span>
                   </span>
                 ),
               )}
@@ -133,26 +176,26 @@ function Home() {
       </section>
 
       {/* TESE */}
-      <section className="relative py-28">
+      <section className="relative py-24">
         <div className="mx-auto max-w-7xl px-6">
           <Reveal>
-            <span className="text-xs tracking-[0.3em] text-primary uppercase">Nossa tese</span>
-            <h2 className="mt-6 max-w-4xl text-3xl leading-tight font-semibold sm:text-4xl lg:text-5xl">
+            <span className="text-[11px] tracking-[0.3em] text-primary uppercase">Nossa tese</span>
+            <h2 className="mt-6 max-w-4xl text-2xl leading-snug font-semibold sm:text-3xl lg:text-4xl">
               Receita não se resolve em um departamento. Nasce da{" "}
               <span className="text-primary">conexão entre marketing, vendas</span> e{" "}
               <span className="text-primary">modelo de negócio</span>.
             </h2>
           </Reveal>
 
-          <div className="mt-16 grid gap-6 md:grid-cols-3">
+          <div className="mt-14 grid gap-6 md:grid-cols-3">
             {pillars.map((p, i) => (
               <Reveal key={p.title} delay={i * 120}>
-                <article className="panel group h-full rounded-2xl p-8 transition-colors hover:border-primary/60">
-                  <p.icon className="size-6 text-primary" />
-                  <p className="mt-6 text-xs tracking-[0.2em] text-muted-foreground uppercase">
+                <article className="panel group h-full rounded-2xl p-8 transition-colors hover:border-primary/50">
+                  <p.icon className="size-5 text-primary" />
+                  <p className="mt-6 text-[11px] tracking-[0.2em] text-muted-foreground uppercase">
                     {p.tag}
                   </p>
-                  <h3 className="mt-2 text-2xl font-bold">{p.title}</h3>
+                  <h3 className="mt-2 text-xl font-bold">{p.title}</h3>
                   <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{p.text}</p>
                 </article>
               </Reveal>
@@ -162,11 +205,11 @@ function Home() {
       </section>
 
       {/* DADOS */}
-      <section className="border-t border-border bg-card/30 py-28">
+      <section className="border-t border-border bg-card/30 py-24">
         <div className="mx-auto max-w-7xl px-6">
           <Reveal>
             <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-              <h2 className="max-w-2xl text-3xl leading-tight font-semibold sm:text-4xl">
+              <h2 className="max-w-2xl text-2xl leading-snug font-semibold sm:text-3xl">
                 A proposta de valor em <span className="text-primary">números</span>
               </h2>
               <p className="max-w-sm text-sm text-muted-foreground">
@@ -179,7 +222,7 @@ function Home() {
           <div className="mt-14 grid gap-6 lg:grid-cols-5">
             <Reveal className="lg:col-span-3">
               <div className="panel h-full rounded-2xl p-6">
-                <h3 className="text-lg font-bold">Receita e margem em escala</h3>
+                <h3 className="text-base font-bold">Receita e margem em escala</h3>
                 <p className="mt-1 mb-6 text-xs text-muted-foreground">
                   Índice base 100 no mês 1 — crescimento com expansão de margem.
                 </p>
@@ -188,7 +231,7 @@ function Home() {
             </Reveal>
             <Reveal delay={120} className="lg:col-span-2">
               <div className="panel h-full rounded-2xl p-6">
-                <h3 className="text-lg font-bold">Funil sob controle</h3>
+                <h3 className="text-base font-bold">Funil sob controle</h3>
                 <p className="mt-1 mb-6 text-xs text-muted-foreground">
                   Conversão por etapa após redesenho de funil e cadência.
                 </p>
@@ -197,7 +240,7 @@ function Home() {
             </Reveal>
             <Reveal delay={80} className="lg:col-span-2">
               <div className="panel h-full rounded-2xl p-6">
-                <h3 className="text-lg font-bold">Maturidade comercial</h3>
+                <h3 className="text-base font-bold">Maturidade comercial</h3>
                 <p className="mt-1 mb-6 text-xs text-muted-foreground">
                   Diagnóstico antes x depois nos seis eixos do sistema.
                 </p>
@@ -216,17 +259,122 @@ function Home() {
         </div>
       </section>
 
+      {/* FUNDADOR */}
+      <section id="fundador" className="scroll-mt-20 border-t border-border py-24">
+        <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[1fr_0.85fr] lg:items-center">
+          <div>
+            <span className="text-[11px] tracking-[0.3em] text-primary uppercase">O Fundador</span>
+            <h2 className="display-xl mt-6 text-2xl sm:text-3xl lg:text-4xl">
+              Quem constrói a máquina por dentro
+            </h2>
+            <p className="mt-8 max-w-lg text-sm leading-relaxed text-muted-foreground">
+              A Ultra Company nasceu na operação, não na teoria. São mais de uma década liderando
+              áreas de marketing e vendas, montando estruturas comerciais do zero e reconstruindo
+              modelos de negócio que cresciam sem gerar margem.
+            </p>
+            <p className="mt-4 max-w-lg text-sm leading-relaxed text-muted-foreground">
+              Dessa vivência veio a tese que sustenta a consultoria: receita é consequência da
+              conexão entre Growth, Estrutura Comercial e Modelo de Negócio sustentável. Quando um
+              desses eixos falha, o crescimento vira volume sem lucro.
+            </p>
+            <ul className="mt-8 space-y-4 text-sm text-muted-foreground">
+              {[
+                "Diagnóstico honesto: onde a receita trava hoje e quanto isso custa por mês.",
+                "Construção conjunta com o time interno — transferência real de método.",
+                "Indicadores acordados no início e revisados em cadência semanal.",
+              ].map((t) => (
+                <li key={t} className="flex gap-3">
+                  <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
+                  {t}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-10">
+              <CTA label="Falar diretamente com o fundador" />
+            </div>
+          </div>
+
+          <Reveal>
+            <div className="relative">
+              <div className="overflow-hidden rounded-2xl border border-border">
+                <img
+                  src={founderAsset.url}
+                  alt="Igor Corrêa, fundador da Ultra Company"
+                  width={912}
+                  height={1200}
+                  loading="lazy"
+                  className="w-full object-cover"
+                />
+              </div>
+              <div className="panel absolute -bottom-6 -left-6 hidden rounded-2xl p-5 sm:block">
+                <p className="text-[11px] tracking-[0.2em] text-muted-foreground uppercase">
+                  Fundador · Ultra Company
+                </p>
+                <p className="font-display mt-1 text-lg font-bold">Igor Corrêa</p>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+
+        <div className="mx-auto mt-20 grid max-w-6xl gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-3">
+          {founderMarks.map((m) => (
+            <div key={m.d} className="bg-background/85 p-8">
+              <Counter to={m.v} suffix={m.s} className="font-display text-3xl font-bold" />
+              <p className="mt-2 text-xs text-muted-foreground">{m.d}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* DEPOIMENTOS */}
+      <section id="depoimentos" className="scroll-mt-20 border-t border-border bg-card/30 py-24">
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <span className="text-[11px] tracking-[0.35em] text-primary uppercase">Depoimentos</span>
+          <h2 className="display-xl mt-6 text-2xl sm:text-3xl lg:text-4xl">
+            O que dizem sobre nós
+          </h2>
+          <div className="mt-8 flex items-center justify-center gap-2">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <Star key={i} className="size-4 fill-primary text-primary" />
+            ))}
+            <Counter to={4.9} decimals={1} className="font-display ml-2 font-bold" />
+            <span className="text-xs text-muted-foreground">média de satisfação</span>
+          </div>
+        </div>
+
+        <div className="mx-auto mt-14 grid max-w-7xl gap-6 px-6 md:grid-cols-2">
+          {quotes.map((q, i) => (
+            <Reveal key={q.name} delay={i * 100}>
+              <article className="panel flex h-full flex-col rounded-2xl p-8 transition-colors hover:border-primary/50">
+                <Quote className="size-5 text-primary" />
+                <p className="mt-6 flex-1 text-sm leading-relaxed">{q.text}</p>
+                <div className="mt-8 flex items-end justify-between gap-4 border-t border-border pt-6">
+                  <div>
+                    <p className="font-display text-sm font-bold tracking-wide uppercase">
+                      {q.name}
+                    </p>
+                    <p className="mt-1 text-xs text-muted-foreground">{q.role}</p>
+                  </div>
+                  <span className="rounded-full bg-primary/12 px-3 py-1 text-xs font-semibold text-primary">
+                    {q.kpi}
+                  </span>
+                </div>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
       {/* CTA */}
-      <section className="relative py-32">
-        <div className="veil absolute inset-0" />
+      <section className="relative border-t border-border py-24">
         <div className="relative mx-auto max-w-3xl px-6 text-center">
-          <span className="text-xs tracking-[0.3em] text-primary uppercase">Próximo passo</span>
-          <h2 className="display-xl mt-6 text-4xl sm:text-5xl">
+          <span className="text-[11px] tracking-[0.3em] text-primary uppercase">Próximo passo</span>
+          <h2 className="display-xl mt-6 text-2xl sm:text-3xl lg:text-4xl">
             Construa a máquina. Colha a previsibilidade.
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-sm text-muted-foreground">
-            Diagnóstico inicial gratuito: mapeamos gargalos de demanda, estrutura comercial e
-            modelo de negócio em uma sessão de 45 minutos.
+            Diagnóstico inicial gratuito: mapeamos gargalos de demanda, estrutura comercial e modelo
+            de negócio em uma sessão de 45 minutos.
           </p>
           <div className="mt-10 flex justify-center">
             <CTA label="Agendar diagnóstico" />
