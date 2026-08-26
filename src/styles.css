@@ -202,3 +202,21 @@ html {
 @utility animate-spin3d {
   animation: spin3d 22s linear infinite;
 }
+
+@keyframes tilt3d {
+  0% {
+    transform: rotateX(10deg) rotateY(-20deg) rotateZ(-1deg);
+  }
+  50% {
+    transform: rotateX(-6deg) rotateY(20deg) rotateZ(1deg);
+  }
+  100% {
+    transform: rotateX(10deg) rotateY(-20deg) rotateZ(-1deg);
+  }
+}
+
+@utility animate-tilt3d {
+  animation: tilt3d 14s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
