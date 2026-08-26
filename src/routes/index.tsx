@@ -282,6 +282,38 @@ function Home() {
               </div>
             </Reveal>
           </div>
+
+          <Reveal delay={120}>
+            <div className="mt-6 grid gap-6 lg:grid-cols-5">
+              <div className="panel rounded-2xl p-6 lg:col-span-2">
+                <div className="mx-auto w-full max-w-[400px] overflow-hidden rounded-xl border border-border bg-background">
+                  <iframe
+                    src="https://www.instagram.com/p/DXHZYJlke6n/embed"
+                    title="Resultado de cliente Ultra Company"
+                    loading="lazy"
+                    allowFullScreen
+                    scrolling="no"
+                    className="h-[560px] w-full border-0"
+                  />
+                </div>
+              </div>
+              <div className="panel flex flex-col justify-center rounded-2xl p-8 lg:col-span-3">
+                <span className="text-[11px] tracking-[0.3em] text-primary uppercase">
+                  Resultado na prática
+                </span>
+                <h3 className="display-xl mt-4 text-xl sm:text-2xl">
+                  O sistema de receita explicado em 60 segundos
+                </h3>
+                <p className="mt-4 max-w-md text-sm text-muted-foreground">
+                  Como a conexão entre Marketing, Vendas e Modelo de Negócio transforma esforço
+                  isolado em crescimento com margem — com números reais de operações tracionadas.
+                </p>
+                <div className="mt-8">
+                  <CTA label="Quero esse resultado no meu negócio" />
+                </div>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 
