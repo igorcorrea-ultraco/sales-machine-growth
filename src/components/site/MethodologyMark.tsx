@@ -1,7 +1,7 @@
 const vertices = [
-  { key: "marketing", label: "Marketing", x: 150, y: 26 },
-  { key: "vendas", label: "Vendas", x: 274, y: 246 },
-  { key: "modelo", label: "Modelo", x: 26, y: 246 },
+  { key: "marketing", label: "Marketing", x: 160, y: 30 },
+  { key: "vendas", label: "Vendas", x: 268, y: 240 },
+  { key: "modelo", label: "Modelo", x: 52, y: 240 },
 ] as const;
 
 export function MethodologyMark({
@@ -12,7 +12,7 @@ export function MethodologyMark({
   onSelect?: (key: string) => void;
 }) {
   return (
-    <svg viewBox="0 0 300 290" className="w-full max-w-[380px]" role="img" aria-hidden="true">
+    <svg viewBox="0 0 320 290" className="w-full max-w-[380px]" role="img" aria-hidden="true">
       <polygon
         points={vertices.map((v) => `${v.x},${v.y}`).join(" ")}
         fill="none"
@@ -37,10 +37,10 @@ export function MethodologyMark({
         );
       })}
 
-      <circle cx="150" cy="176" r="58" fill="none" stroke="var(--border)" strokeDasharray="3 6" />
+      <circle cx="160" cy="172" r="58" fill="none" stroke="var(--border)" strokeDasharray="3 6" />
       <text
-        x="150"
-        y="170"
+        x="160"
+        y="166"
         textAnchor="middle"
         fill="var(--foreground)"
         style={{ font: "700 30px var(--font-display)", letterSpacing: "-1px" }}
@@ -48,8 +48,8 @@ export function MethodologyMark({
         U
       </text>
       <text
-        x="150"
-        y="192"
+        x="160"
+        y="188"
         textAnchor="middle"
         fill="var(--muted-foreground)"
         style={{ font: "500 8px var(--font-sans)", letterSpacing: "3px" }}
@@ -75,9 +75,9 @@ export function MethodologyMark({
               style={{ transition: "all .4s ease" }}
             />
             <text
-              x={v.key === "modelo" ? v.x - 12 : v.key === "vendas" ? v.x + 12 : v.x}
-              y={v.y === 26 ? 8 : 270}
-              textAnchor={v.key === "modelo" ? "start" : v.key === "vendas" ? "end" : "middle"}
+              x={v.x}
+              y={v.y === 30 ? 12 : 268}
+              textAnchor="middle"
               fill={on ? "var(--foreground)" : "var(--muted-foreground)"}
               style={{ font: "600 10px var(--font-sans)", letterSpacing: "2.5px" }}
             >
