@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, LineChart, Quote, Star, Target, Workflow } from "lucide-react";
-import heroImage from "@/assets/hero-machine.jpg";
+
 import founderAsset from "@/assets/igor-founder.png.asset.json";
 import { CTA, scrollToSection } from "@/components/site/SiteNav";
 import { MethodologyShowcase } from "@/components/site/Methodology";
@@ -103,13 +103,7 @@ function Home() {
       {/* HERO */}
       <section id="inicio" className="relative scroll-mt-24 pt-28 pb-24 md:pt-36">
         <div className="grid-lines absolute inset-0 opacity-25" />
-        <img
-          src={heroImage}
-          alt="Estrutura luminosa representando uma máquina de vendas em crescimento"
-          width={1408}
-          height={1408}
-          className="pointer-events-none absolute top-0 right-[-14%] h-full max-w-none opacity-35 mix-blend-screen md:right-0 md:w-[56%]"
-        />
+        <div className="veil absolute inset-0" />
         <div className="relative mx-auto max-w-7xl px-6">
           <span className="text-[11px] tracking-[0.35em] text-muted-foreground uppercase">
             Consultoria de receita de alta performance
@@ -140,25 +134,9 @@ function Home() {
               <ArrowUpRight className="size-4" />
             </a>
           </div>
-
-          <div className="mt-16 grid max-w-3xl grid-cols-2 gap-px overflow-hidden rounded-lg border border-border bg-border lg:grid-cols-4">
-            {[
-              { p: "+R$ ", v: 50, s: "M", d: "gerados em receita" },
-              { v: 10, s: " anos", d: "de experiência" },
-              { p: "+", v: 100, s: "", d: "operações tracionadas" },
-              { pre: "NPS ", v: 8.9, s: "", d: "satisfação dos clientes", dec: 1 },
-            ].map((k) => (
-              <div key={k.d} className="flex flex-col justify-start bg-background/85 p-5 backdrop-blur">
-                <div className="font-display flex items-baseline text-xl font-bold sm:text-2xl">
-                  {k.pre && <span className="text-sm text-muted-foreground">{k.pre}</span>}
-                  <Counter to={k.v} prefix={k.p ?? ""} suffix={k.s} decimals={k.dec ?? 0} />
-                </div>
-                <p className="mt-1.5 text-[11px] leading-snug text-muted-foreground">{k.d}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
+
 
       {/* METODOLOGIA */}
       <section
@@ -196,24 +174,23 @@ function Home() {
 
       {/* TESE */}
       <section className="relative py-24">
-        <div className="mx-auto max-w-7xl px-6">
+        <div className="mx-auto max-w-7xl px-6 text-center">
           <Reveal>
             <span className="text-[11px] tracking-[0.3em] text-primary uppercase">Nossa tese</span>
           </Reveal>
-          <div className="mt-8 grid gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-            <Reveal>
-              <h2 className="max-w-2xl text-2xl leading-snug font-semibold sm:text-3xl lg:text-4xl">
-                Receita não se resolve com ações isoladas de um departamento, mas nasce da{" "}
-                <span className="text-primary">conexão entre marketing, vendas</span> e{" "}
-                <span className="text-primary">modelo de negócio</span>.
-              </h2>
-            </Reveal>
-            <Reveal delay={120}>
-              <ConnectionShape />
-            </Reveal>
-          </div>
+          <Reveal>
+            <h2 className="mx-auto mt-8 max-w-3xl text-2xl leading-snug font-semibold sm:text-3xl lg:text-4xl">
+              Receita não se resolve com ações isoladas de um departamento, mas nasce da{" "}
+              <span className="text-primary">conexão entre marketing, vendas</span> e{" "}
+              <span className="text-primary">modelo de negócio</span>.
+            </h2>
+          </Reveal>
+          <Reveal delay={120} className="mt-14">
+            <ConnectionShape />
+          </Reveal>
 
-          <div className="mt-16 grid gap-6 md:grid-cols-3">
+          <div className="mt-16 grid gap-6 text-left md:grid-cols-3">
+
             {pillars.map((p, i) => (
               <Reveal key={p.title} delay={i * 120}>
                 <article className="panel group h-full rounded-2xl p-8 transition-colors hover:border-primary/50">
@@ -286,17 +263,19 @@ function Home() {
           <Reveal delay={120}>
             <div className="mt-6 grid gap-6 lg:grid-cols-5">
               <div className="panel rounded-2xl p-6 lg:col-span-2">
-                <div className="mx-auto w-full max-w-[400px] overflow-hidden rounded-xl border border-border bg-background">
+                <div className="relative mx-auto aspect-[9/16] w-full max-w-[380px] overflow-hidden rounded-xl border border-border bg-black">
                   <iframe
-                    src="https://www.instagram.com/p/DXHZYJlke6n/embed"
+                    src="https://www.instagram.com/reel/DXHZYJlke6n/embed/?autoplay=1&muted=1"
                     title="Resultado de cliente Ultra Company"
-                    loading="lazy"
+                    allow="autoplay; encrypted-media; fullscreen"
                     allowFullScreen
                     scrolling="no"
-                    className="h-[560px] w-full border-0"
+                    className="absolute -top-[54px] left-0 w-full border-0"
+                    style={{ height: "calc(100% + 200px)" }}
                   />
                 </div>
               </div>
+
               <div className="panel flex flex-col justify-center rounded-2xl p-8 lg:col-span-3">
                 <span className="text-[11px] tracking-[0.3em] text-primary uppercase">
                   Resultado na prática
@@ -319,56 +298,78 @@ function Home() {
 
       {/* FUNDADOR */}
       <section id="fundador" className="scroll-mt-20 border-t border-border py-24">
-        <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-[240px_1fr] md:items-start">
+        <div className="mx-auto max-w-6xl px-6">
           <Reveal>
-            <div className="overflow-hidden rounded-xl border border-border">
-              <img
-                src={founderAsset.url}
-                alt="Igor Corrêa, fundador da Ultra Company"
-                width={912}
-                height={1200}
-                loading="lazy"
-                className="w-full object-cover"
-              />
+            <div className="grid gap-6 lg:grid-cols-2 lg:items-end">
+              <h2 className="display-xl text-3xl sm:text-4xl lg:text-5xl">Conheça o fundador</h2>
+              <p className="max-w-lg text-sm leading-relaxed text-muted-foreground">
+                Quem constrói a máquina de receita por dentro — método nascido na operação, aplicado
+                junto com a diretoria dos nossos clientes.
+              </p>
             </div>
-            <p className="mt-4 text-[11px] tracking-[0.2em] text-muted-foreground uppercase">
-              Fundador · Ultra Company
-            </p>
-            <p className="font-display mt-1 text-lg font-bold">Igor Corrêa</p>
           </Reveal>
 
-          <div>
-            <span className="text-[11px] tracking-[0.3em] text-primary uppercase">O Fundador</span>
-            <h2 className="display-xl mt-5 text-2xl sm:text-3xl lg:text-4xl">
-              Quem constrói a máquina por dentro
-            </h2>
-            <p className="mt-7 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-              A Ultra Company nasceu na operação, não na teoria. São mais de uma década liderando
-              áreas de marketing e vendas, montando estruturas comerciais do zero e reconstruindo
-              modelos de negócio que cresciam sem gerar margem.
-            </p>
-            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-              Dessa vivência veio a tese que sustenta a consultoria: receita é consequência da
-              conexão entre Growth, Estrutura Comercial e Modelo de Negócio sustentável. Quando um
-              desses eixos falha, o crescimento vira volume sem lucro.
-            </p>
-            <ul className="mt-8 space-y-4 text-sm text-muted-foreground">
-              {[
-                "Diagnóstico honesto: onde a receita trava hoje e quanto isso custa por mês.",
-                "Construção conjunta com o time interno — transferência real de método.",
-                "Indicadores acordados no início e revisados em cadência semanal.",
-              ].map((t) => (
-                <li key={t} className="flex gap-3">
-                  <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
-                  {t}
-                </li>
-              ))}
-            </ul>
-            <div className="mt-10">
-              <CTA label="Quero meu diagnóstico gratuito" />
-            </div>
+          <div className="mt-16 grid gap-12 lg:grid-cols-[1fr_420px] lg:items-start">
+            <Reveal>
+              <span className="text-[11px] tracking-[0.3em] text-primary uppercase">
+                Fundador · Ultra Company
+              </span>
+              <h3 className="display-xl mt-4 text-2xl sm:text-3xl">Igor Corrêa</h3>
+              <p className="mt-7 max-w-xl text-sm leading-relaxed text-muted-foreground">
+                A Ultra Company nasceu na operação, não na teoria. São mais de uma década liderando
+                áreas de marketing e vendas, montando estruturas comerciais do zero e reconstruindo
+                modelos de negócio que cresciam sem gerar margem.
+              </p>
+              <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
+                Dessa vivência veio a tese que sustenta a consultoria: receita é consequência da
+                conexão entre Growth, Estrutura Comercial e Modelo de Negócio sustentável. Quando um
+                desses eixos falha, o crescimento vira volume sem lucro.
+              </p>
+              <ul className="mt-8 space-y-4 text-sm text-muted-foreground">
+                {[
+                  "Diagnóstico honesto: onde a receita trava hoje e quanto isso custa por mês.",
+                  "Construção conjunta com o time interno — transferência real de método.",
+                  "Indicadores acordados no início e revisados em cadência semanal.",
+                ].map((t) => (
+                  <li key={t} className="flex gap-3">
+                    <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
+                    {t}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-10">
+                <CTA label="Quero meu diagnóstico gratuito" />
+              </div>
+            </Reveal>
+
+            <Reveal delay={120}>
+              <figure className="relative overflow-hidden rounded-2xl border border-border">
+                <img
+                  src={founderAsset.url}
+                  alt="Igor Corrêa, fundador da Ultra Company"
+                  width={912}
+                  height={1200}
+                  loading="lazy"
+                  className="aspect-[3/4] w-full object-cover grayscale contrast-110"
+                />
+                <div
+                  className="pointer-events-none absolute inset-0"
+                  style={{
+                    background:
+                      "linear-gradient(to top, color-mix(in oklab, var(--background) 92%, transparent), transparent 55%)",
+                  }}
+                />
+                <figcaption className="absolute inset-x-0 bottom-0 p-6">
+                  <p className="font-display text-lg font-bold">Igor Corrêa</p>
+                  <p className="text-[11px] tracking-[0.2em] text-muted-foreground uppercase">
+                    Fundador · Ultra Company
+                  </p>
+                </figcaption>
+              </figure>
+            </Reveal>
           </div>
         </div>
+
 
         <div className="mx-auto mt-20 grid max-w-6xl gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-3">
           {founderMarks.map((m) => (
