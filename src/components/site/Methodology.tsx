@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Check } from "lucide-react";
 import { Counter, Reveal } from "@/components/site/animate";
+import { MethodologyMark } from "@/components/site/MethodologyMark";
 
 export const methodologyTabs = [
   {
@@ -90,32 +91,22 @@ export function MethodologyShowcase({
       </Reveal>
 
       <div className="mt-14 grid gap-14 lg:grid-cols-2 lg:items-start">
-        {/* Emblema animado */}
+        {/* Símbolo da metodologia */}
         <Reveal className="relative hidden lg:block">
-          <div className="relative grid aspect-square place-items-center">
-            <div className="absolute inset-8 rounded-full border border-dashed border-primary/25" />
-            <div className="absolute inset-20 rounded-full border border-primary/20" />
-            <div
-              className="animate-pulse-glow absolute inset-28 rounded-full"
-              style={{ background: "var(--gradient-veil)" }}
-            />
-            <div className="glow-ring relative grid size-52 place-items-center rounded-full bg-card">
-              <span className="font-display text-5xl font-bold tracking-tighter">U</span>
-            </div>
-            <div className="absolute bottom-0 w-full">
-              <div className="panel rounded-2xl p-6">
-                <p className="text-xs tracking-[0.2em] text-muted-foreground uppercase">
-                  {current.subtitle}
-                </p>
-                <div className="mt-2 flex items-baseline gap-2">
-                  <Counter
-                    key={current.key}
-                    to={current.metric}
-                    decimals={current.metric % 1 === 0 ? 0 : 1}
-                    className="font-display text-4xl font-bold text-primary"
-                  />
-                  <span className="text-sm text-muted-foreground">{current.metricLabel}</span>
-                </div>
+          <div className="flex flex-col items-center gap-8">
+            <MethodologyMark active={current.key} onSelect={setActive} />
+            <div className="panel w-full rounded-2xl p-6">
+              <p className="text-xs tracking-[0.2em] text-muted-foreground uppercase">
+                {current.subtitle}
+              </p>
+              <div className="mt-2 flex items-baseline gap-2">
+                <Counter
+                  key={current.key}
+                  to={current.metric}
+                  decimals={current.metric % 1 === 0 ? 0 : 1}
+                  className="font-display text-4xl font-bold text-primary"
+                />
+                <span className="text-sm text-muted-foreground">{current.metricLabel}</span>
               </div>
             </div>
           </div>

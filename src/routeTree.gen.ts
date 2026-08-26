@@ -10,63 +10,33 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as DepoimentosRouteImport } from './routes/depoimentos'
-import { Route as FundadorRouteImport } from './routes/fundador'
-import { Route as MetodologiaRouteImport } from './routes/metodologia'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DepoimentosRoute = DepoimentosRouteImport.update({
-  id: '/depoimentos',
-  path: '/depoimentos',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FundadorRoute = FundadorRouteImport.update({
-  id: '/fundador',
-  path: '/fundador',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MetodologiaRoute = MetodologiaRouteImport.update({
-  id: '/metodologia',
-  path: '/metodologia',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/depoimentos': typeof DepoimentosRoute
-  '/fundador': typeof FundadorRoute
-  '/metodologia': typeof MetodologiaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/depoimentos': typeof DepoimentosRoute
-  '/fundador': typeof FundadorRoute
-  '/metodologia': typeof MetodologiaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/depoimentos': typeof DepoimentosRoute
-  '/fundador': typeof FundadorRoute
-  '/metodologia': typeof MetodologiaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/depoimentos' | '/fundador' | '/metodologia'
+  fullPaths: '/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/depoimentos' | '/fundador' | '/metodologia'
-  id: '__root__' | '/' | '/depoimentos' | '/fundador' | '/metodologia'
+  to: '/'
+  id: '__root__' | '/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  DepoimentosRoute: typeof DepoimentosRoute
-  FundadorRoute: typeof FundadorRoute
-  MetodologiaRoute: typeof MetodologiaRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -78,35 +48,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/depoimentos': {
-      id: '/depoimentos'
-      path: '/depoimentos'
-      fullPath: '/depoimentos'
-      preLoaderRoute: typeof DepoimentosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/fundador': {
-      id: '/fundador'
-      path: '/fundador'
-      fullPath: '/fundador'
-      preLoaderRoute: typeof FundadorRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/metodologia': {
-      id: '/metodologia'
-      path: '/metodologia'
-      fullPath: '/metodologia'
-      preLoaderRoute: typeof MetodologiaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  DepoimentosRoute: DepoimentosRoute,
-  FundadorRoute: FundadorRoute,
-  MetodologiaRoute: MetodologiaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

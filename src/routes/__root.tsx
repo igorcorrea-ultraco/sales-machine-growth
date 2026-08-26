@@ -11,7 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { Logo, SiteNav } from "../components/site/SiteNav";
+import { Logo, SiteNav, scrollToSection, sections } from "../components/site/SiteNav";
 
 function NotFoundComponent() {
   return (
@@ -129,23 +129,24 @@ function SiteFooter() {
         <div>
           <Logo />
           <p className="mt-4 max-w-xs text-xs leading-relaxed text-muted-foreground">
-            Assessoria de Receita. Marketing, Vendas e Modelo de Negócio conectados em uma única
+            Consultoria de receita. Marketing, Vendas e Modelo de Negócio conectados em uma única
             máquina de crescimento.
           </p>
         </div>
         <nav className="flex flex-wrap gap-6 text-sm text-muted-foreground">
-          <Link to="/" className="hover:text-foreground">
-            Início
-          </Link>
-          <Link to="/metodologia" className="hover:text-foreground">
-            Metodologia
-          </Link>
-          <Link to="/fundador" className="hover:text-foreground">
-            Fundador
-          </Link>
-          <Link to="/depoimentos" className="hover:text-foreground">
-            Depoimentos
-          </Link>
+          {sections.map((s) => (
+            <a
+              key={s.id}
+              href={`#${s.id}`}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection(s.id);
+              }}
+              className="hover:text-foreground"
+            >
+              {s.label}
+            </a>
+          ))}
         </nav>
         <p className="text-xs text-muted-foreground">
           © {new Date().getFullYear()} Ultra Company
