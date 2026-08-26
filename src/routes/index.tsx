@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, LineChart, Target, Workflow } from "lucide-react";
 import heroImage from "@/assets/hero-machine.jpg";
 import { CTA } from "@/components/site/SiteNav";
+import { MethodologyShowcase } from "@/components/site/Methodology";
 import { Counter, ProgressBar, Reveal } from "@/components/site/animate";
 import { FunnelChart, GrowthChart, PillarsRadar } from "@/components/site/charts";
 
@@ -103,6 +104,11 @@ function Home() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* METODOLOGIA */}
+      <section id="metodologia" className="border-t border-border py-20 md:py-28">
+        <MethodologyShowcase />
       </section>
 
       {/* MARQUEE */}
