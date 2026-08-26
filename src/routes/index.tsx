@@ -232,25 +232,7 @@ function Home() {
                 <GrowthChart />
               </div>
             </Reveal>
-            <Reveal delay={120} className="lg:col-span-2">
-              <div className="panel h-full rounded-2xl p-6">
-                <h3 className="text-base font-bold">Funil sob controle</h3>
-                <p className="mt-1 mb-6 text-xs text-muted-foreground">
-                  Conversão por etapa após redesenho de funil e cadência.
-                </p>
-                <FunnelChart />
-              </div>
-            </Reveal>
-            <Reveal delay={80} className="lg:col-span-2">
-              <div className="panel h-full rounded-2xl p-6">
-                <h3 className="text-base font-bold">Maturidade comercial</h3>
-                <p className="mt-1 mb-6 text-xs text-muted-foreground">
-                  Diagnóstico antes x depois nos seis eixos do sistema.
-                </p>
-                <PillarsRadar />
-              </div>
-            </Reveal>
-            <Reveal delay={160} className="lg:col-span-3">
+            <Reveal delay={160} className="lg:col-span-2">
               <div className="panel flex h-full flex-col justify-center gap-7 rounded-2xl p-8">
                 <ProgressBar label="Aumento de ticket médio" value={37} />
                 <ProgressBar label="Redução do ciclo de vendas" value={44} />
@@ -260,39 +242,6 @@ function Home() {
             </Reveal>
           </div>
 
-          <Reveal delay={120}>
-            <div className="mt-6 grid gap-6 lg:grid-cols-5">
-              <div className="panel rounded-2xl p-6 lg:col-span-2">
-                <div className="relative mx-auto aspect-[9/16] w-full max-w-[380px] overflow-hidden rounded-xl border border-border bg-black">
-                  <iframe
-                    src="https://www.instagram.com/reel/DXHZYJlke6n/embed/?autoplay=1&muted=1"
-                    title="Resultado de cliente Ultra Company"
-                    allow="autoplay; encrypted-media; fullscreen"
-                    allowFullScreen
-                    scrolling="no"
-                    className="absolute -top-[54px] left-0 w-full border-0"
-                    style={{ height: "calc(100% + 200px)" }}
-                  />
-                </div>
-              </div>
-
-              <div className="panel flex flex-col justify-center rounded-2xl p-8 lg:col-span-3">
-                <span className="text-[11px] tracking-[0.3em] text-primary uppercase">
-                  Resultado na prática
-                </span>
-                <h3 className="display-xl mt-4 text-xl sm:text-2xl">
-                  O sistema de receita explicado em 60 segundos
-                </h3>
-                <p className="mt-4 max-w-md text-sm text-muted-foreground">
-                  Como a conexão entre Marketing, Vendas e Modelo de Negócio transforma esforço
-                  isolado em crescimento com margem — com números reais de operações tracionadas.
-                </p>
-                <div className="mt-8">
-                  <CTA label="Quero esse resultado no meu negócio" />
-                </div>
-              </div>
-            </div>
-          </Reveal>
         </div>
       </section>
 
