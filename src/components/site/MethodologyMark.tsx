@@ -20,7 +20,7 @@ export function MethodologyMark({
         strokeWidth="1"
       />
       {vertices.map((v, i) => {
-        const next = vertices[(i + 1) % vertices.length];
+        const next = vertices[(i + 1) % vertices.length]!;
         const isEdge = v.key === active || next.key === active;
         return (
           <line
