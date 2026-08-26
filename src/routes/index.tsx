@@ -188,12 +188,9 @@ function Home() {
             </h2>
           </Reveal>
           <Reveal delay={120} className="mt-14">
-            <ConnectionShape />
-          </Reveal>
-
-          <Reveal delay={160} className="mt-16">
             <MethodologyMark active="marketing" />
           </Reveal>
+
 
           <div className="mt-16 grid gap-6 text-left md:grid-cols-3">
 
