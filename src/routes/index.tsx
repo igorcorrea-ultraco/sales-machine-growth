@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, LineChart, Quote, Star, Target, Workflow } from "lucide-react";
-import heroImage from "@/assets/hero-machine.jpg";
+
 import founderAsset from "@/assets/igor-founder.png.asset.json";
 import { CTA, scrollToSection } from "@/components/site/SiteNav";
 import { MethodologyShowcase } from "@/components/site/Methodology";
