@@ -333,7 +333,7 @@ function Home() {
               ))}
             </ul>
             <div className="mt-10">
-              <CTA label="Falar diretamente com o fundador" />
+              <CTA label="Quero meu diagnóstico gratuito" />
             </div>
           </div>
         </div>
