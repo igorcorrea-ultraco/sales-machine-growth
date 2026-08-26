@@ -146,14 +146,14 @@ export function Logo() {
 }
 
 /** Todo CTA do site leva para a captação de lead do Diagnóstico. */
+export const DIAGNOSTIC_FORM_URL = "https://form.respondi.app/oidXVJVB";
+
 export function CTA({ label = "Quero meu diagnóstico" }: { label?: string }) {
   return (
     <a
-      href="#diagnostico"
-      onClick={(e) => {
-        e.preventDefault();
-        scrollToSection("diagnostico");
-      }}
+      href={DIAGNOSTIC_FORM_URL}
+      target="_blank"
+      rel="noopener noreferrer"
       className="group inline-flex items-center gap-2 rounded-full border border-primary/60 bg-primary/95 px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary"
     >
       {label}
