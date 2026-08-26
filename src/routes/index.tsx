@@ -189,7 +189,12 @@ function Home() {
             <ConnectionShape />
           </Reveal>
 
+          <Reveal delay={160} className="mt-16">
+            <MethodologyMark active="marketing" />
+          </Reveal>
+
           <div className="mt-16 grid gap-6 text-left md:grid-cols-3">
+
 
             {pillars.map((p, i) => (
               <Reveal key={p.title} delay={i * 120}>
