@@ -298,56 +298,78 @@ function Home() {
 
       {/* FUNDADOR */}
       <section id="fundador" className="scroll-mt-20 border-t border-border py-24">
-        <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-[240px_1fr] md:items-start">
+        <div className="mx-auto max-w-6xl px-6">
           <Reveal>
-            <div className="overflow-hidden rounded-xl border border-border">
-              <img
-                src={founderAsset.url}
-                alt="Igor Corrêa, fundador da Ultra Company"
-                width={912}
-                height={1200}
-                loading="lazy"
-                className="w-full object-cover"
-              />
+            <div className="grid gap-6 lg:grid-cols-2 lg:items-end">
+              <h2 className="display-xl text-3xl sm:text-4xl lg:text-5xl">Conheça o fundador</h2>
+              <p className="max-w-lg text-sm leading-relaxed text-muted-foreground">
+                Quem constrói a máquina de receita por dentro — método nascido na operação, aplicado
+                junto com a diretoria dos nossos clientes.
+              </p>
             </div>
-            <p className="mt-4 text-[11px] tracking-[0.2em] text-muted-foreground uppercase">
-              Fundador · Ultra Company
-            </p>
-            <p className="font-display mt-1 text-lg font-bold">Igor Corrêa</p>
           </Reveal>
 
-          <div>
-            <span className="text-[11px] tracking-[0.3em] text-primary uppercase">O Fundador</span>
-            <h2 className="display-xl mt-5 text-2xl sm:text-3xl lg:text-4xl">
-              Quem constrói a máquina por dentro
-            </h2>
-            <p className="mt-7 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-              A Ultra Company nasceu na operação, não na teoria. São mais de uma década liderando
-              áreas de marketing e vendas, montando estruturas comerciais do zero e reconstruindo
-              modelos de negócio que cresciam sem gerar margem.
-            </p>
-            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-              Dessa vivência veio a tese que sustenta a consultoria: receita é consequência da
-              conexão entre Growth, Estrutura Comercial e Modelo de Negócio sustentável. Quando um
-              desses eixos falha, o crescimento vira volume sem lucro.
-            </p>
-            <ul className="mt-8 space-y-4 text-sm text-muted-foreground">
-              {[
-                "Diagnóstico honesto: onde a receita trava hoje e quanto isso custa por mês.",
-                "Construção conjunta com o time interno — transferência real de método.",
-                "Indicadores acordados no início e revisados em cadência semanal.",
-              ].map((t) => (
-                <li key={t} className="flex gap-3">
-                  <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
-                  {t}
-                </li>
-              ))}
-            </ul>
-            <div className="mt-10">
-              <CTA label="Quero meu diagnóstico gratuito" />
-            </div>
+          <div className="mt-16 grid gap-12 lg:grid-cols-[1fr_420px] lg:items-start">
+            <Reveal>
+              <span className="text-[11px] tracking-[0.3em] text-primary uppercase">
+                Fundador · Ultra Company
+              </span>
+              <h3 className="display-xl mt-4 text-2xl sm:text-3xl">Igor Corrêa</h3>
+              <p className="mt-7 max-w-xl text-sm leading-relaxed text-muted-foreground">
+                A Ultra Company nasceu na operação, não na teoria. São mais de uma década liderando
+                áreas de marketing e vendas, montando estruturas comerciais do zero e reconstruindo
+                modelos de negócio que cresciam sem gerar margem.
+              </p>
+              <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
+                Dessa vivência veio a tese que sustenta a consultoria: receita é consequência da
+                conexão entre Growth, Estrutura Comercial e Modelo de Negócio sustentável. Quando um
+                desses eixos falha, o crescimento vira volume sem lucro.
+              </p>
+              <ul className="mt-8 space-y-4 text-sm text-muted-foreground">
+                {[
+                  "Diagnóstico honesto: onde a receita trava hoje e quanto isso custa por mês.",
+                  "Construção conjunta com o time interno — transferência real de método.",
+                  "Indicadores acordados no início e revisados em cadência semanal.",
+                ].map((t) => (
+                  <li key={t} className="flex gap-3">
+                    <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
+                    {t}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-10">
+                <CTA label="Quero meu diagnóstico gratuito" />
+              </div>
+            </Reveal>
+
+            <Reveal delay={120}>
+              <figure className="relative overflow-hidden rounded-2xl border border-border">
+                <img
+                  src={founderAsset.url}
+                  alt="Igor Corrêa, fundador da Ultra Company"
+                  width={912}
+                  height={1200}
+                  loading="lazy"
+                  className="aspect-[3/4] w-full object-cover grayscale contrast-110"
+                />
+                <div
+                  className="pointer-events-none absolute inset-0"
+                  style={{
+                    background:
+                      "linear-gradient(to top, color-mix(in oklab, var(--background) 92%, transparent), transparent 55%)",
+                  }}
+                />
+                <figcaption className="absolute inset-x-0 bottom-0 p-6">
+                  <p className="font-display text-lg font-bold">Igor Corrêa</p>
+                  <p className="text-[11px] tracking-[0.2em] text-muted-foreground uppercase">
+                    Fundador · Ultra Company
+                  </p>
+                </figcaption>
+              </figure>
+            </Reveal>
           </div>
         </div>
+
 
         <div className="mx-auto mt-20 grid max-w-6xl gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-3">
           {founderMarks.map((m) => (
