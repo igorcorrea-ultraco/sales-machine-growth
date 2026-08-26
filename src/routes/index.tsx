@@ -333,7 +333,7 @@ function Home() {
               ))}
             </ul>
             <div className="mt-10">
-              <CTA label="Falar diretamente com o fundador" />
+              <CTA label="Quero meu diagnóstico gratuito" />
             </div>
           </div>
         </div>
@@ -387,20 +387,32 @@ function Home() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="relative border-t border-border py-24">
+      {/* DIAGNÓSTICO — captação de lead */}
+      <section
+        id="diagnostico"
+        className="relative scroll-mt-20 border-t border-border py-24"
+      >
         <div className="relative mx-auto max-w-3xl px-6 text-center">
           <span className="text-[11px] tracking-[0.3em] text-primary uppercase">Próximo passo</span>
           <h2 className="display-xl mt-6 text-2xl sm:text-3xl lg:text-4xl">
-            Construa a máquina. Colha a previsibilidade.
+            Diagnóstico de receita — gratuito
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-sm text-muted-foreground">
-            Diagnóstico inicial gratuito: mapeamos gargalos de demanda, estrutura comercial e modelo
-            de negócio em uma sessão de 45 minutos.
+            Em uma sessão de 45 minutos mapeamos os gargalos de demanda, da estrutura comercial e do
+            modelo de negócio — e você sai com as prioridades dos próximos 90 dias.
           </p>
           <div className="mt-10 flex justify-center">
-            <CTA label="Agendar diagnóstico" />
+            <a
+              href="mailto:contato@ultracompany.com.br?subject=Quero%20meu%20Diagn%C3%B3stico%20de%20Receita&body=Nome%3A%0AEmpresa%3A%0ASegmento%3A%0AFaturamento%20mensal%3A%0AWhatsApp%3A"
+              className="group inline-flex items-center gap-2 rounded-full border border-primary/60 bg-primary/95 px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary"
+            >
+              Solicitar meu diagnóstico gratuito
+              <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+            </a>
           </div>
+          <p className="mt-4 text-xs text-muted-foreground">
+            Vagas limitadas por mês — atendimento conduzido pela equipe Ultra.
+          </p>
         </div>
       </section>
     </div>
