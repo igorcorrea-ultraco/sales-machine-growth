@@ -5,6 +5,7 @@ import founderAsset from "@/assets/igor-founder.png.asset.json";
 import { CTA, scrollToSection } from "@/components/site/SiteNav";
 import { MethodologyShowcase } from "@/components/site/Methodology";
 import { Counter, ProgressBar, Reveal } from "@/components/site/animate";
+import { ConnectionShape } from "@/components/site/ConnectionShape";
 import { FunnelChart, GrowthChart, PillarsRadar } from "@/components/site/charts";
 
 export const Route = createFileRoute("/")({
@@ -48,10 +49,25 @@ const pillars = [
   },
 ];
 
+/** Contabilidade aparece com peso maior que os demais nichos. */
+const niches: string[] = [
+  "Contabilidade",
+  "Advogados",
+  "Contabilidade",
+  "Médicos",
+  "Contabilidade",
+  "Indústria",
+  "Contabilidade",
+  "Biomédicos",
+  "Contabilidade",
+  "Agências",
+  "Contabilidade",
+];
+
 const founderMarks = [
-  { v: 180, s: "+", d: "Operações comerciais estruturadas" },
-  { v: 12, s: " anos", d: "Liderando times de receita" },
-  { v: 9, s: " setores", d: "B2B, serviços, indústria e tech" },
+  { v: 100, s: "+", d: "Operações tracionadas" },
+  { v: 10, s: " anos", d: "Liderando times de receita" },
+  { v: 50, s: "M", d: "Em receita gerada (R$)" },
 ];
 
 const quotes = [
@@ -100,9 +116,9 @@ function Home() {
           </span>
 
           <h1 className="display-xl animate-rise mt-7 max-w-3xl text-[2rem] leading-[1.06] sm:text-[2.6rem] lg:text-[3.4rem]">
-            Seu negócio pode ter uma máquina de vendas que{" "}
-            <span className="text-primary">vende mais</span> e{" "}
-            <span className="text-primary">gera margem</span>.
+            Seu negócio pode ter uma máquina que te faz{" "}
+            <span className="text-primary">vender mais</span> e com{" "}
+            <span className="text-primary">mais margem</span>.
           </h1>
 
           <p className="animate-rise mt-8 max-w-xl text-base leading-relaxed text-muted-foreground">
@@ -125,21 +141,19 @@ function Home() {
             </a>
           </div>
 
-          <div className="mt-20 grid max-w-4xl grid-cols-2 gap-px overflow-hidden rounded-xl border border-border bg-border lg:grid-cols-4">
+          <div className="mt-16 grid max-w-3xl grid-cols-2 gap-px overflow-hidden rounded-lg border border-border bg-border lg:grid-cols-4">
             {[
-              { v: 3.2, s: "x", d: "Receita média em 12 meses", dec: 1 },
-              { v: 41, s: "%", d: "Ganho de margem operacional" },
-              { v: 92, s: "%", d: "Previsibilidade de pipeline" },
-              { v: 180, s: "+", d: "Operações comerciais estruturadas" },
+              { p: "+R$ ", v: 50, s: "M", d: "gerados em receita" },
+              { v: 10, s: " anos", d: "de experiência" },
+              { p: "+", v: 100, s: "", d: "operações tracionadas" },
+              { pre: "NPS ", v: 8.9, s: "", d: "satisfação dos clientes", dec: 1 },
             ].map((k) => (
-              <div key={k.d} className="bg-background/85 p-6 backdrop-blur">
-                <Counter
-                  to={k.v}
-                  suffix={k.s}
-                  decimals={k.dec ?? 0}
-                  className="font-display text-3xl font-bold"
-                />
-                <p className="mt-2 text-xs leading-snug text-muted-foreground">{k.d}</p>
+              <div key={k.d} className="flex flex-col justify-start bg-background/85 p-5 backdrop-blur">
+                <div className="font-display flex items-baseline text-xl font-bold sm:text-2xl">
+                  {k.pre && <span className="text-sm text-muted-foreground">{k.pre}</span>}
+                  <Counter to={k.v} prefix={k.p ?? ""} suffix={k.s} decimals={k.dec ?? 0} />
+                </div>
+                <p className="mt-1.5 text-[11px] leading-snug text-muted-foreground">{k.d}</p>
               </div>
             ))}
           </div>
@@ -154,22 +168,27 @@ function Home() {
         <MethodologyShowcase />
       </section>
 
-      {/* MARQUEE */}
+      {/* NICHOS — MARQUEE */}
       <section className="border-y border-border bg-card/40 py-5">
+        <p className="mb-4 text-center text-[10px] tracking-[0.3em] text-muted-foreground uppercase">
+          Entregáveis rodando hoje em
+        </p>
         <div className="marquee-track flex w-max">
           {[0, 1].map((dup) => (
             <div key={dup} className="flex shrink-0 items-center">
-              {["Growth", "Funis", "Estrutura Comercial", "Previsibilidade", "Margem", "7P's"].map(
-                (w) => (
+              {niches.map((w, i) => (
+                <span
+                  key={`${dup}-${i}-${w}`}
+                  className="font-display flex items-center text-base font-semibold tracking-tight uppercase md:text-xl"
+                >
                   <span
-                    key={w}
-                    className="font-display flex items-center text-lg font-semibold tracking-tight uppercase md:text-2xl"
+                    className={`px-7 ${w === "Contabilidade" ? "text-foreground" : "text-muted-foreground"}`}
                   >
-                    <span className="px-8 text-muted-foreground">{w}</span>
-                    <span className="text-primary/70">///</span>
+                    {w}
                   </span>
-                ),
-              )}
+                  <span className="text-primary/70">///</span>
+                </span>
+              ))}
             </div>
           ))}
         </div>
@@ -180,14 +199,21 @@ function Home() {
         <div className="mx-auto max-w-7xl px-6">
           <Reveal>
             <span className="text-[11px] tracking-[0.3em] text-primary uppercase">Nossa tese</span>
-            <h2 className="mt-6 max-w-4xl text-2xl leading-snug font-semibold sm:text-3xl lg:text-4xl">
-              Receita não se resolve em um departamento. Nasce da{" "}
-              <span className="text-primary">conexão entre marketing, vendas</span> e{" "}
-              <span className="text-primary">modelo de negócio</span>.
-            </h2>
           </Reveal>
+          <div className="mt-8 grid gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            <Reveal>
+              <h2 className="max-w-2xl text-2xl leading-snug font-semibold sm:text-3xl lg:text-4xl">
+                Receita não se resolve com ações isoladas de um departamento, mas nasce da{" "}
+                <span className="text-primary">conexão entre marketing, vendas</span> e{" "}
+                <span className="text-primary">modelo de negócio</span>.
+              </h2>
+            </Reveal>
+            <Reveal delay={120}>
+              <ConnectionShape />
+            </Reveal>
+          </div>
 
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
+          <div className="mt-16 grid gap-6 md:grid-cols-3">
             {pillars.map((p, i) => (
               <Reveal key={p.title} delay={i * 120}>
                 <article className="panel group h-full rounded-2xl p-8 transition-colors hover:border-primary/50">
@@ -261,18 +287,35 @@ function Home() {
 
       {/* FUNDADOR */}
       <section id="fundador" className="scroll-mt-20 border-t border-border py-24">
-        <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[1fr_0.85fr] lg:items-center">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-[240px_1fr] md:items-start">
+          <Reveal>
+            <div className="overflow-hidden rounded-xl border border-border">
+              <img
+                src={founderAsset.url}
+                alt="Igor Corrêa, fundador da Ultra Company"
+                width={912}
+                height={1200}
+                loading="lazy"
+                className="w-full object-cover"
+              />
+            </div>
+            <p className="mt-4 text-[11px] tracking-[0.2em] text-muted-foreground uppercase">
+              Fundador · Ultra Company
+            </p>
+            <p className="font-display mt-1 text-lg font-bold">Igor Corrêa</p>
+          </Reveal>
+
           <div>
             <span className="text-[11px] tracking-[0.3em] text-primary uppercase">O Fundador</span>
-            <h2 className="display-xl mt-6 text-2xl sm:text-3xl lg:text-4xl">
+            <h2 className="display-xl mt-5 text-2xl sm:text-3xl lg:text-4xl">
               Quem constrói a máquina por dentro
             </h2>
-            <p className="mt-8 max-w-lg text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-7 max-w-2xl text-sm leading-relaxed text-muted-foreground">
               A Ultra Company nasceu na operação, não na teoria. São mais de uma década liderando
               áreas de marketing e vendas, montando estruturas comerciais do zero e reconstruindo
               modelos de negócio que cresciam sem gerar margem.
             </p>
-            <p className="mt-4 max-w-lg text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
               Dessa vivência veio a tese que sustenta a consultoria: receita é consequência da
               conexão entre Growth, Estrutura Comercial e Modelo de Negócio sustentável. Quando um
               desses eixos falha, o crescimento vira volume sem lucro.
@@ -293,27 +336,6 @@ function Home() {
               <CTA label="Falar diretamente com o fundador" />
             </div>
           </div>
-
-          <Reveal>
-            <div className="relative">
-              <div className="overflow-hidden rounded-2xl border border-border">
-                <img
-                  src={founderAsset.url}
-                  alt="Igor Corrêa, fundador da Ultra Company"
-                  width={912}
-                  height={1200}
-                  loading="lazy"
-                  className="w-full object-cover"
-                />
-              </div>
-              <div className="panel absolute -bottom-6 -left-6 hidden rounded-2xl p-5 sm:block">
-                <p className="text-[11px] tracking-[0.2em] text-muted-foreground uppercase">
-                  Fundador · Ultra Company
-                </p>
-                <p className="font-display mt-1 text-lg font-bold">Igor Corrêa</p>
-              </div>
-            </div>
-          </Reveal>
         </div>
 
         <div className="mx-auto mt-20 grid max-w-6xl gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-3">
