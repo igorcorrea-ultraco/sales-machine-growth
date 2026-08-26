@@ -62,7 +62,7 @@ function Fundador() {
               <div className="glow-ring overflow-hidden rounded-3xl">
                 <img
                   src={founderImage}
-                  alt="Fundador da Ultra Company"
+                  alt="Igor Corrêa, fundador da Ultra Company"
                   width={912}
                   height={1200}
                   loading="lazy"
@@ -71,9 +71,9 @@ function Fundador() {
               </div>
               <div className="panel absolute -bottom-6 -left-6 hidden rounded-2xl p-5 sm:block">
                 <p className="text-xs tracking-[0.2em] text-muted-foreground uppercase">
-                  Assessoria de Receita
+                  Fundador · Ultra Company
                 </p>
-                <p className="font-display mt-1 text-xl font-bold">Ultra Company</p>
+                <p className="font-display mt-1 text-xl font-bold">Igor Corrêa</p>
               </div>
             </div>
           </Reveal>
