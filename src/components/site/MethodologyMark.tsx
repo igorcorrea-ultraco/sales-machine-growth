@@ -75,9 +75,9 @@ export function MethodologyMark({
               style={{ transition: "all .4s ease" }}
             />
             <text
-              x={v.x}
-              y={v.y === 26 ? 8 : 268}
-              textAnchor="middle"
+              x={v.key === "modelo" ? v.x - 12 : v.key === "vendas" ? v.x + 12 : v.x}
+              y={v.y === 26 ? 8 : 270}
+              textAnchor={v.key === "modelo" ? "start" : v.key === "vendas" ? "end" : "middle"}
               fill={on ? "var(--foreground)" : "var(--muted-foreground)"}
               style={{ font: "600 10px var(--font-sans)", letterSpacing: "2.5px" }}
             >
