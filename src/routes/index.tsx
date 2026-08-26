@@ -125,21 +125,19 @@ function Home() {
             </a>
           </div>
 
-          <div className="mt-20 grid max-w-4xl grid-cols-2 gap-px overflow-hidden rounded-xl border border-border bg-border lg:grid-cols-4">
+          <div className="mt-16 grid max-w-3xl grid-cols-2 gap-px overflow-hidden rounded-lg border border-border bg-border lg:grid-cols-4">
             {[
-              { v: 3.2, s: "x", d: "Receita média em 12 meses", dec: 1 },
-              { v: 41, s: "%", d: "Ganho de margem operacional" },
-              { v: 92, s: "%", d: "Previsibilidade de pipeline" },
-              { v: 180, s: "+", d: "Operações comerciais estruturadas" },
+              { p: "+R$ ", v: 50, s: "M", d: "gerados em receita" },
+              { v: 10, s: " anos", d: "de experiência" },
+              { p: "+", v: 100, s: "", d: "operações tracionadas" },
+              { pre: "NPS ", v: 8.9, s: "", d: "satisfação dos clientes", dec: 1 },
             ].map((k) => (
-              <div key={k.d} className="bg-background/85 p-6 backdrop-blur">
-                <Counter
-                  to={k.v}
-                  suffix={k.s}
-                  decimals={k.dec ?? 0}
-                  className="font-display text-3xl font-bold"
-                />
-                <p className="mt-2 text-xs leading-snug text-muted-foreground">{k.d}</p>
+              <div key={k.d} className="flex flex-col justify-start bg-background/85 p-5 backdrop-blur">
+                <div className="font-display flex items-baseline text-xl font-bold sm:text-2xl">
+                  {k.pre && <span className="text-sm text-muted-foreground">{k.pre}</span>}
+                  <Counter to={k.v} prefix={k.p ?? ""} suffix={k.s} decimals={k.dec ?? 0} />
+                </div>
+                <p className="mt-1.5 text-[11px] leading-snug text-muted-foreground">{k.d}</p>
               </div>
             ))}
           </div>
