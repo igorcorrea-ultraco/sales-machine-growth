@@ -287,18 +287,35 @@ function Home() {
 
       {/* FUNDADOR */}
       <section id="fundador" className="scroll-mt-20 border-t border-border py-24">
-        <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[1fr_0.85fr] lg:items-center">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-[240px_1fr] md:items-start">
+          <Reveal>
+            <div className="overflow-hidden rounded-xl border border-border">
+              <img
+                src={founderAsset.url}
+                alt="Igor Corrêa, fundador da Ultra Company"
+                width={912}
+                height={1200}
+                loading="lazy"
+                className="w-full object-cover"
+              />
+            </div>
+            <p className="mt-4 text-[11px] tracking-[0.2em] text-muted-foreground uppercase">
+              Fundador · Ultra Company
+            </p>
+            <p className="font-display mt-1 text-lg font-bold">Igor Corrêa</p>
+          </Reveal>
+
           <div>
             <span className="text-[11px] tracking-[0.3em] text-primary uppercase">O Fundador</span>
-            <h2 className="display-xl mt-6 text-2xl sm:text-3xl lg:text-4xl">
+            <h2 className="display-xl mt-5 text-2xl sm:text-3xl lg:text-4xl">
               Quem constrói a máquina por dentro
             </h2>
-            <p className="mt-8 max-w-lg text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-7 max-w-2xl text-sm leading-relaxed text-muted-foreground">
               A Ultra Company nasceu na operação, não na teoria. São mais de uma década liderando
               áreas de marketing e vendas, montando estruturas comerciais do zero e reconstruindo
               modelos de negócio que cresciam sem gerar margem.
             </p>
-            <p className="mt-4 max-w-lg text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
               Dessa vivência veio a tese que sustenta a consultoria: receita é consequência da
               conexão entre Growth, Estrutura Comercial e Modelo de Negócio sustentável. Quando um
               desses eixos falha, o crescimento vira volume sem lucro.
@@ -319,27 +336,6 @@ function Home() {
               <CTA label="Falar diretamente com o fundador" />
             </div>
           </div>
-
-          <Reveal>
-            <div className="relative">
-              <div className="overflow-hidden rounded-2xl border border-border">
-                <img
-                  src={founderAsset.url}
-                  alt="Igor Corrêa, fundador da Ultra Company"
-                  width={912}
-                  height={1200}
-                  loading="lazy"
-                  className="w-full object-cover"
-                />
-              </div>
-              <div className="panel absolute -bottom-6 -left-6 hidden rounded-2xl p-5 sm:block">
-                <p className="text-[11px] tracking-[0.2em] text-muted-foreground uppercase">
-                  Fundador · Ultra Company
-                </p>
-                <p className="font-display mt-1 text-lg font-bold">Igor Corrêa</p>
-              </div>
-            </div>
-          </Reveal>
         </div>
 
         <div className="mx-auto mt-20 grid max-w-6xl gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-3">
