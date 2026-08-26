@@ -309,8 +309,25 @@ function Home() {
             </div>
           </Reveal>
 
-          <div className="mt-16 grid gap-12 lg:grid-cols-[1fr_420px] lg:items-start">
+          <div className="mt-16 grid gap-10 lg:grid-cols-[240px_1fr] lg:items-start">
             <Reveal>
+              <figure className="relative overflow-hidden rounded-2xl border border-border">
+                <img
+                  src={founderAsset.url}
+                  alt="Igor Corrêa, fundador da Ultra Company"
+                  width={912}
+                  height={1200}
+                  loading="lazy"
+                  className="aspect-[3/4] w-full object-cover grayscale contrast-110"
+                />
+              </figure>
+              <p className="font-display mt-4 text-lg font-bold">Igor Corrêa</p>
+              <p className="text-[11px] tracking-[0.2em] text-muted-foreground uppercase">
+                Fundador · Ultra Company
+              </p>
+            </Reveal>
+
+            <Reveal delay={120}>
               <span className="text-[11px] tracking-[0.3em] text-primary uppercase">
                 Fundador · Ultra Company
               </span>
@@ -337,48 +354,23 @@ function Home() {
                   </li>
                 ))}
               </ul>
+
+              <div className="mt-10 flex flex-wrap gap-x-12 gap-y-6">
+                {founderMarks.map((m) => (
+                  <div key={m.d}>
+                    <Counter to={m.v} suffix={m.s} className="font-display text-3xl font-bold" />
+                    <p className="mt-1 text-xs text-muted-foreground">{m.d}</p>
+                  </div>
+                ))}
+              </div>
+
               <div className="mt-10">
                 <CTA label="Quero meu diagnóstico gratuito" />
               </div>
             </Reveal>
-
-            <Reveal delay={120}>
-              <figure className="relative overflow-hidden rounded-2xl border border-border">
-                <img
-                  src={founderAsset.url}
-                  alt="Igor Corrêa, fundador da Ultra Company"
-                  width={912}
-                  height={1200}
-                  loading="lazy"
-                  className="aspect-[3/4] w-full object-cover grayscale contrast-110"
-                />
-                <div
-                  className="pointer-events-none absolute inset-0"
-                  style={{
-                    background:
-                      "linear-gradient(to top, color-mix(in oklab, var(--background) 92%, transparent), transparent 55%)",
-                  }}
-                />
-                <figcaption className="absolute inset-x-0 bottom-0 p-6">
-                  <p className="font-display text-lg font-bold">Igor Corrêa</p>
-                  <p className="text-[11px] tracking-[0.2em] text-muted-foreground uppercase">
-                    Fundador · Ultra Company
-                  </p>
-                </figcaption>
-              </figure>
-            </Reveal>
           </div>
         </div>
 
-
-        <div className="mx-auto mt-20 grid max-w-6xl gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-3">
-          {founderMarks.map((m) => (
-            <div key={m.d} className="bg-background/85 p-8">
-              <Counter to={m.v} suffix={m.s} className="font-display text-3xl font-bold" />
-              <p className="mt-2 text-xs text-muted-foreground">{m.d}</p>
-            </div>
-          ))}
-        </div>
       </section>
 
       {/* DEPOIMENTOS */}
