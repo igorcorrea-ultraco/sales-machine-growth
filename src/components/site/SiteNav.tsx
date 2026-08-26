@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
+import logoAsset from "@/assets/ultra-logo.png.asset.json";
 
 const links = [
   { to: "/", label: "Início" },
