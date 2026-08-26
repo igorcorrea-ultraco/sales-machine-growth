@@ -55,7 +55,7 @@ export const methodologyTabs = [
     items: [
       {
         title: "Análise dos 7P's do Modelo de Negócio vencedor",
-        text: "Revisão profunda de produto, preço, praça, promoção, pessoas, processos e posicionamento.",
+        text: "Um diagnóstico proprietário em 7 dimensões que revela onde sua margem vaza — e o que precisa ser redesenhado antes de escalar. O método é aplicado ao vivo, junto com a sua diretoria.",
       },
       {
         title: "Suporte ao crescimento",
