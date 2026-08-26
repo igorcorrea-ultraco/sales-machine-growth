@@ -44,31 +44,31 @@ function Triangle({
           <circle
             cx="160"
             cy="172"
-            r="58"
+            r="62"
             fill="none"
             stroke="var(--border)"
             strokeDasharray="3 6"
           />
+          <image
+            href="/favicon.png"
+            x="136"
+            y="140"
+            width="48"
+            height="48"
+            preserveAspectRatio="xMidYMid meet"
+          />
           <text
             x="160"
-            y="166"
-            textAnchor="middle"
-            fill="var(--foreground)"
-            style={{ font: "700 30px var(--font-display)", letterSpacing: "-1px" }}
-          >
-            U
-          </text>
-          <text
-            x="160"
-            y="188"
+            y="204"
             textAnchor="middle"
             fill="var(--muted-foreground)"
-            style={{ font: "500 8px var(--font-sans)", letterSpacing: "3px" }}
+            style={{ font: "600 9px var(--font-sans)", letterSpacing: "2.5px" }}
           >
-            SISTEMA DE RECEITA
+            MÁQUINA DE RECEITA
           </text>
         </>
       )}
+
 
       {vertices.map((v) => {
         const on = v.key === active;
