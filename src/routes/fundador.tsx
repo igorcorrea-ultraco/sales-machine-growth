@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import founderImage from "@/assets/founder.jpg";
+import founderAsset from "@/assets/igor-founder.png.asset.json";
+
+const founderImage = founderAsset.url;
 import { CTA } from "@/components/site/SiteNav";
 import { Counter, Reveal } from "@/components/site/animate";
 import { GrowthChart } from "@/components/site/charts";
