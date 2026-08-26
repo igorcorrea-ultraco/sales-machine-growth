@@ -1,36 +1,79 @@
-import { Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowRight, Menu, X } from "lucide-react";
 import logoAsset from "@/assets/ultra-logo.png.asset.json";
 
-const links = [
-  { to: "/", label: "Início" },
-  { to: "/metodologia", label: "Metodologia" },
-  { to: "/fundador", label: "Fundador" },
-  { to: "/depoimentos", label: "Depoimentos" },
+export const sections = [
+  { id: "inicio", label: "Início" },
+  { id: "metodologia", label: "Metodologia" },
+  { id: "fundador", label: "Fundador" },
+  { id: "depoimentos", label: "Depoimentos" },
 ] as const;
+
+export function scrollToSection(id: string) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function useActiveSection() {
+  const [active, setActive] = useState<string>("inicio");
+
+  useEffect(() => {
+    const onScroll = () => {
+      const probe = window.innerHeight * 0.35;
+      let current = sections[0].id;
+      for (const s of sections) {
+        const el = document.getElementById(s.id);
+        if (el && el.getBoundingClientRect().top <= probe) current = s.id;
+      }
+      setActive(current);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return active;
+}
 
 export function SiteNav() {
   const [open, setOpen] = useState(false);
+  const active = useActiveSection();
+
+  const go = (id: string) => {
+    setOpen(false);
+    scrollToSection(id);
+  };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl">
-      <div className="mx-auto grid h-16 max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-6 md:h-20 md:flex md:justify-between">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur-xl">
+      <div className="mx-auto grid h-16 max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-6 md:flex md:h-[76px] md:justify-between">
         <div className="flex min-w-0 items-center">
           <Logo />
         </div>
 
-        <nav className="hidden items-center gap-8 md:flex">
-          {links.map((l) => (
-            <Link
-              key={l.to}
-              to={l.to}
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-              activeOptions={{ exact: l.to === "/" }}
-              activeProps={{ className: "text-foreground border-b-2 border-primary pb-1" }}
+        <nav className="hidden items-center gap-9 md:flex">
+          {sections.map((s) => (
+            <a
+              key={s.id}
+              href={`#${s.id}`}
+              onClick={(e) => {
+                e.preventDefault();
+                go(s.id);
+              }}
+              className={`text-[13px] tracking-wide transition-colors ${
+                active === s.id
+                  ? "text-foreground"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
             >
-              {l.label}
-            </Link>
+              {s.label}
+              <span
+                className={`mt-1 block h-px origin-left bg-primary transition-transform duration-300 ${
+                  active === s.id ? "scale-x-100" : "scale-x-0"
+                }`}
+              />
+            </a>
           ))}
         </nav>
 
@@ -50,22 +93,25 @@ export function SiteNav() {
       </div>
 
       {open && (
-        <div className="border-t border-border/60 bg-background/95 px-6 py-4 backdrop-blur-xl md:hidden">
+        <div className="border-t border-border/70 bg-background/95 px-6 py-4 backdrop-blur-xl md:hidden">
           <nav className="flex flex-col">
-            {links.map((l) => (
-              <Link
-                key={l.to}
-                to={l.to}
-                onClick={() => setOpen(false)}
-                className="border-b border-border/50 py-3 text-sm font-medium tracking-wide text-muted-foreground uppercase"
-                activeOptions={{ exact: l.to === "/" }}
-                activeProps={{ className: "text-primary" }}
+            {sections.map((s) => (
+              <a
+                key={s.id}
+                href={`#${s.id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  go(s.id);
+                }}
+                className={`border-b border-border/60 py-3 text-sm font-medium tracking-wide uppercase ${
+                  active === s.id ? "text-primary" : "text-muted-foreground"
+                }`}
               >
-                {l.label}
-              </Link>
+                {s.label}
+              </a>
             ))}
           </nav>
-          <div className="mt-5" onClick={() => setOpen(false)}>
+          <div className="mt-5">
             <CTA label="Falar com especialista" />
           </div>
         </div>
@@ -76,7 +122,15 @@ export function SiteNav() {
 
 export function Logo() {
   return (
-    <Link to="/" className="flex items-center" aria-label="Ultra Company">
+    <a
+      href="#inicio"
+      onClick={(e) => {
+        e.preventDefault();
+        scrollToSection("inicio");
+      }}
+      className="flex items-center"
+      aria-label="Ultra Company"
+    >
       <img
         src={logoAsset.url}
         alt="Ultra Company"
@@ -84,7 +138,7 @@ export function Logo() {
         height={146}
         className="h-7 w-auto sm:h-8"
       />
-    </Link>
+    </a>
   );
 }
 
@@ -92,7 +146,7 @@ export function CTA({ label = "Falar com especialista" }: { label?: string }) {
   return (
     <a
       href="mailto:contato@ultracompany.com.br?subject=Quero%20uma%20m%C3%A1quina%20de%20vendas"
-      className="glow-ring group inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03]"
+      className="group inline-flex items-center gap-2 rounded-full border border-primary/60 bg-primary/95 px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary"
     >
       {label}
       <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
