@@ -21,7 +21,7 @@ function useActiveSection() {
   useEffect(() => {
     const onScroll = () => {
       const probe = window.innerHeight * 0.35;
-      let current = sections[0].id;
+      let current: string = sections[0].id;
       for (const s of sections) {
         const el = document.getElementById(s.id);
         if (el && el.getBoundingClientRect().top <= probe) current = s.id;
