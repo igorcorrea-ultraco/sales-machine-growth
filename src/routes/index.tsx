@@ -100,9 +100,9 @@ function Home() {
           </span>
 
           <h1 className="display-xl animate-rise mt-7 max-w-3xl text-[2rem] leading-[1.06] sm:text-[2.6rem] lg:text-[3.4rem]">
-            Seu negócio pode ter uma máquina de vendas que{" "}
-            <span className="text-primary">vende mais</span> e{" "}
-            <span className="text-primary">gera margem</span>.
+            Seu negócio pode ter uma máquina que te faz{" "}
+            <span className="text-primary">vender mais</span> e com{" "}
+            <span className="text-primary">mais margem</span>.
           </h1>
 
           <p className="animate-rise mt-8 max-w-xl text-base leading-relaxed text-muted-foreground">
