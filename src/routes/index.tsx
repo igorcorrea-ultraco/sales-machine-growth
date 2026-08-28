@@ -15,17 +15,15 @@ import { GrowthChart } from "@/components/site/charts";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Ultra Company — Máquina de vendas que vende mais e gera margem" },
+      { title: "Ultra Company - Máquina de Vendas" },
       {
         name: "description",
-        content:
-          "Consultoria de receita de alta performance: Marketing, Vendas e Modelo de Negócio conectados para gerar crescimento previsível com margem.",
+        content: "Venda Mais e com Mais Margem.",
       },
-      { property: "og:title", content: "Ultra Company — Máquina de Vendas com Margem" },
+      { property: "og:title", content: "Ultra Company - Máquina de Vendas" },
       {
         property: "og:description",
-        content:
-          "Growth, estrutura comercial e modelo de negócio sustentável em um único sistema de receita.",
+        content: "Venda Mais e com Mais Margem.",
       },
     ],
   }),
