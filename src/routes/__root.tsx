@@ -78,11 +78,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Ultra Company — Assessoria de Receita" },
+      { title: "Ultra Company - Máquina de Vendas" },
       {
         name: "description",
-        content:
-          "Máquina de vendas que gera crescimento e previsibilidade, conectando Marketing, Vendas e Modelo de Negócio.",
+        content: "Venda Mais e com Mais Margem.",
       },
       { name: "author", content: "Ultra Company" },
       { property: "og:type", content: "website" },
