@@ -94,7 +94,7 @@ function Home() {
               <h1 className="display-xl text-[2.1rem] leading-[1.02] sm:text-5xl lg:text-[4rem]">
                 SEU NEGÓCIO PODE SER&nbsp;<br />
                 UMA MÁQUINA DE&nbsp;<br />
-                <span className="text-brand">VENDAS&nbsp;<br />
+                <span className="text-brand">VENDAS&nbsp;
                 PREVISÍVEIS</span>
               </h1>
               <p className="mt-7 max-w-xl text-base leading-relaxed text-muted-foreground">
