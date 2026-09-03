@@ -77,19 +77,27 @@ function Home() {
 
       <main className="pt-16 md:pt-[76px]">
         {/* HERO */}
-        <section id="inicio" className="scroll-mt-20 py-20 md:py-28">
-          <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-[1.05fr_1fr]">
+        <section
+          id="inicio"
+          className="scroll-mt-20 relative flex min-h-[88vh] items-center overflow-hidden py-24 md:py-32"
+        >
+          <img
+            src={heroUrl}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/30" />
+          <div className="absolute inset-0 bg-background/40" />
+          <div className="relative mx-auto w-full max-w-7xl px-6">
             <Reveal>
-              <span className="text-[11px] tracking-[0.35em] text-primary uppercase">
-                 
-              </span>
-              <h1 className="display-xl mt-6 text-[2.1rem] leading-[1.02] sm:text-5xl lg:text-[4rem]">
-                 SEU NEGÓCIO PODE SER&nbsp;<br />
-                 UMA MÁQUINA DE&nbsp;<br />
-                 VENDAS&nbsp;PREVISÍVEIS
+              <h1 className="display-xl text-[2.1rem] leading-[1.02] sm:text-5xl lg:text-[4rem]">
+                SEU NEGÓCIO PODE SER&nbsp;<br />
+                UMA MÁQUINA DE&nbsp;<br />
+                VENDAS&nbsp;PREVISÍVEIS
               </h1>
               <p className="mt-7 max-w-xl text-base leading-relaxed text-muted-foreground">
-                 A Ultra Company é o lugar certo para o Empresário que está decidido a transformar seu negócio em uma máquina de vendas previsíveis. Método eficiente e validado, acompanhamento aproximado e uma comunidade de altíssimo valor agregado.
+                A Ultra Company é o lugar certo para o Empresário que está decidido a transformar seu negócio em uma máquina de vendas previsíveis. Método eficiente e validado, acompanhamento aproximado e uma comunidade de altíssimo valor agregado.
               </p>
               <div className="mt-9 flex flex-wrap items-center gap-4">
                 <CTA label="Quero meu diagnóstico gratuito" />
@@ -99,18 +107,6 @@ function Home() {
                 >
                   Ver a metodologia
                 </a>
-              </div>
-            </Reveal>
-
-            <Reveal delay={150}>
-              <div className="panel overflow-hidden rounded-3xl">
-                <img
-                  src={heroUrl}
-                  alt="Máquina de vendas estruturada"
-                  width={1200}
-                  height={900}
-                  className="h-full w-full object-cover"
-                />
               </div>
             </Reveal>
           </div>
