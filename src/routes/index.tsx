@@ -5,9 +5,10 @@ import { Reveal } from "@/components/site/animate";
 import { SiteNav, CTA, DIAGNOSTIC_FORM_URL, Logo } from "@/components/site/SiteNav";
 import { PhasesSection } from "@/components/site/Phases";
 import { ProofSection } from "@/components/site/Proof";
+import { NichesMarquee } from "@/components/site/Niches";
 import { CompareSection } from "@/components/site/Compare";
 import { FaqSection } from "@/components/site/Faq";
-import heroUrl from "@/assets/hero-machine.jpg";
+import heroUrl from "@/assets/maquinario.jpg";
 import igorUrl from "@/assets/igor-founder.webp";
 import botaoUrl from "@/assets/botao-vermelho.jpg";
 
@@ -114,6 +115,8 @@ function Home() {
             </Reveal>
           </div>
         </section>
+
+        <NichesMarquee />
 
         <PhasesSection />
 
