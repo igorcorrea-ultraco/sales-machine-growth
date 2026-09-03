@@ -80,14 +80,15 @@ function Home() {
           <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-[1.05fr_1fr]">
             <Reveal>
               <span className="text-[11px] tracking-[0.35em] text-primary uppercase">
-                Aceleração de vendas para empresários
+                 
               </span>
               <h1 className="display-xl mt-6 text-[2.1rem] leading-[1.02] sm:text-5xl lg:text-[4rem]">
-                SEU NEGÓCIO PODE TER UMA MÁQUINA QUE TE FAZ VENDER MAIS E COM MAIS MARGEM.
+                 SEU NEGÓCIO PODE SER&nbsp;<br />
+                 UMA MÁQUINA DE&nbsp;<br />
+                 VENDAS&nbsp;PREVISÍVEIS
               </h1>
               <p className="mt-7 max-w-xl text-base leading-relaxed text-muted-foreground">
-                Um sistema único de receita, construído sobre a conexão entre Marketing, Vendas e
-                Modelo de Negócio.
+                 A Ultra Company é o lugar certo para o Empresário que está decidido a transformar seu negócio em uma máquina de vendas previsíveis. Método eficiente e validado, acompanhamento aproximado e uma comunidade de altíssimo valor agregado.
               </p>
               <div className="mt-9 flex flex-wrap items-center gap-4">
                 <CTA label="Quero meu diagnóstico gratuito" />
