@@ -50,7 +50,7 @@ export function SiteNav() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur-xl">
-      <div className="mx-auto grid h-16 max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-6 md:flex md:h-[76px] md:justify-between">
+      <div className="mx-auto grid h-16 max-w-7xl grid-cols-[minmax(0,1fr)_auto_auto] items-center gap-4 px-6 md:flex md:h-[76px] md:justify-between">
         <div className="flex min-w-0 items-center">
           <Logo />
         </div>
@@ -82,6 +82,10 @@ export function SiteNav() {
 
         <div className="hidden md:block">
           <CTA />
+        </div>
+
+        <div className="md:hidden">
+          <CTA label="Diagnóstico" />
         </div>
 
         <button
