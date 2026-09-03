@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Check, MessageCircle, Users, Target, Repeat } from "lucide-react";
+import { ArrowRight, MessageCircle, Users, Target, Repeat } from "lucide-react";
 
 import { Reveal } from "@/components/site/animate";
 import { SiteNav, CTA, DIAGNOSTIC_FORM_URL, Logo } from "@/components/site/SiteNav";
