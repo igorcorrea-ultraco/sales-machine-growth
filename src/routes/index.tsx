@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, LineChart, Quote, Star, Target, Workflow } from "lucide-react";
 
-import founderAsset from "@/assets/igor-founder.png.asset.json";
+import founderUrl from "@/assets/igor-founder.webp";
 import { CTA, scrollToSection } from "@/components/site/SiteNav";
 import { MethodologyShowcase } from "@/components/site/Methodology";
 import { FitSection } from "@/components/site/Fit";
@@ -262,7 +262,7 @@ function Home() {
             <Reveal>
               <figure className="relative overflow-hidden rounded-2xl border border-border">
                 <img
-                  src={founderAsset.url}
+                  src={founderUrl}
                   alt="Igor Corrêa, fundador da Ultra Company"
                   width={912}
                   height={1200}
