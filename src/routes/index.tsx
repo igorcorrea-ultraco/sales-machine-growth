@@ -1,397 +1,281 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowUpRight, LineChart, Quote, Star, Target, Workflow } from "lucide-react";
+import { ArrowRight, Check, MessageCircle, Users, Target, Repeat } from "lucide-react";
 
-import founderUrl from "@/assets/igor-founder.webp";
-import { CTA, scrollToSection } from "@/components/site/SiteNav";
-import { MethodologyShowcase } from "@/components/site/Methodology";
-import { FitSection } from "@/components/site/Fit";
+import { Reveal } from "@/components/site/animate";
+import { SiteNav, CTA, DIAGNOSTIC_FORM_URL, Logo } from "@/components/site/SiteNav";
+import { PhasesSection } from "@/components/site/Phases";
+import { ProofSection } from "@/components/site/Proof";
+import { CompareSection } from "@/components/site/Compare";
 import { FaqSection } from "@/components/site/Faq";
+import heroUrl from "@/assets/hero-machine.jpg";
+import igorUrl from "@/assets/igor-founder.webp";
+import botaoUrl from "@/assets/botao-vermelho.jpg";
 
-import { Counter, ProgressBar, Reveal } from "@/components/site/animate";
-
-import { GrowthChart } from "@/components/site/charts";
-
+const TITLE = "Ultra Company - Máquina de Vendas";
+const DESCRIPTION = "Venda Mais e com Mais Margem.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Ultra Company - Máquina de Vendas" },
-      {
-        name: "description",
-        content: "Venda Mais e com Mais Margem.",
-      },
-      { property: "og:title", content: "Ultra Company - Máquina de Vendas" },
-      {
-        property: "og:description",
-        content: "Venda Mais e com Mais Margem.",
-      },
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Home,
 });
 
-const pillars = [
+const deliverables = [
+  {
+    icon: MessageCircle,
+    title: "Grupo VIP no WhatsApp",
+    text: "Canal direto com nossos especialistas para tirar dúvidas de comercial e receita no dia a dia.",
+  },
+  {
+    icon: Users,
+    title: "Encontros presenciais",
+    text: "Imersões com empresários de alto impacto, onde o network vale tanto quanto o conteúdo.",
+  },
   {
     icon: Target,
-    tag: "Marketing",
-    title: "Growth",
-    text: "Demanda previsível com funis desenhados por intenção de compra e canais validados.",
+    title: "Acompanhamento aproximado",
+    text: "Um gerente de sucesso dedicado conduzindo a implementação ao longo de 12 meses.",
   },
   {
-    icon: Workflow,
-    tag: "Vendas",
-    title: "Estrutura Comercial",
-    text: "Processo, cadência e scripts que tiram a operação da dependência do vendedor estrela.",
-  },
-  {
-    icon: LineChart,
-    tag: "Modelo de Negócio",
-    title: "Sustentável",
-    text: "Precificação, oferta e unidade econômica ajustadas para crescer sem destruir margem.",
+    icon: Repeat,
+    title: "Sprints práticos",
+    text: "Oficinas de execução em marketing, vendas, gestão e modelo de negócio — nada de teoria solta.",
   },
 ];
 
-/** Contabilidade aparece com peso maior que os demais nichos. */
-const niches: string[] = [
-  "Contabilidade",
-  "Advogados",
-  "Contabilidade",
-  "Médicos",
-  "Contabilidade",
-  "Indústria",
-  "Contabilidade",
-  "Biomédicos",
-  "Contabilidade",
-  "Agências",
-  "Contabilidade",
-];
-
-const founderMarks = [
-  { v: 100, s: "+", d: "Operações tracionadas" },
-  { v: 10, s: " anos", d: "Liderando times de receita" },
-  { v: 50, s: "M", d: "Em receita gerada (R$)" },
-];
-
-const quotes = [
+const steps = [
   {
-    name: "Rafael Menezes",
-    role: "CEO — Indústria de embalagens",
-    text: "Saímos da dependência de dois vendedores. Hoje o processo está documentado e o pipeline é previsível — o crescimento parou de ser sorte.",
-    kpi: "+38% receita em 7 meses",
+    n: "01",
+    title: "Descubra o que paralisa seu comercial",
+    text: "Antes de investir mais em marketing, entenda onde a receita está vazando: oferta, funil, processo ou gestão.",
   },
   {
-    name: "Carla Bittencourt",
-    role: "Sócia — Serviços contábeis",
-    text: "A revisão do modelo de negócio foi o ponto de virada. Vendemos o mesmo volume com margem muito maior e time menos sobrecarregado.",
-    kpi: "+19 p.p. de margem",
+    n: "02",
+    title: "Avalie o seu posicionamento",
+    text: "A percepção de valor define o seu preço. Reposicionamos a sua empresa para vender melhor, não apenas mais.",
   },
   {
-    name: "Diego Andrade",
-    role: "Diretor Comercial — SaaS",
-    text: "Funis redesenhados por estágio de consciência mudaram nossa taxa de reunião. Foi a primeira vez que marketing e vendas falaram a mesma língua.",
-    kpi: "2,6x oportunidades qualificadas",
-  },
-  {
-    name: "Marina Prado",
-    role: "Fundadora — Educação corporativa",
-    text: "Cadência de gestão semanal e indicadores claros. Em três meses eu já sabia prever o fechamento do trimestre com margem de erro pequena.",
-    kpi: "92% de acurácia no forecast",
+    n: "03",
+    title: "Blinde o seu modelo de negócio",
+    text: "Crescimento sem estrutura quebra a margem. Ajustamos o modelo para suportar o próximo patamar de receita.",
   },
 ];
 
 function Home() {
   return (
-    <div className="overflow-hidden">
-      {/* HERO */}
-      <section id="inicio" className="relative scroll-mt-24 pt-28 pb-24 md:pt-36">
-        <div className="grid-lines absolute inset-0 opacity-25" />
-        <div className="veil absolute inset-0" />
-        <div className="relative mx-auto max-w-7xl px-6">
-          <span className="text-[11px] tracking-[0.35em] text-muted-foreground uppercase">
-            Consultoria de receita de alta performance
-          </span>
+    <div className="min-h-screen bg-background text-foreground">
+      <SiteNav />
 
-          <h1 className="display-xl animate-rise mt-7 max-w-3xl text-[2rem] leading-[1.06] sm:text-[2.6rem] lg:text-[3.4rem]">
-            Seu negócio pode ter uma máquina que te faz{" "}
-            <span className="text-primary">vender mais</span> e com{" "}
-            <span className="text-primary">mais margem</span>.
-          </h1>
-
-          <p className="animate-rise mt-8 max-w-xl text-base leading-relaxed text-muted-foreground">
-            Somos a Ultra Company. Construímos sistemas de receita conectando Marketing, Vendas e
-            Modelo de Negócio — para que crescimento deixe de ser sorte e passe a ser previsão.
-          </p>
-
-          <div className="animate-rise mt-10 flex flex-wrap items-center gap-4">
-            <CTA label="Quero minha máquina de vendas" />
-            <a
-              href="#metodologia"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("metodologia");
-              }}
-              className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium transition-colors hover:bg-accent"
-            >
-              Ver a metodologia
-              <ArrowUpRight className="size-4" />
-            </a>
-          </div>
-        </div>
-      </section>
-
-
-      {/* METODOLOGIA */}
-      <section
-        id="metodologia"
-        className="scroll-mt-20 border-t border-border py-20 md:py-28"
-      >
-        <MethodologyShowcase />
-      </section>
-
-      {/* NICHOS — MARQUEE */}
-      <section className="border-y border-border bg-card/40 py-5">
-        <p className="mb-4 text-center text-[10px] tracking-[0.3em] text-muted-foreground uppercase">
-          Entregáveis rodando hoje em
-        </p>
-        <div className="marquee-track flex w-max">
-          {[0, 1].map((dup) => (
-            <div key={dup} className="flex shrink-0 items-center">
-              {niches.map((w, i) => (
-                <span
-                  key={`${dup}-${i}-${w}`}
-                  className="font-display flex items-center text-base font-semibold tracking-tight uppercase md:text-xl"
+      <main className="pt-16 md:pt-[76px]">
+        {/* HERO */}
+        <section id="inicio" className="scroll-mt-20 py-20 md:py-28">
+          <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-[1.05fr_1fr]">
+            <Reveal>
+              <span className="text-[11px] tracking-[0.35em] text-primary uppercase">
+                Aceleração de vendas para empresários
+              </span>
+              <h1 className="display-xl mt-6 text-[2.1rem] leading-[1.02] sm:text-5xl lg:text-[4rem]">
+                SEU NEGÓCIO PODE TER UMA MÁQUINA QUE TE FAZ VENDER MAIS E COM MAIS MARGEM.
+              </h1>
+              <p className="mt-7 max-w-xl text-base leading-relaxed text-muted-foreground">
+                Um sistema único de receita, construído sobre a conexão entre Marketing, Vendas e
+                Modelo de Negócio.
+              </p>
+              <div className="mt-9 flex flex-wrap items-center gap-4">
+                <CTA label="Quero meu diagnóstico gratuito" />
+                <a
+                  href="#metodologia"
+                  className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                 >
-                  <span
-                    className={`px-7 ${w === "Contabilidade" ? "text-foreground" : "text-muted-foreground"}`}
-                  >
-                    {w}
-                  </span>
-                  <span className="text-primary/70">///</span>
-                </span>
+                  Ver a metodologia
+                </a>
+              </div>
+            </Reveal>
+
+            <Reveal delay={150}>
+              <div className="panel overflow-hidden rounded-3xl">
+                <img
+                  src={heroUrl}
+                  alt="Máquina de vendas estruturada"
+                  width={1200}
+                  height={900}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
+        <PhasesSection />
+
+        {/* O QUE VOCÊ RECEBE */}
+        <section id="o-que-recebe" className="scroll-mt-20 border-t border-border py-24">
+          <div className="mx-auto max-w-7xl px-6">
+            <Reveal className="max-w-2xl">
+              <span className="text-[11px] tracking-[0.35em] text-primary uppercase">
+                O que você recebe
+              </span>
+              <h2 className="display-xl mt-6 text-2xl sm:text-3xl lg:text-[3rem]">
+                Estrutura, execução e gente ao seu lado
+              </h2>
+            </Reveal>
+
+            <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {deliverables.map((d, i) => (
+                <Reveal key={d.title} delay={i * 100}>
+                  <article className="panel h-full rounded-2xl p-7">
+                    <d.icon className="size-6 text-primary" />
+                    <h3 className="mt-6 text-base font-bold">{d.title}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{d.text}</p>
+                  </article>
+                </Reveal>
               ))}
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* TESE */}
-      <section className="relative py-24">
-        <div className="mx-auto max-w-7xl px-6 text-center">
-          <Reveal>
-            <span className="text-[11px] tracking-[0.3em] text-primary uppercase">Nossa tese</span>
-          </Reveal>
-          <Reveal>
-            <h2 className="mx-auto mt-8 max-w-3xl text-2xl leading-snug font-semibold sm:text-3xl lg:text-4xl">
-              Um sistema único de receita, construído sobre a{" "}
-              <span className="text-primary">conexão entre Marketing, Vendas</span> e{" "}
-              <span className="text-primary">Modelo de Negócio</span>.
-            </h2>
-          </Reveal>
-
-          <div className="mt-16 grid gap-6 text-left md:grid-cols-3">
-
-
-            {pillars.map((p, i) => (
-              <Reveal key={p.title} delay={i * 120}>
-                <article className="panel group h-full rounded-2xl p-8 transition-colors hover:border-primary/50">
-                  <p.icon className="size-5 text-primary" />
-                  <p className="mt-6 text-[11px] tracking-[0.2em] text-muted-foreground uppercase">
-                    {p.tag}
-                  </p>
-                  <h3 className="mt-2 text-xl font-bold">{p.title}</h3>
-                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{p.text}</p>
-                </article>
-              </Reveal>
-            ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* DADOS */}
-      <section className="border-t border-border bg-card/30 py-24">
-        <div className="mx-auto max-w-7xl px-6">
-          <Reveal>
-            <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-              <h2 className="max-w-2xl text-2xl leading-snug font-semibold sm:text-3xl">
-                A proposta de valor em <span className="text-primary">números</span>
+        {/* PASSOS DIRECIONAIS */}
+        <section className="border-t border-border py-24">
+          <div className="mx-auto max-w-7xl px-6">
+            <Reveal className="max-w-2xl">
+              <span className="text-[11px] tracking-[0.35em] text-primary uppercase">
+                Passos direcionais
+              </span>
+              <h2 className="display-xl mt-6 text-2xl sm:text-3xl lg:text-[3rem]">
+                Três movimentos antes de escalar
               </h2>
-              <p className="max-w-sm text-sm text-muted-foreground">
-                Indicadores médios das operações que implementaram o sistema Ultra de receita ao
-                longo de 6 a 12 meses.
-              </p>
-            </div>
-          </Reveal>
+            </Reveal>
 
-          <div className="mt-14 grid gap-6 lg:grid-cols-5">
-            <Reveal className="lg:col-span-3">
-              <div className="panel h-full rounded-2xl p-6">
-                <h3 className="text-base font-bold">Receita e margem em escala</h3>
-                <p className="mt-1 mb-6 text-xs text-muted-foreground">
-                  Índice base 100 no mês 1 — crescimento com expansão de margem.
-                </p>
-                <GrowthChart />
-              </div>
-            </Reveal>
-            <Reveal delay={160} className="lg:col-span-2">
-              <div className="panel flex h-full flex-col justify-center gap-7 rounded-2xl p-8">
-                <ProgressBar label="Aumento de ticket médio" value={37} />
-                <ProgressBar label="Redução do ciclo de vendas" value={44} />
-                <ProgressBar label="Aderência ao processo comercial" value={89} />
-                <ProgressBar label="Taxa de conversão em proposta" value={58} />
-              </div>
-            </Reveal>
+            <div className="mt-14 grid gap-10 md:grid-cols-3">
+              {steps.map((s, i) => (
+                <Reveal key={s.n} delay={i * 120}>
+                  <div className="border-t border-primary/40 pt-6">
+                    <span className="display-xl text-4xl text-primary/70">{s.n}</span>
+                    <h3 className="mt-4 text-lg font-bold">{s.title}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.text}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
           </div>
+        </section>
 
-        </div>
-      </section>
+        <ProofSection />
+        <CompareSection />
 
-      {/* FUNDADOR */}
-      <section id="fundador" className="scroll-mt-20 border-t border-border py-24">
-        <div className="mx-auto max-w-6xl px-6">
-          <Reveal>
-            <div className="grid gap-6 lg:grid-cols-2 lg:items-end">
-              <h2 className="display-xl text-3xl sm:text-4xl lg:text-5xl">Conheça o fundador</h2>
-              <p className="max-w-lg text-sm leading-relaxed text-muted-foreground">
-                Quem constrói a máquina de receita por dentro — método nascido na operação, aplicado
-                junto com a diretoria dos nossos clientes.
-              </p>
-            </div>
-          </Reveal>
-
-          <div className="mt-16 grid gap-10 lg:grid-cols-[240px_1fr] lg:items-start">
+        {/* BOTÃO VERMELHO */}
+        <section id="diagnostico" className="scroll-mt-20 border-t border-border py-24 md:py-28">
+          <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-[300px_1fr]">
             <Reveal>
-              <figure className="relative overflow-hidden rounded-2xl border border-border">
+              <div className="panel overflow-hidden rounded-2xl">
                 <img
-                  src={founderUrl}
-                  alt="Igor Corrêa, fundador da Ultra Company"
-                  width={912}
-                  height={1200}
+                  src={botaoUrl}
+                  alt="Botão vermelho"
+                  width={1200}
+                  height={900}
                   loading="lazy"
-                  className="aspect-[3/4] w-full object-cover grayscale contrast-110"
+                  className="h-56 w-full object-cover lg:h-72"
                 />
-              </figure>
-              <p className="font-display mt-4 text-lg font-bold">Igor Corrêa</p>
-              <p className="text-[11px] tracking-[0.2em] text-muted-foreground uppercase">
-                Fundador · Ultra Company
-              </p>
+              </div>
+              <div className="panel mt-6 flex items-center gap-4 rounded-2xl p-4">
+                <img
+                  src={igorUrl}
+                  alt="Igor Corrêa"
+                  width={400}
+                  height={400}
+                  loading="lazy"
+                  className="size-14 rounded-full object-cover"
+                />
+                <div>
+                  <p className="text-sm font-semibold">Igor Corrêa</p>
+                  <p className="text-xs text-muted-foreground">
+                    Fundador da Ultra Company
+                  </p>
+                </div>
+              </div>
             </Reveal>
 
             <Reveal delay={120}>
-              <span className="text-[11px] tracking-[0.3em] text-primary uppercase">
-                Fundador · Ultra Company
+              <span className="text-[11px] tracking-[0.35em] text-primary uppercase">
+                Aperte o botão vermelho
               </span>
-              <h3 className="display-xl mt-4 text-2xl sm:text-3xl">Igor Corrêa</h3>
-              <p className="mt-7 max-w-xl text-sm leading-relaxed text-muted-foreground">
-                +10 anos construindo estratégias de crescimento e escala para negócios, com
-                aproximadamente R$ 50 milhões em receita gerada para parceiros a partir de estratégia
-                de RevOps. Formado em Marketing e MBA PUC em Estratégia data-driven.
+              <h2 className="display-xl mt-6 text-2xl sm:text-3xl lg:text-[3.2rem]">
+                Faça o seu pedido prioritário de acesso
+              </h2>
+              <p className="mt-6 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+                Nós não trabalhamos com todo mundo, e isso é proposital. Cada operação que entra
+                recebe acompanhamento aproximado, e isso limita quantas empresas conseguimos
+                conduzir ao mesmo tempo. Por isso o acesso começa por um pedido prioritário: você
+                preenche o diagnóstico, nós analisamos o seu momento de receita e retornamos dizendo
+                com honestidade se faz sentido — e o que precisaria ser construído primeiro. Se não
+                fizer sentido agora, você sai com clareza do que corrigir. Se fizer, você entra
+                sabendo exatamente onde está o dinheiro que a sua empresa está deixando na mesa.
               </p>
-              <ul className="mt-6 space-y-4 text-sm text-muted-foreground">
+              <ul className="mt-8 grid gap-3 sm:grid-cols-2">
                 {[
-                  "Ex-CEO e cofundador da Seren — EdTech premiada internacionalmente por 3 anos consecutivos.",
-                  "Captação de mais de R$ 1,2 milhão em investimentos para expansão com estratégia de geração de receita.",
-                  "Entre os investidores esteve o Dr. Augusto Cury, reforçando a solidez e credibilidade do projeto.",
-                  "Ex-oficial do Exército e atleta — disciplina, liderança e execução sob pressão em ambientes de crescimento e escala.",
-                ].map((t) => (
-                  <li key={t} className="flex gap-3">
-                    <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
-                    {t}
+                  "Análise da sua operação de receita",
+                  "Mapa dos gargalos comerciais",
+                  "Prioridade por impacto no caixa",
+                  "Resposta honesta sobre o seu momento",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <Check className="mt-0.5 size-4 shrink-0 text-primary" />
+                    {item}
                   </li>
                 ))}
               </ul>
-
-              <div className="mt-10 flex flex-wrap gap-x-12 gap-y-6">
-                {founderMarks.map((m) => (
-                  <div key={m.d}>
-                    <Counter to={m.v} suffix={m.s} className="font-display text-3xl font-bold" />
-                    <p className="mt-1 text-xs text-muted-foreground">{m.d}</p>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-10">
+              <div className="mt-9">
                 <CTA label="Quero meu diagnóstico gratuito" />
               </div>
             </Reveal>
           </div>
-        </div>
+        </section>
 
-      </section>
+        <FaqSection />
 
-      {/* DEPOIMENTOS */}
-      <section id="depoimentos" className="scroll-mt-20 border-t border-border bg-card/30 py-24">
-        <div className="mx-auto max-w-3xl px-6 text-center">
-          <span className="text-[11px] tracking-[0.35em] text-primary uppercase">Depoimentos</span>
-          <h2 className="display-xl mt-6 text-2xl sm:text-3xl lg:text-4xl">
-            O que dizem sobre nós
-          </h2>
-          <div className="mt-8 flex items-center justify-center gap-2">
-            {Array.from({ length: 5 }).map((_, i) => (
-              <Star key={i} className="size-4 fill-primary text-primary" />
-            ))}
-            <Counter to={4.9} decimals={1} className="font-display ml-2 font-bold" />
-            <span className="text-xs text-muted-foreground">média de satisfação</span>
-          </div>
-        </div>
-
-        <div className="mx-auto mt-14 grid max-w-7xl gap-6 px-6 md:grid-cols-2">
-          {quotes.map((q, i) => (
-            <Reveal key={q.name} delay={i * 100}>
-              <article className="panel flex h-full flex-col rounded-2xl p-8 transition-colors hover:border-primary/50">
-                <Quote className="size-5 text-primary" />
-                <p className="mt-6 flex-1 text-sm leading-relaxed">{q.text}</p>
-                <div className="mt-8 flex items-end justify-between gap-4 border-t border-border pt-6">
-                  <div>
-                    <p className="font-display text-sm font-bold tracking-wide uppercase">
-                      {q.name}
-                    </p>
-                    <p className="mt-1 text-xs text-muted-foreground">{q.role}</p>
-                  </div>
-                  <span className="rounded-full bg-primary/12 px-3 py-1 text-xs font-semibold text-primary">
-                    {q.kpi}
-                  </span>
-                </div>
-              </article>
+        {/* CTA FINAL */}
+        <section className="border-t border-border py-24">
+          <div className="mx-auto max-w-3xl px-6 text-center">
+            <Reveal>
+              <h2 className="display-xl text-2xl sm:text-3xl lg:text-[3rem]">
+                Pronto para vender mais e com mais margem?
+              </h2>
+              <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+                Preencha o diagnóstico e receba a leitura do que está travando o crescimento da sua
+                empresa.
+              </p>
+              <div className="mt-9 flex justify-center">
+                <a
+                  href={DIAGNOSTIC_FORM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+                >
+                  Quero meu diagnóstico gratuito
+                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+                </a>
+              </div>
             </Reveal>
-          ))}
-        </div>
-      </section>
-
-      <FitSection />
-
-      <FaqSection />
-
-      {/* DIAGNÓSTICO — captação de lead */}
-
-      <section
-        id="diagnostico"
-        className="relative scroll-mt-20 border-t border-border py-24"
-      >
-        <div className="relative mx-auto max-w-3xl px-6 text-center">
-          <span className="text-[11px] tracking-[0.3em] text-primary uppercase">Próximo passo</span>
-          <h2 className="display-xl mt-6 text-2xl sm:text-3xl lg:text-4xl">
-            Diagnóstico de receita — gratuito
-          </h2>
-          <p className="mx-auto mt-6 max-w-xl text-sm text-muted-foreground">
-            Em uma sessão de 45 minutos mapeamos os gargalos de demanda, da estrutura comercial e do
-            modelo de negócio — e você sai com as prioridades dos próximos 90 dias.
-          </p>
-          <div className="mt-10 flex justify-center">
-            <a
-              href="https://form.respondi.app/oidXVJVB"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 rounded-full border border-primary/60 bg-primary/95 px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary"
-            >
-              Solicitar meu diagnóstico gratuito
-              <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-            </a>
           </div>
-          <p className="mt-4 text-xs text-muted-foreground">
-            Vagas limitadas por mês — atendimento conduzido pela equipe Ultra.
-          </p>
-        </div>
-      </section>
+        </section>
+
+        <footer className="border-t border-border py-10">
+          <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 px-6 sm:flex-row">
+            <Logo />
+            <p className="text-xs text-muted-foreground">
+              © {new Date().getFullYear()} Ultra Company. Todos os direitos reservados.
+            </p>
+          </div>
+        </footer>
+      </main>
     </div>
   );
 }
