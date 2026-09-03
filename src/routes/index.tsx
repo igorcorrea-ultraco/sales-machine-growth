@@ -208,23 +208,19 @@ function Home() {
                 Aperte o botão vermelho
               </span>
               <h2 className="display-xl mt-6 text-2xl sm:text-3xl lg:text-[3.2rem]">
-                Faça o seu pedido prioritário de acesso
+                {"\n"}
               </h2>
               <p className="mt-6 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-                Nós não trabalhamos com todo mundo, e isso é proposital. Cada operação que entra
-                recebe acompanhamento aproximado, e isso limita quantas empresas conseguimos
-                conduzir ao mesmo tempo. Por isso o acesso começa por um pedido prioritário: você
-                preenche o diagnóstico, nós analisamos o seu momento de receita e retornamos dizendo
-                com honestidade se faz sentido — e o que precisaria ser construído primeiro. Se não
-                fizer sentido agora, você sai com clareza do que corrigir. Se fizer, você entra
-                sabendo exatamente onde está o dinheiro que a sua empresa está deixando na mesa.
+                O BOTÃO VERMELHO SERVE COMO UM PEDIDO PRIORITÁRIO DE ACESSO AO FUNDADOR E SÓCIOS PARA DECISÕES IMPORTANTES
+
+                É levar o nosso cérebro de negócios para dentro do seu escritório para tomar uma decisão importante que não pode esperar.
               </p>
               <ul className="mt-8 grid gap-3 sm:grid-cols-2">
                 {[
-                  "Análise da sua operação de receita",
-                  "Mapa dos gargalos comerciais",
-                  "Prioridade por impacto no caixa",
-                  "Resposta honesta sobre o seu momento",
+                  "\n",
+                  "\n",
+                  "\n",
+                  "\n",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
                     <Check className="mt-0.5 size-4 shrink-0 text-primary" />
