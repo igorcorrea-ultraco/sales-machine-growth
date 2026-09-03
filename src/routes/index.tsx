@@ -94,7 +94,8 @@ function Home() {
               <h1 className="display-xl text-[2.1rem] leading-[1.02] sm:text-5xl lg:text-[4rem]">
                 SEU NEGÓCIO PODE SER&nbsp;<br />
                 UMA MÁQUINA DE&nbsp;<br />
-                VENDAS&nbsp;PREVISÍVEIS
+                VENDAS&nbsp;<br />
+                PREVISÍVEIS
               </h1>
               <p className="mt-7 max-w-xl text-base leading-relaxed text-muted-foreground">
                 A Ultra Company é o lugar certo para o Empresário que está decidido a transformar seu negócio em uma máquina de vendas previsíveis. Método eficiente e validado, acompanhamento aproximado e uma comunidade de altíssimo valor agregado.
