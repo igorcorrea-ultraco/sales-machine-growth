@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { ArrowRight, Menu, X } from "lucide-react";
-import logoAsset from "@/assets/ultra-logo.png.asset.json";
+import logoUrl from "@/assets/ultra-logo.png";
 
 export const sections = [
   { id: "inicio", label: "Início" },
@@ -135,7 +135,7 @@ export function Logo() {
       aria-label="Ultra Company"
     >
       <img
-        src={logoAsset.url}
+        src={logoUrl}
         alt="Ultra Company"
         width={640}
         height={146}
