@@ -5,12 +5,12 @@ import logoUrl from "@/assets/ultra-logo.png";
 export const sections = [
   { id: "inicio", label: "Início" },
   { id: "metodologia", label: "Metodologia" },
-  { id: "fundador", label: "Fundador" },
+  { id: "o-que-recebe", label: "O que você recebe" },
   { id: "depoimentos", label: "Depoimentos" },
-  { id: "para-quem", label: "Para quem é" },
+  { id: "diferenciais", label: "Diferenciais" },
   { id: "faq", label: "FAQ" },
-
 ] as const;
+
 
 export function scrollToSection(id: string) {
   const el = document.getElementById(id);
