@@ -216,19 +216,6 @@ function Home() {
 
                 É levar o nosso cérebro de negócios para dentro do seu escritório para tomar uma decisão importante que não pode esperar.
               </p>
-              <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-                {[
-                  "\n",
-                  "\n",
-                  "\n",
-                  "\n",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <Check className="mt-0.5 size-4 shrink-0 text-primary" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
               <div className="mt-9">
                 <CTA label="Quero meu diagnóstico gratuito" />
               </div>
