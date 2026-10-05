@@ -71,10 +71,16 @@ export function PhasesSection() {
                 <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
                   {stage.text}
                 </p>
-              </article>
+          </article>
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={200}>
+          <div className="mt-14 flex justify-center">
+            <CTA label="Quero aplicar o Método Ultra no meu negócio" />
+          </div>
+        </Reveal>
       </div>
     </section>
   );

@@ -83,6 +83,12 @@ export function ProofSection() {
               </div>
             ))}
           </div>
+          </Reveal>
+
+        <Reveal delay={320}>
+          <div className="mt-14 flex justify-center">
+            <CTA label="Quero resultados assim" />
+          </div>
         </Reveal>
       </div>
     </section>

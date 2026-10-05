@@ -68,6 +68,12 @@ export function StepsSection() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={200}>
+          <div className="mt-14 flex justify-center">
+            <CTA label="Quero meu diagnóstico gratuito" />
+          </div>
+        </Reveal>
       </div>
     </section>
   );

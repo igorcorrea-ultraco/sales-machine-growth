@@ -83,6 +83,12 @@ export function FaqSection() {
             );
           })}
         </div>
+
+        <Reveal delay={200}>
+          <div className="mt-14 flex justify-center">
+            <CTA label="Comece pelo diagnóstico gratuito" />
+          </div>
+        </Reveal>
       </div>
     </section>
   );
