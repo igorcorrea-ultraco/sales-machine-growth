@@ -7,6 +7,7 @@ import { PhasesSection } from "@/components/site/Phases";
 import { ProofSection } from "@/components/site/Proof";
 import { NichesMarquee } from "@/components/site/Niches";
 import { FaqSection } from "@/components/site/Faq";
+import { StepsSection } from "@/components/site/Steps";
 import heroUrl from "@/assets/maquinario.jpg";
 
 const TITLE = "Ultra Company - Máquina de Vendas";
@@ -68,6 +69,8 @@ function Home() {
             </Reveal>
           </div>
         </section>
+
+        <StepsSection />
 
         <NichesMarquee />
 
