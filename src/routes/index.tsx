@@ -99,7 +99,7 @@ function Home() {
               <FileCheck2 className="size-6" aria-hidden="true" />
               <span>CONTRATO</span>
             </div>
-            <div className="hero-tile hero-float-lead absolute -right-2 top-[60%] size-[5.6rem]">
+            <div className="hero-tile hero-float-lead absolute -right-1 top-[50%] size-[4.8rem]">
               <BadgeDollarSign className="size-8" aria-hidden="true" />
               <span>FECHADO</span>
             </div>
@@ -110,7 +110,7 @@ function Home() {
               <div className="mx-auto mb-4 w-fit rounded-lg border border-foreground/25 bg-background/60 px-5 py-2.5 text-center text-[13px] font-medium backdrop-blur-md md:mx-0">
                 Sua empresa precisa <span className="text-glow">vender mais?</span>
               </div>
-              <h1 className="text-center text-[1.75rem] font-semibold leading-[1.15] tracking-tight sm:text-5xl md:text-left lg:text-[4rem]">
+              <h1 className="text-center text-[1.75rem] font-semibold leading-[1.15] tracking-tight sm:text-5xl md:max-w-2xl md:text-left lg:text-[3.6rem]">
                 Precisa destravar o <span className="text-glow">crescimento</span> da sua{" "}
                 <span className="text-glow">empresa?</span>
               </h1>
