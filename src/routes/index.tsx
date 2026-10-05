@@ -96,10 +96,14 @@ function Home() {
 
           <div className="relative mx-auto w-full max-w-7xl px-5 md:px-6">
             <Reveal>
-              <h1 className="text-center text-[1.75rem] font-semibold leading-[1.15] tracking-tight sm:text-5xl md:max-w-2xl md:text-left lg:text-[3.6rem]">
-                Precisa destravar o <span className="text-glow">crescimento</span> da sua{" "}
-                <span className="text-glow">empresa?</span>
+              <p className="hero-badge mx-auto mb-5 w-fit md:mx-0">
+                Precisa destravar o crescimento da sua empresa?
+              </p>
+              <h1 className="text-center text-[1.55rem] font-semibold leading-[1.16] tracking-tight sm:text-[2.6rem] md:max-w-3xl md:text-left lg:text-[3.15rem]">
+                Destrave o <span className="text-glow">faturamento</span> da sua empresa com a assessoria de{" "}
+                <span className="text-glow">Marketing e Vendas</span> da Ultra Company.
               </h1>
+
               <p className="mx-auto mt-4 max-w-xl text-center text-[15px] leading-relaxed text-foreground/85 md:mx-0 md:mt-7 md:text-left md:text-base">
                 A Ultra Company é o lugar certo para o Empresário que está decidido a transformar seu negócio em uma máquina de vendas previsíveis. Método eficiente e validado, acompanhamento aproximado e uma comunidade de altíssimo valor agregado.
               </p>
