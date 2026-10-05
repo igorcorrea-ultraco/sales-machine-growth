@@ -8,8 +8,7 @@ import { ProofSection } from "@/components/site/Proof";
 import { NichesMarquee } from "@/components/site/Niches";
 import { FaqSection } from "@/components/site/Faq";
 import { StepsSection } from "@/components/site/Steps";
-import igorHeroUrl from "@/assets/igor-cutout.webp";
-import officeBgUrl from "@/assets/office-bg.jpg";
+import igorRedUrl from "@/assets/igor-red.webp";
 
 const TITLE = "Ultra Company - Máquina de Vendas";
 const DESCRIPTION = "Venda Mais e com Mais Margem.";
@@ -39,23 +38,21 @@ function Home() {
           id="inicio"
           className="scroll-mt-20 relative flex min-h-[calc(100svh-4rem)] items-end overflow-hidden pb-10 pt-0 md:min-h-[88vh] md:items-center md:py-32"
         >
-          <img
-            src={officeBgUrl}
-            alt=""
-            aria-hidden="true"
-            className="absolute inset-0 hidden h-full w-full scale-[1.25] object-cover object-center blur-[7px] brightness-[1.2] saturate-[1.05] md:block"
-          />
-          <div className="absolute inset-0 hidden bg-gradient-to-r from-background via-background/80 to-background/25 md:block" />
-          <div className="absolute inset-0 hidden bg-gradient-to-t from-background via-transparent to-background/40 md:block" />
-
-          <div className="absolute inset-y-0 right-[2%] hidden w-[50%] md:block">
-            <div className="absolute inset-0 flex items-end justify-center">
-              <img
-                src={igorHeroUrl}
-                alt="Igor Corrêa, fundador da Ultra Company"
-                className="h-[96%] w-auto max-w-full object-contain object-bottom"
-              />
-            </div>
+          <div className="absolute inset-y-0 right-0 hidden w-[54%] md:block">
+            <img
+              src={igorRedUrl}
+              alt="Igor Corrêa, fundador da Ultra Company"
+              className="h-full w-full object-cover object-[50%_24%]"
+              style={{
+                maskImage: "linear-gradient(to left, black 58%, transparent 97%)",
+                WebkitMaskImage: "linear-gradient(to left, black 58%, transparent 97%)",
+              }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-transparent to-background/40" />
+          </div>
+          <div className="absolute inset-0 hidden bg-gradient-to-r from-background via-background/80 to-background/10 md:block" />
+          <div className="absolute inset-0 hidden bg-[radial-gradient(ellipse_at_78%_45%,oklch(0.45_0.19_26/0.35),transparent_60%)] md:block" />
+          <div className="absolute inset-y-0 right-[2%] hidden w-[54%] md:block">
             <div className="hero-float hero-float-lead absolute bottom-[27%] left-2">
               <UserRoundPlus className="size-5" aria-hidden="true" />
               <span>LEAD<br /><strong>QUALIFICADO</strong></span>
@@ -72,19 +69,11 @@ function Home() {
 
           <div className="absolute inset-x-0 top-0 h-[64%] overflow-hidden bg-card md:hidden">
             <img
-              src={officeBgUrl}
-              alt=""
-              aria-hidden="true"
-              className="absolute inset-0 h-full w-full scale-[1.3] object-cover object-center blur-[10px] brightness-[0.9] saturate-[1.3] sepia-[0.35]"
+              src={igorRedUrl}
+              alt="Igor Corrêa, fundador da Ultra Company"
+              className="absolute inset-0 h-full w-full object-cover object-[50%_26%]"
             />
-            <div className="hero-warm absolute inset-0" />
-            <div className="absolute inset-0 flex items-end justify-center">
-              <img
-                src={igorHeroUrl}
-                alt="Igor Corrêa, fundador da Ultra Company"
-                className="h-[96%] w-auto max-w-none object-contain object-bottom"
-              />
-            </div>
+            <div className="absolute inset-0 bg-gradient-to-b from-background/45 via-transparent to-background/30" />
             <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background via-background/70 to-transparent" />
 
             <div className="hero-tile hero-float-lead absolute left-[8%] top-[9%] size-[4.6rem]">
