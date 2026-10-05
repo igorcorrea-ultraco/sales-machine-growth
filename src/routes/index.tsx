@@ -81,7 +81,7 @@ function Home() {
               <UserRoundPlus className="size-6" aria-hidden="true" />
               <span>LEAD</span>
             </div>
-            <div className="hero-tile hero-float-lead-alt absolute left-[3%] top-[28%] size-[4.1rem]">
+            <div className="hero-tile hero-float-lead-alt absolute left-[3%] top-[21%] size-[4.1rem]">
               <TrendingUp className="size-6" aria-hidden="true" />
               <span>+VENDAS</span>
             </div>
@@ -89,7 +89,7 @@ function Home() {
               <FileCheck2 className="size-6" aria-hidden="true" />
               <span>CONTRATO</span>
             </div>
-            <div className="hero-tile hero-float-lead absolute -right-1 size-[4.6rem]" style={{ top: "32%" }}>
+            <div className="hero-tile hero-float-lead absolute -right-1 size-[4.6rem]" style={{ top: "21%" }}>
               <BadgeDollarSign className="size-8" aria-hidden="true" />
               <span>FECHADO</span>
             </div>
