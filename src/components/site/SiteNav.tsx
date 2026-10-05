@@ -5,9 +5,7 @@ import logoUrl from "@/assets/ultra-logo.png";
 export const sections = [
   { id: "inicio", label: "Início" },
   { id: "metodologia", label: "Metodologia" },
-  { id: "o-que-recebe", label: "O que você recebe" },
   { id: "depoimentos", label: "Depoimentos" },
-  { id: "diferenciais", label: "Diferenciais" },
   { id: "faq", label: "FAQ" },
 ] as const;
 

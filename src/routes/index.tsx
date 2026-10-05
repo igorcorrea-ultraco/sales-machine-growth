@@ -1,18 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, MessageCircle, Users, Target, Repeat } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import { Reveal } from "@/components/site/animate";
 import { SiteNav, CTA, DIAGNOSTIC_FORM_URL, Logo } from "@/components/site/SiteNav";
 import { PhasesSection } from "@/components/site/Phases";
 import { ProofSection } from "@/components/site/Proof";
 import { NichesMarquee } from "@/components/site/Niches";
-import { StepsSection } from "@/components/site/Steps";
-
-import { CompareSection } from "@/components/site/Compare";
 import { FaqSection } from "@/components/site/Faq";
 import heroUrl from "@/assets/maquinario.jpg";
-import igorUrl from "@/assets/igor-founder.webp";
-import botaoUrl from "@/assets/botao-vermelho.jpg";
 
 const TITLE = "Ultra Company - Máquina de Vendas";
 const DESCRIPTION = "Venda Mais e com Mais Margem.";
@@ -30,47 +25,6 @@ export const Route = createFileRoute("/")({
   }),
   component: Home,
 });
-
-const deliverables = [
-  {
-    icon: MessageCircle,
-    title: "Grupo VIP no WhatsApp",
-    text: "Canal direto com nossos especialistas para tirar dúvidas de comercial e receita no dia a dia.",
-  },
-  {
-    icon: Users,
-    title: "Encontros presenciais",
-    text: "Imersões com empresários de alto impacto, onde o network vale tanto quanto o conteúdo.",
-  },
-  {
-    icon: Target,
-    title: "Acompanhamento aproximado",
-    text: "Um gerente de sucesso dedicado conduzindo a implementação ao longo de 12 meses.",
-  },
-  {
-    icon: Repeat,
-    title: "Sprints práticos",
-    text: "Oficinas de execução em marketing, vendas, gestão e modelo de negócio — nada de teoria solta.",
-  },
-];
-
-const steps = [
-  {
-    n: "01",
-    title: "Descubra o que paralisa seu comercial",
-    text: "Antes de investir mais em marketing, entenda onde a receita está vazando: oferta, funil, processo ou gestão.",
-  },
-  {
-    n: "02",
-    title: "Avalie o seu posicionamento",
-    text: "A percepção de valor define o seu preço. Reposicionamos a sua empresa para vender melhor, não apenas mais.",
-  },
-  {
-    n: "03",
-    title: "Blinde o seu modelo de negócio",
-    text: "Crescimento sem estrutura quebra a margem. Ajustamos o modelo para suportar o próximo patamar de receita.",
-  },
-];
 
 function Home() {
   return (
@@ -115,118 +69,11 @@ function Home() {
           </div>
         </section>
 
-        <StepsSection />
-
         <NichesMarquee />
-
 
         <PhasesSection />
 
-        {/* O QUE VOCÊ RECEBE */}
-        <section id="o-que-recebe" className="scroll-mt-20 border-t border-border py-24">
-          <div className="mx-auto max-w-7xl px-6">
-            <Reveal className="max-w-2xl">
-              <span className="text-[11px] tracking-[0.35em] text-primary uppercase">
-                O que você recebe
-              </span>
-              <h2 className="display-xl mt-6 text-2xl sm:text-3xl lg:text-[3rem]">
-                Estrutura, execução e gente ao seu lado
-              </h2>
-            </Reveal>
-
-            <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {deliverables.map((d, i) => (
-                <Reveal key={d.title} delay={i * 100}>
-                  <article className="panel h-full rounded-2xl p-7">
-                    <d.icon className="size-6 text-primary" />
-                    <h3 className="mt-6 text-base font-bold">{d.title}</h3>
-                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{d.text}</p>
-                  </article>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* PASSOS DIRECIONAIS */}
-        <section className="border-t border-border py-24">
-          <div className="mx-auto max-w-7xl px-6">
-            <Reveal className="max-w-2xl">
-              <span className="text-[11px] tracking-[0.35em] text-primary uppercase">
-                Passos direcionais
-              </span>
-              <h2 className="display-xl mt-6 text-2xl sm:text-3xl lg:text-[3rem]">
-                Três movimentos antes de escalar
-              </h2>
-            </Reveal>
-
-            <div className="mt-14 grid gap-10 md:grid-cols-3">
-              {steps.map((s, i) => (
-                <Reveal key={s.n} delay={i * 120}>
-                  <div className="border-t border-primary/40 pt-6">
-                    <span className="display-xl text-4xl text-primary/70">{s.n}</span>
-                    <h3 className="mt-4 text-lg font-bold">{s.title}</h3>
-                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.text}</p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <ProofSection />
-        <CompareSection />
-
-        {/* BOTÃO VERMELHO */}
-        <section id="diagnostico" className="scroll-mt-20 border-t border-border py-24 md:py-28">
-          <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-[300px_1fr]">
-            <Reveal>
-              <div className="panel overflow-hidden rounded-2xl">
-                <img
-                  src={botaoUrl}
-                  alt="Botão vermelho"
-                  width={1200}
-                  height={900}
-                  loading="lazy"
-                  className="h-56 w-full object-cover lg:h-72"
-                />
-              </div>
-              <div className="panel mt-6 flex items-center gap-4 rounded-2xl p-4">
-                <img
-                  src={igorUrl}
-                  alt="Igor Corrêa"
-                  width={400}
-                  height={400}
-                  loading="lazy"
-                  className="size-14 rounded-full object-cover"
-                />
-                <div>
-                  <p className="text-sm font-semibold">Igor Corrêa</p>
-                  <p className="text-xs text-muted-foreground">
-                    Fundador da Ultra Company
-                  </p>
-                </div>
-              </div>
-            </Reveal>
-
-            <Reveal delay={120}>
-              <span className="text-[11px] tracking-[0.35em] text-primary uppercase">
-                Aperte o botão vermelho
-              </span>
-              <h2 className="display-xl mt-6 text-2xl sm:text-3xl lg:text-[3.2rem]">
-                {"\n"}
-              </h2>
-              <p className="mt-6 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-                O BOTÃO VERMELHO SERVE COMO UM PEDIDO PRIORITÁRIO DE ACESSO AO FUNDADOR E SÓCIOS PARA DECISÕES IMPORTANTES
-
-                É levar o nosso cérebro de negócios para dentro do seu escritório para tomar uma decisão importante que não pode esperar.
-              </p>
-              <div className="mt-9">
-                <CTA label="Quero meu diagnóstico gratuito" />
-              </div>
-            </Reveal>
-          </div>
-        </section>
 
         <FaqSection />
 
