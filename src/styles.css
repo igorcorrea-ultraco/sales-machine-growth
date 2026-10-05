@@ -220,3 +220,56 @@ html {
   transform-style: preserve-3d;
 }
 
+@keyframes hero-float-lead {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-7deg); }
+  50% { transform: translate3d(8px, -13px, 0) rotate(-2deg); }
+}
+
+@keyframes hero-float-contract {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(7deg); }
+  50% { transform: translate3d(-9px, -15px, 0) rotate(2deg); }
+}
+
+@keyframes hero-float-lead-alt {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(5deg); }
+  50% { transform: translate3d(-6px, 10px, 0) rotate(9deg); }
+}
+
+@utility hero-float {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 3.25rem;
+  max-width: 8.6rem;
+  border: 1px solid color-mix(in oklab, var(--primary) 58%, var(--border));
+  border-radius: 0.65rem;
+  background: color-mix(in oklab, var(--background) 78%, transparent);
+  padding: 0.6rem 0.7rem;
+  color: var(--foreground);
+  box-shadow: var(--shadow-glow);
+  backdrop-filter: blur(10px);
+  font-size: 0.57rem;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+
+@utility hero-float-lead {
+  animation: hero-float-lead 4.8s ease-in-out infinite;
+}
+
+@utility hero-float-contract {
+  animation: hero-float-contract 5.4s ease-in-out -1.2s infinite;
+}
+
+@utility hero-float-lead-alt {
+  animation: hero-float-lead-alt 4.2s ease-in-out -2s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-float-lead,
+  .hero-float-contract,
+  .hero-float-lead-alt {
+    animation: none;
+  }
+}
+

@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep uploaded website imagery as real Vite-bundled image files, because production hosts must not depend on Lovable-internal asset URLs.
