@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, FileCheck2, UserRoundPlus } from "lucide-react";
+import { ArrowRight, BadgeDollarSign, FileCheck2, TrendingUp, UserRoundPlus } from "lucide-react";
 
 import { Reveal } from "@/components/site/animate";
 import { SiteNav, CTA, DIAGNOSTIC_FORM_URL, Logo } from "@/components/site/SiteNav";
@@ -70,56 +70,66 @@ function Home() {
             </div>
           </div>
 
-          <div className="absolute inset-x-0 top-0 h-[42%] overflow-hidden bg-card md:hidden">
+          <div className="absolute inset-x-0 top-0 h-[64%] overflow-hidden bg-card md:hidden">
             <img
               src={officeBgUrl}
               alt=""
               aria-hidden="true"
-              className="absolute inset-0 h-full w-full scale-[1.3] object-cover object-center blur-[9px] brightness-[1.25] saturate-[1.05]"
+              className="absolute inset-0 h-full w-full scale-[1.3] object-cover object-center blur-[10px] brightness-[0.9] saturate-[1.3] sepia-[0.35]"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-transparent to-background" />
+            <div className="hero-warm absolute inset-0" />
             <div className="absolute inset-0 flex items-end justify-center">
               <img
                 src={igorHeroUrl}
                 alt="Igor Corrêa, fundador da Ultra Company"
-                className="h-[100%] w-auto max-w-none origin-bottom scale-[1.12] object-contain object-bottom"
+                className="h-[96%] w-auto max-w-none object-contain object-bottom"
               />
             </div>
-            <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-background via-background/45 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background via-background/70 to-transparent" />
 
-            <div className="hero-float hero-float-sm hero-float-lead absolute left-3 top-[34%]">
-              <UserRoundPlus className="size-4" aria-hidden="true" />
-              <span>LEAD<br /><strong>QUALIFICADO</strong></span>
+            <div className="hero-tile hero-float-lead absolute left-[8%] top-[9%] size-[4.6rem]">
+              <UserRoundPlus className="size-6" aria-hidden="true" />
+              <span>LEAD</span>
             </div>
-            <div className="hero-float hero-float-sm hero-float-contract absolute right-1 top-[56%]">
-              <FileCheck2 className="size-4" aria-hidden="true" />
-              <span>CONTRATO<br /><strong>FECHADO</strong></span>
+            <div className="hero-tile hero-float-lead-alt absolute left-[3%] top-[34%] size-[4.1rem]">
+              <TrendingUp className="size-6" aria-hidden="true" />
+              <span>+VENDAS</span>
             </div>
-            <div className="hero-float hero-float-sm hero-float-lead-alt absolute right-1 top-[6%]">
-              <UserRoundPlus className="size-3.5" aria-hidden="true" />
-              <span>NOVO LEAD</span>
+            <div className="hero-tile hero-float-contract absolute right-[5%] top-[17%] size-[4.4rem]">
+              <FileCheck2 className="size-6" aria-hidden="true" />
+              <span>CONTRATO</span>
+            </div>
+            <div className="hero-tile hero-float-lead absolute -right-1 size-[4.6rem]" style={{ top: "40%" }}>
+              <BadgeDollarSign className="size-8" aria-hidden="true" />
+              <span>FECHADO</span>
             </div>
           </div>
 
           <div className="relative mx-auto w-full max-w-7xl px-5 md:px-6">
             <Reveal>
-              <div className="mx-auto mb-4 w-fit rounded-md border border-border/80 bg-background/75 px-4 py-2 text-center text-[11px] font-medium backdrop-blur-md md:hidden">
-                Sua empresa precisa vender com previsibilidade?
+              <div className="mx-auto mb-4 w-fit rounded-lg border border-foreground/25 bg-background/60 px-5 py-2.5 text-center text-[13px] font-medium backdrop-blur-md md:mx-0">
+                Sua empresa precisa <span className="text-glow">vender mais?</span>
               </div>
-              <h1 className="display-xl text-center text-[2rem] leading-[1.02] sm:text-5xl md:text-left lg:text-[4rem]">
-                SEU NEGÓCIO PODE SER&nbsp;<br />
-                UMA MÁQUINA DE&nbsp;<br />
-                <span className="text-brand">VENDAS&nbsp;
-                PREVISÍVEIS</span>
+              <h1 className="text-center text-[1.75rem] font-semibold leading-[1.15] tracking-tight sm:text-5xl md:max-w-2xl md:text-left lg:text-[3.6rem]">
+                Precisa destravar o <span className="text-glow">crescimento</span> da sua{" "}
+                <span className="text-glow">empresa?</span>
               </h1>
-              <p className="mx-auto mt-5 max-w-xl text-center text-sm leading-relaxed text-muted-foreground md:mx-0 md:mt-7 md:text-left md:text-base">
+              <p className="mx-auto mt-4 max-w-xl text-center text-[15px] leading-relaxed text-foreground/85 md:mx-0 md:mt-7 md:text-left md:text-base">
                 A Ultra Company é o lugar certo para o Empresário que está decidido a transformar seu negócio em uma máquina de vendas previsíveis. Método eficiente e validado, acompanhamento aproximado e uma comunidade de altíssimo valor agregado.
               </p>
-              <div className="mt-6 flex flex-col items-stretch gap-4 md:mt-9 md:flex-row md:flex-wrap md:items-center">
-                <CTA label="Quero meu diagnóstico gratuito" />
+              <div className="mt-7 flex flex-col items-center gap-4 md:mt-9 md:flex-row md:flex-wrap">
+                <a
+                  href={DIAGNOSTIC_FORM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hero-cta group inline-flex w-full items-center justify-center gap-2 rounded-full px-7 py-4 text-base font-semibold md:w-auto"
+                >
+                  Quero meu diagnóstico gratuito
+                  <ArrowRight className="size-5 transition-transform group-hover:translate-x-1" />
+                </a>
                 <a
                   href="#metodologia"
-                  className="text-center text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  className="rounded-full border border-foreground/30 px-8 py-3 text-center text-sm font-medium text-glow transition-colors hover:border-foreground/60"
                 >
                   Ver a metodologia
                 </a>
