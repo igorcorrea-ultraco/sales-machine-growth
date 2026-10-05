@@ -107,9 +107,6 @@ function Home() {
 
           <div className="relative mx-auto w-full max-w-7xl px-5 md:px-6">
             <Reveal>
-              <div className="mx-auto mb-4 w-fit rounded-lg border border-foreground/25 bg-background/60 px-5 py-2.5 text-center text-[13px] font-medium backdrop-blur-md md:mx-0">
-                Sua empresa precisa <span className="text-glow">vender mais?</span>
-              </div>
               <h1 className="text-center text-[1.75rem] font-semibold leading-[1.15] tracking-tight sm:text-5xl md:max-w-2xl md:text-left lg:text-[3.6rem]">
                 Precisa destravar o <span className="text-glow">crescimento</span> da sua{" "}
                 <span className="text-glow">empresa?</span>
