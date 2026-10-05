@@ -43,12 +43,12 @@ function Home() {
             src={officeBgUrl}
             alt=""
             aria-hidden="true"
-            className="absolute inset-0 hidden h-full w-full scale-[1.25] object-cover object-center blur-[10px] brightness-[1.45] saturate-[1.05] md:block"
+            className="absolute inset-0 hidden h-full w-full scale-[1.25] object-cover object-center blur-[7px] brightness-[1.2] saturate-[1.05] md:block"
           />
           <div className="absolute inset-0 hidden bg-gradient-to-r from-background via-background/80 to-background/25 md:block" />
           <div className="absolute inset-0 hidden bg-gradient-to-t from-background via-transparent to-background/40 md:block" />
 
-          <div className="absolute inset-y-0 right-0 hidden w-[52%] md:block">
+          <div className="absolute inset-y-0 right-[2%] hidden w-[50%] md:block">
             <div className="absolute inset-0 flex items-end justify-center">
               <img
                 src={igorHeroUrl}
@@ -56,15 +56,15 @@ function Home() {
                 className="h-[96%] w-auto max-w-full object-contain object-bottom"
               />
             </div>
-            <div className="hero-float hero-float-lead absolute bottom-[14%] left-4">
+            <div className="hero-float hero-float-lead absolute bottom-[14%] left-2">
               <UserRoundPlus className="size-5" aria-hidden="true" />
               <span>LEAD<br /><strong>QUALIFICADO</strong></span>
             </div>
-            <div className="hero-float hero-float-contract absolute right-5 top-[46%]">
+            <div className="hero-float hero-float-contract absolute right-4 top-[48%]">
               <FileCheck2 className="size-5" aria-hidden="true" />
               <span>CONTRATO<br /><strong>FECHADO</strong></span>
             </div>
-            <div className="hero-float hero-float-lead-alt absolute right-9 top-[18%]">
+            <div className="hero-float hero-float-lead-alt absolute right-8 top-[16%]">
               <UserRoundPlus className="size-4" aria-hidden="true" />
               <span>NOVO LEAD</span>
             </div>
