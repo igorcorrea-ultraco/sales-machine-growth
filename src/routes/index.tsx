@@ -85,11 +85,11 @@ function Home() {
               <TrendingUp className="size-6" aria-hidden="true" />
               <span>+VENDAS</span>
             </div>
-            <div className="hero-tile hero-float-contract absolute right-[5%] top-[13%] size-[4.4rem]">
+            <div className="hero-tile hero-float-contract absolute right-[5%] top-[5%] size-[4.4rem]">
               <FileCheck2 className="size-6" aria-hidden="true" />
               <span>CONTRATO</span>
             </div>
-            <div className="hero-tile hero-float-lead absolute -right-1 size-[4.6rem]" style={{ top: "21%" }}>
+            <div className="hero-tile hero-float-lead absolute -right-1 size-[4.6rem]" style={{ top: "22%" }}>
               <BadgeDollarSign className="size-8" aria-hidden="true" />
               <span>FECHADO</span>
             </div>
