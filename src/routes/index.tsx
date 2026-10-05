@@ -41,13 +41,35 @@ function Home() {
           className="scroll-mt-20 relative flex min-h-[calc(100svh-4rem)] items-end overflow-hidden pb-10 pt-0 md:min-h-[88vh] md:items-center md:py-32"
         >
           <img
-            src={heroUrl}
+            src={officeBgUrl}
             alt=""
             aria-hidden="true"
-            className="absolute inset-0 hidden h-full w-full object-cover object-center md:block"
+            className="absolute inset-0 hidden h-full w-full scale-[1.25] object-cover object-center blur-[10px] brightness-[.9] saturate-[.9] md:block"
           />
-          <div className="absolute inset-0 hidden bg-gradient-to-r from-background via-background/85 to-background/30 md:block" />
-          <div className="absolute inset-0 hidden bg-background/40 md:block" />
+          <div className="absolute inset-0 hidden bg-gradient-to-r from-background via-background/90 to-background/45 md:block" />
+          <div className="absolute inset-0 hidden bg-gradient-to-t from-background via-background/20 to-background/50 md:block" />
+
+          <div className="absolute inset-y-0 right-0 hidden w-[52%] md:block">
+            <div className="absolute inset-0 flex items-end justify-center">
+              <img
+                src={igorHeroUrl}
+                alt="Igor Corrêa, fundador da Ultra Company"
+                className="h-[96%] w-auto max-w-full object-contain object-bottom"
+              />
+            </div>
+            <div className="hero-float hero-float-lead absolute left-8 top-[26%]">
+              <UserRoundPlus className="size-5" aria-hidden="true" />
+              <span>LEAD<br /><strong>QUALIFICADO</strong></span>
+            </div>
+            <div className="hero-float hero-float-contract absolute right-6 top-[52%]">
+              <FileCheck2 className="size-5" aria-hidden="true" />
+              <span>CONTRATO<br /><strong>FECHADO</strong></span>
+            </div>
+            <div className="hero-float hero-float-lead-alt absolute right-10 top-[16%]">
+              <UserRoundPlus className="size-4" aria-hidden="true" />
+              <span>NOVO LEAD</span>
+            </div>
+          </div>
 
           <div className="absolute inset-x-0 top-0 h-[42%] overflow-hidden bg-card md:hidden">
             <img
