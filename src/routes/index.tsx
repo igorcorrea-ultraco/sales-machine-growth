@@ -52,6 +52,7 @@ function Home() {
           </div>
           <div className="absolute inset-0 hidden bg-gradient-to-r from-background via-background/80 to-background/10 md:block" />
           <div className="absolute inset-0 hidden bg-[radial-gradient(ellipse_at_78%_45%,oklch(0.45_0.19_26/0.35),transparent_60%)] md:block" />
+          <div className="absolute inset-y-0 right-[2%] hidden w-[54%] md:block">
             <div className="hero-float hero-float-lead absolute bottom-[27%] left-2">
               <UserRoundPlus className="size-5" aria-hidden="true" />
               <span>LEAD<br /><strong>QUALIFICADO</strong></span>
