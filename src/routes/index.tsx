@@ -53,7 +53,7 @@ function Home() {
           <div className="absolute inset-0 hidden bg-gradient-to-r from-background via-background/80 to-background/10 md:block" />
           <div className="absolute inset-0 hidden bg-[radial-gradient(ellipse_at_78%_45%,oklch(0.45_0.19_26/0.35),transparent_60%)] md:block" />
           <div className="absolute inset-y-0 right-[2%] hidden w-[54%] md:block">
-            <div className="hero-float hero-float-lead absolute bottom-[27%] left-2">
+            <div className="hero-float hero-float-lead absolute bottom-[20%] left-[26%]">
               <UserRoundPlus className="size-5" aria-hidden="true" />
               <span>LEAD<br /><strong>QUALIFICADO</strong></span>
             </div>
@@ -120,10 +120,11 @@ function Home() {
                 </a>
                 <a
                   href="#metodologia"
-                  className="rounded-full border border-foreground/30 px-8 py-3 text-center text-sm font-medium text-glow transition-colors hover:border-foreground/60"
+                  className="rounded-full border border-foreground/30 px-8 py-3 text-center text-sm font-medium text-foreground/85 transition-colors hover:border-foreground/60"
                 >
                   Ver a metodologia
                 </a>
+
               </div>
             </Reveal>
           </div>
