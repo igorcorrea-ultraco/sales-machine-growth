@@ -241,16 +241,31 @@ html {
   gap: 0.45rem;
   min-height: 3.25rem;
   max-width: 8.6rem;
-  border: 1px solid color-mix(in oklab, var(--primary) 58%, var(--border));
-  border-radius: 0.65rem;
-  background: color-mix(in oklab, var(--background) 78%, transparent);
+  border: 1px solid color-mix(in oklab, var(--primary) 42%, var(--border));
+  border-radius: 0.7rem;
+  background: linear-gradient(
+    160deg,
+    color-mix(in oklab, var(--card) 92%, transparent),
+    color-mix(in oklab, var(--background) 86%, transparent)
+  );
   padding: 0.6rem 0.7rem;
   color: var(--foreground);
-  box-shadow: var(--shadow-glow);
-  backdrop-filter: blur(10px);
+  box-shadow:
+    0 22px 45px -20px rgb(0 0 0 / 0.9),
+    inset 0 1px 0 rgb(255 255 255 / 0.06),
+    var(--shadow-glow);
+  backdrop-filter: blur(14px) saturate(1.25);
   font-size: 0.57rem;
   line-height: 1.25;
   letter-spacing: 0;
+}
+
+@utility hero-float-sm {
+  min-height: 2.6rem;
+  max-width: 7.1rem;
+  gap: 0.35rem;
+  padding: 0.45rem 0.55rem;
+  font-size: 0.5rem;
 }
 
 @utility hero-float-lead {
