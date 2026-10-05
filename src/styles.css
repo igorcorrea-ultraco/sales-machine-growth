@@ -274,12 +274,12 @@ html {
 }
 
 @utility hero-float-contract {
-  --c1: oklch(0.8 0.17 60); --c2: oklch(0.64 0.19 48); --c3: oklch(0.42 0.14 45);
+  --c1: oklch(0.64 0.23 26); --c2: oklch(0.44 0.2 26); --c3: oklch(0.29 0.14 26);
   animation: hero-float-contract 5.4s ease-in-out -1.2s infinite;
 }
 
 @utility hero-float-lead-alt {
-  --c1: oklch(0.82 0.005 260); --c2: oklch(0.58 0.008 260); --c3: oklch(0.36 0.008 260);
+  --c1: oklch(0.56 0.22 27); --c2: oklch(0.4 0.19 27); --c3: oklch(0.26 0.13 27);
   animation: hero-float-lead-alt 4.2s ease-in-out -2s infinite;
 }
 

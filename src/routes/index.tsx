@@ -82,7 +82,7 @@ function Home() {
               <img
                 src={igorHeroUrl}
                 alt="Igor Corrêa, fundador da Ultra Company"
-                className="h-[96%] w-auto max-w-full object-contain object-bottom"
+                className="h-[108%] w-auto max-w-none origin-bottom scale-[1.28] object-contain object-bottom"
               />
             </div>
             <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-background via-background/45 to-transparent" />
