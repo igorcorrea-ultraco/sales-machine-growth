@@ -43,10 +43,10 @@ function Home() {
             src={officeBgUrl}
             alt=""
             aria-hidden="true"
-            className="absolute inset-0 hidden h-full w-full scale-[1.25] object-cover object-center blur-[10px] brightness-[.9] saturate-[.9] md:block"
+            className="absolute inset-0 hidden h-full w-full scale-[1.25] object-cover object-center blur-[10px] brightness-[1.45] saturate-[1.05] md:block"
           />
-          <div className="absolute inset-0 hidden bg-gradient-to-r from-background via-background/90 to-background/45 md:block" />
-          <div className="absolute inset-0 hidden bg-gradient-to-t from-background via-background/20 to-background/50 md:block" />
+          <div className="absolute inset-0 hidden bg-gradient-to-r from-background via-background/80 to-background/25 md:block" />
+          <div className="absolute inset-0 hidden bg-gradient-to-t from-background via-transparent to-background/40 md:block" />
 
           <div className="absolute inset-y-0 right-0 hidden w-[52%] md:block">
             <div className="absolute inset-0 flex items-end justify-center">
@@ -56,15 +56,15 @@ function Home() {
                 className="h-[96%] w-auto max-w-full object-contain object-bottom"
               />
             </div>
-            <div className="hero-float hero-float-lead absolute left-8 top-[26%]">
+            <div className="hero-float hero-float-lead absolute bottom-[14%] left-4">
               <UserRoundPlus className="size-5" aria-hidden="true" />
               <span>LEAD<br /><strong>QUALIFICADO</strong></span>
             </div>
-            <div className="hero-float hero-float-contract absolute right-6 top-[52%]">
+            <div className="hero-float hero-float-contract absolute right-5 top-[46%]">
               <FileCheck2 className="size-5" aria-hidden="true" />
               <span>CONTRATO<br /><strong>FECHADO</strong></span>
             </div>
-            <div className="hero-float hero-float-lead-alt absolute right-10 top-[16%]">
+            <div className="hero-float hero-float-lead-alt absolute right-9 top-[18%]">
               <UserRoundPlus className="size-4" aria-hidden="true" />
               <span>NOVO LEAD</span>
             </div>
@@ -75,9 +75,9 @@ function Home() {
               src={officeBgUrl}
               alt=""
               aria-hidden="true"
-              className="absolute inset-0 h-full w-full scale-[1.3] object-cover object-center blur-[12px] brightness-[1.2] saturate-[.95]"
+              className="absolute inset-0 h-full w-full scale-[1.3] object-cover object-center blur-[12px] brightness-[1.6] saturate-[1.05]"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-transparent to-background" />
+            <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-transparent to-background" />
             <div className="absolute inset-0 flex items-end justify-center">
               <img
                 src={igorHeroUrl}
@@ -85,7 +85,7 @@ function Home() {
                 className="h-[96%] w-auto max-w-full object-contain object-bottom"
               />
             </div>
-            <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-background via-background/75 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background via-background/60 to-transparent" />
 
             <div className="hero-float hero-float-lead absolute left-4 top-[24%]">
               <UserRoundPlus className="size-5" aria-hidden="true" />
