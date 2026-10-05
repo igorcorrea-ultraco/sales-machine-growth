@@ -8,7 +8,7 @@ import { ProofSection } from "@/components/site/Proof";
 import { NichesMarquee } from "@/components/site/Niches";
 import { FaqSection } from "@/components/site/Faq";
 import { StepsSection } from "@/components/site/Steps";
-import igorRedUrl from "@/assets/igor-red.webp";
+import igorRedUrl from "@/assets/igor-red-crop.webp";
 
 const TITLE = "Ultra Company - Máquina de Vendas";
 const DESCRIPTION = "Venda Mais e com Mais Margem.";
@@ -42,7 +42,7 @@ function Home() {
             <img
               src={igorRedUrl}
               alt="Igor Corrêa, fundador da Ultra Company"
-              className="h-full w-full object-cover object-[50%_24%]"
+              className="h-full w-full object-cover object-[50%_18%]"
               style={{
                 maskImage: "linear-gradient(to left, black 58%, transparent 97%)",
                 WebkitMaskImage: "linear-gradient(to left, black 58%, transparent 97%)",
@@ -71,7 +71,7 @@ function Home() {
             <img
               src={igorRedUrl}
               alt="Igor Corrêa, fundador da Ultra Company"
-              className="absolute inset-0 h-full w-full object-cover object-[50%_26%]"
+              className="absolute inset-0 h-full w-full object-cover object-[50%_18%]"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-background/45 via-transparent to-background/30" />
             <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background via-background/70 to-transparent" />
