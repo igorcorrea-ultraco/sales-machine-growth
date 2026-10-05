@@ -49,22 +49,22 @@ function Home() {
           <div className="absolute inset-0 hidden bg-gradient-to-r from-background via-background/85 to-background/30 md:block" />
           <div className="absolute inset-0 hidden bg-background/40 md:block" />
 
-          <div className="absolute inset-x-0 top-0 h-[54%] overflow-hidden bg-card md:hidden">
+          <div className="absolute inset-x-0 top-0 h-[42%] overflow-hidden bg-card md:hidden">
             <img
               src={officeBgUrl}
               alt=""
               aria-hidden="true"
-              className="absolute inset-0 h-full w-full scale-[1.3] object-cover object-center blur-[14px] brightness-[.85] saturate-[.9]"
+              className="absolute inset-0 h-full w-full scale-[1.3] object-cover object-center blur-[12px] brightness-[1.2] saturate-[.95]"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-background/35 via-transparent to-background" />
+            <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-transparent to-background" />
             <div className="absolute inset-0 flex items-end justify-center">
               <img
                 src={igorHeroUrl}
                 alt="Igor Corrêa, fundador da Ultra Company"
-                className="h-[92%] w-auto max-w-full object-contain object-bottom"
+                className="h-[96%] w-auto max-w-full object-contain object-bottom"
               />
             </div>
-            <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background via-background/80 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-background via-background/75 to-transparent" />
 
             <div className="hero-float hero-float-lead absolute left-4 top-[24%]">
               <UserRoundPlus className="size-5" aria-hidden="true" />
