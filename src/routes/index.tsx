@@ -75,7 +75,7 @@ function Home() {
               src={officeBgUrl}
               alt=""
               aria-hidden="true"
-              className="absolute inset-0 h-full w-full scale-[1.3] object-cover object-center blur-[12px] brightness-[1.6] saturate-[1.05]"
+              className="absolute inset-0 h-full w-full scale-[1.3] object-cover object-center blur-[9px] brightness-[1.25] saturate-[1.05]"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-transparent to-background" />
             <div className="absolute inset-0 flex items-end justify-center">
@@ -85,18 +85,18 @@ function Home() {
                 className="h-[96%] w-auto max-w-full object-contain object-bottom"
               />
             </div>
-            <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background via-background/60 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-background via-background/45 to-transparent" />
 
-            <div className="hero-float hero-float-lead absolute left-4 top-[24%]">
-              <UserRoundPlus className="size-5" aria-hidden="true" />
+            <div className="hero-float hero-float-sm hero-float-lead absolute left-1 top-[34%]">
+              <UserRoundPlus className="size-4" aria-hidden="true" />
               <span>LEAD<br /><strong>QUALIFICADO</strong></span>
             </div>
-            <div className="hero-float hero-float-contract absolute right-3 top-[42%]">
-              <FileCheck2 className="size-5" aria-hidden="true" />
+            <div className="hero-float hero-float-sm hero-float-contract absolute right-1 top-[56%]">
+              <FileCheck2 className="size-4" aria-hidden="true" />
               <span>CONTRATO<br /><strong>FECHADO</strong></span>
             </div>
-            <div className="hero-float hero-float-lead-alt absolute right-5 top-[12%]">
-              <UserRoundPlus className="size-4" aria-hidden="true" />
+            <div className="hero-float hero-float-sm hero-float-lead-alt absolute right-1 top-[6%]">
+              <UserRoundPlus className="size-3.5" aria-hidden="true" />
               <span>NOVO LEAD</span>
             </div>
           </div>
