@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, FileCheck2, UserRoundPlus } from "lucide-react";
 
 import { Reveal } from "@/components/site/animate";
 import { SiteNav, CTA, DIAGNOSTIC_FORM_URL, Logo } from "@/components/site/SiteNav";
@@ -9,6 +9,7 @@ import { NichesMarquee } from "@/components/site/Niches";
 import { FaqSection } from "@/components/site/Faq";
 import { StepsSection } from "@/components/site/Steps";
 import heroUrl from "@/assets/maquinario.jpg";
+import igorHeroUrl from "@/assets/igor-blazer.webp";
 
 const TITLE = "Ultra Company - Máquina de Vendas";
 const DESCRIPTION = "Venda Mais e com Mais Margem.";
@@ -36,32 +37,59 @@ function Home() {
         {/* HERO */}
         <section
           id="inicio"
-          className="scroll-mt-20 relative flex min-h-[88vh] items-center overflow-hidden py-24 md:py-32"
+          className="scroll-mt-20 relative flex min-h-[calc(100svh-4rem)] items-end overflow-hidden pb-10 pt-0 md:min-h-[88vh] md:items-center md:py-32"
         >
           <img
             src={heroUrl}
             alt=""
             aria-hidden="true"
-            className="absolute inset-0 h-full w-full object-cover object-center"
+            className="absolute inset-0 hidden h-full w-full object-cover object-center md:block"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/30" />
-          <div className="absolute inset-0 bg-background/40" />
-          <div className="relative mx-auto w-full max-w-7xl px-6">
+          <div className="absolute inset-0 hidden bg-gradient-to-r from-background via-background/85 to-background/30 md:block" />
+          <div className="absolute inset-0 hidden bg-background/40 md:block" />
+
+          <div className="absolute inset-x-0 top-0 h-[59%] overflow-hidden bg-card md:hidden">
+            <img
+              src={igorHeroUrl}
+              alt="Igor Corrêa, fundador da Ultra Company"
+              className="h-full w-full object-cover object-[center_28%]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-background/5 via-transparent to-background" />
+            <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent" />
+
+            <div className="hero-float hero-float-lead absolute left-4 top-[24%]">
+              <UserRoundPlus className="size-5" aria-hidden="true" />
+              <span>LEAD<br /><strong>QUALIFICADO</strong></span>
+            </div>
+            <div className="hero-float hero-float-contract absolute right-3 top-[42%]">
+              <FileCheck2 className="size-5" aria-hidden="true" />
+              <span>CONTRATO<br /><strong>FECHADO</strong></span>
+            </div>
+            <div className="hero-float hero-float-lead-alt absolute right-5 top-[12%]">
+              <UserRoundPlus className="size-4" aria-hidden="true" />
+              <span>NOVO LEAD</span>
+            </div>
+          </div>
+
+          <div className="relative mx-auto w-full max-w-7xl px-5 md:px-6">
             <Reveal>
-              <h1 className="display-xl text-[2.1rem] leading-[1.02] sm:text-5xl lg:text-[4rem]">
+              <div className="mx-auto mb-4 w-fit rounded-md border border-border/80 bg-background/75 px-4 py-2 text-center text-[11px] font-medium backdrop-blur-md md:hidden">
+                Sua empresa precisa vender com previsibilidade?
+              </div>
+              <h1 className="display-xl text-center text-[2rem] leading-[1.02] sm:text-5xl md:text-left lg:text-[4rem]">
                 SEU NEGÓCIO PODE SER&nbsp;<br />
                 UMA MÁQUINA DE&nbsp;<br />
                 <span className="text-brand">VENDAS&nbsp;
                 PREVISÍVEIS</span>
               </h1>
-              <p className="mt-7 max-w-xl text-base leading-relaxed text-muted-foreground">
+              <p className="mx-auto mt-5 max-w-xl text-center text-sm leading-relaxed text-muted-foreground md:mx-0 md:mt-7 md:text-left md:text-base">
                 A Ultra Company é o lugar certo para o Empresário que está decidido a transformar seu negócio em uma máquina de vendas previsíveis. Método eficiente e validado, acompanhamento aproximado e uma comunidade de altíssimo valor agregado.
               </p>
-              <div className="mt-9 flex flex-wrap items-center gap-4">
+              <div className="mt-6 flex flex-col items-stretch gap-4 md:mt-9 md:flex-row md:flex-wrap md:items-center">
                 <CTA label="Quero meu diagnóstico gratuito" />
                 <a
                   href="#metodologia"
-                  className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  className="text-center text-sm text-muted-foreground transition-colors hover:text-foreground"
                 >
                   Ver a metodologia
                 </a>
