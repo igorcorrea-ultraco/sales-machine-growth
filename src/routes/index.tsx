@@ -56,7 +56,7 @@ function Home() {
                 className="h-[96%] w-auto max-w-full object-contain object-bottom"
               />
             </div>
-            <div className="hero-float hero-float-lead absolute bottom-[14%] left-2">
+            <div className="hero-float hero-float-lead absolute bottom-[27%] left-2">
               <UserRoundPlus className="size-5" aria-hidden="true" />
               <span>LEAD<br /><strong>QUALIFICADO</strong></span>
             </div>
@@ -87,7 +87,7 @@ function Home() {
             </div>
             <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-background via-background/45 to-transparent" />
 
-            <div className="hero-float hero-float-sm hero-float-lead absolute left-1 top-[34%]">
+            <div className="hero-float hero-float-sm hero-float-lead absolute left-3 top-[34%]">
               <UserRoundPlus className="size-4" aria-hidden="true" />
               <span>LEAD<br /><strong>QUALIFICADO</strong></span>
             </div>
