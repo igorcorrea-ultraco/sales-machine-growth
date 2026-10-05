@@ -74,22 +74,22 @@ function Home() {
               className="absolute inset-0 h-full w-full object-cover object-[50%_18%]"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-background/45 via-transparent to-background/30" />
-            <div className="absolute inset-x-0 bottom-0 h-[74%] bg-gradient-to-t from-background via-background/85 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-[82%] bg-gradient-to-t from-background via-background/90 to-transparent" />
 
 
-            <div className="hero-tile hero-float-lead absolute left-[8%] top-[9%] size-[4.6rem]">
+            <div className="hero-tile hero-float-lead absolute left-[8%] top-[6%] size-[4.6rem]">
               <UserRoundPlus className="size-6" aria-hidden="true" />
               <span>LEAD</span>
             </div>
-            <div className="hero-tile hero-float-lead-alt absolute left-[3%] top-[34%] size-[4.1rem]">
+            <div className="hero-tile hero-float-lead-alt absolute left-[3%] top-[28%] size-[4.1rem]">
               <TrendingUp className="size-6" aria-hidden="true" />
               <span>+VENDAS</span>
             </div>
-            <div className="hero-tile hero-float-contract absolute right-[5%] top-[17%] size-[4.4rem]">
+            <div className="hero-tile hero-float-contract absolute right-[5%] top-[13%] size-[4.4rem]">
               <FileCheck2 className="size-6" aria-hidden="true" />
               <span>CONTRATO</span>
             </div>
-            <div className="hero-tile hero-float-lead absolute -right-1 size-[4.6rem]" style={{ top: "40%" }}>
+            <div className="hero-tile hero-float-lead absolute -right-1 size-[4.6rem]" style={{ top: "32%" }}>
               <BadgeDollarSign className="size-8" aria-hidden="true" />
               <span>FECHADO</span>
             </div>
