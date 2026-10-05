@@ -1,4 +1,5 @@
 import { Reveal } from "@/components/site/animate";
+import { CTA } from "@/components/site/SiteNav";
 
 const steps = [
   {
@@ -67,6 +68,12 @@ export function StepsSection() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={200}>
+          <div className="mt-14 flex justify-center">
+            <CTA label="Quero meu diagnóstico gratuito" />
+          </div>
+        </Reveal>
       </div>
     </section>
   );

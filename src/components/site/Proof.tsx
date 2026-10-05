@@ -1,4 +1,5 @@
 import { Reveal, Counter } from "@/components/site/animate";
+import { CTA } from "@/components/site/SiteNav";
 import depo600k from "@/assets/depoimento-600k.png";
 import depoOnboarding from "@/assets/depoimento-onboarding.png";
 import depoMetas from "@/assets/depoimento-metas.png";
@@ -81,6 +82,12 @@ export function ProofSection() {
                 </p>
               </div>
             ))}
+          </div>
+          </Reveal>
+
+        <Reveal delay={320}>
+          <div className="mt-14 flex justify-center">
+            <CTA label="Quero resultados assim" />
           </div>
         </Reveal>
       </div>
