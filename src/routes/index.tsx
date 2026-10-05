@@ -8,7 +8,6 @@ import { ProofSection } from "@/components/site/Proof";
 import { NichesMarquee } from "@/components/site/Niches";
 import { FaqSection } from "@/components/site/Faq";
 import { StepsSection } from "@/components/site/Steps";
-import heroUrl from "@/assets/maquinario.jpg";
 import igorHeroUrl from "@/assets/igor-cutout.webp";
 import officeBgUrl from "@/assets/office-bg.jpg";
 
