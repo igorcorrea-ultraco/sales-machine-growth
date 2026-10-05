@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Plus } from "lucide-react";
 
 import { Reveal } from "@/components/site/animate";
+import { CTA } from "@/components/site/SiteNav";
 
 const faqs = [
   {

@@ -1,4 +1,5 @@
 import { Reveal, Counter } from "@/components/site/animate";
+import { CTA } from "@/components/site/SiteNav";
 import depo600k from "@/assets/depoimento-600k.png";
 import depoOnboarding from "@/assets/depoimento-onboarding.png";
 import depoMetas from "@/assets/depoimento-metas.png";

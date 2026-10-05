@@ -1,4 +1,5 @@
 import { Reveal } from "@/components/site/animate";
+import { CTA } from "@/components/site/SiteNav";
 import logoUrl from "@/assets/ultra-logo.png";
 
 const stages = [
