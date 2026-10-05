@@ -68,19 +68,11 @@ function Home() {
 
           <div className="absolute inset-x-0 top-0 h-[64%] overflow-hidden bg-card md:hidden">
             <img
-              src={officeBgUrl}
-              alt=""
-              aria-hidden="true"
-              className="absolute inset-0 h-full w-full scale-[1.3] object-cover object-center blur-[10px] brightness-[0.9] saturate-[1.3] sepia-[0.35]"
+              src={igorRedUrl}
+              alt="Igor Corrêa, fundador da Ultra Company"
+              className="absolute inset-0 h-full w-full object-cover object-[50%_26%]"
             />
-            <div className="hero-warm absolute inset-0" />
-            <div className="absolute inset-0 flex items-end justify-center">
-              <img
-                src={igorHeroUrl}
-                alt="Igor Corrêa, fundador da Ultra Company"
-                className="h-[96%] w-auto max-w-none object-contain object-bottom"
-              />
-            </div>
+            <div className="absolute inset-0 bg-gradient-to-b from-background/45 via-transparent to-background/30" />
             <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background via-background/70 to-transparent" />
 
             <div className="hero-tile hero-float-lead absolute left-[8%] top-[9%] size-[4.6rem]">
