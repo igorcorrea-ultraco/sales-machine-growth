@@ -89,7 +89,7 @@ function Home() {
               <FileCheck2 className="size-6" aria-hidden="true" />
               <span>CONTRATO</span>
             </div>
-            <div className="hero-tile hero-float-lead absolute -right-1 size-[4.6rem]" style={{ top: "22%" }}>
+            <div className="hero-tile hero-float-lead absolute -right-1 size-[3.8rem]" style={{ top: "24%" }}>
               <BadgeDollarSign className="size-8" aria-hidden="true" />
               <span>FECHADO</span>
             </div>
