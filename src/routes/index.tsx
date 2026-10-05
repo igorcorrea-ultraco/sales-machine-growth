@@ -9,7 +9,8 @@ import { NichesMarquee } from "@/components/site/Niches";
 import { FaqSection } from "@/components/site/Faq";
 import { StepsSection } from "@/components/site/Steps";
 import heroUrl from "@/assets/maquinario.jpg";
-import igorHeroUrl from "@/assets/igor-blazer.webp";
+import igorHeroUrl from "@/assets/igor-cutout.webp";
+import officeBgUrl from "@/assets/office-bg.jpg";
 
 const TITLE = "Ultra Company - Máquina de Vendas";
 const DESCRIPTION = "Venda Mais e com Mais Margem.";
@@ -50,12 +51,20 @@ function Home() {
 
           <div className="absolute inset-x-0 top-0 h-[59%] overflow-hidden bg-card md:hidden">
             <img
-              src={igorHeroUrl}
-              alt="Igor Corrêa, fundador da Ultra Company"
-              className="h-full w-full object-cover object-[center_28%]"
+              src={officeBgUrl}
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 h-full w-full scale-[1.35] object-cover object-center blur-[18px] brightness-[.42] saturate-[.8]"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-background/5 via-transparent to-background" />
-            <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/10 to-background" />
+            <div className="absolute inset-0 flex items-end justify-center">
+              <img
+                src={igorHeroUrl}
+                alt="Igor Corrêa, fundador da Ultra Company"
+                className="h-[95%] w-auto max-w-full object-contain object-bottom"
+              />
+            </div>
+            <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-background via-background/85 to-transparent" />
 
             <div className="hero-float hero-float-lead absolute left-4 top-[24%]">
               <UserRoundPlus className="size-5" aria-hidden="true" />
