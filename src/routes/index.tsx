@@ -53,7 +53,7 @@ function Home() {
           <div className="absolute inset-0 hidden bg-gradient-to-r from-background via-background/80 to-background/10 md:block" />
           <div className="absolute inset-0 hidden bg-[radial-gradient(ellipse_at_78%_45%,oklch(0.45_0.19_26/0.35),transparent_60%)] md:block" />
           <div className="absolute inset-y-0 right-[2%] hidden w-[54%] md:block">
-            <div className="hero-float hero-float-lead absolute bottom-[27%] left-2">
+            <div className="hero-float hero-float-lead absolute bottom-[20%] left-[26%]">
               <UserRoundPlus className="size-5" aria-hidden="true" />
               <span>LEAD<br /><strong>QUALIFICADO</strong></span>
             </div>
@@ -74,32 +74,37 @@ function Home() {
               className="absolute inset-0 h-full w-full object-cover object-[50%_18%]"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-background/45 via-transparent to-background/30" />
-            <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background via-background/70 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-[82%] bg-gradient-to-t from-background via-background/90 to-transparent" />
 
-            <div className="hero-tile hero-float-lead absolute left-[8%] top-[9%] size-[4.6rem]">
+
+            <div className="hero-tile hero-float-lead absolute left-[8%] top-[6%] size-[4.6rem]">
               <UserRoundPlus className="size-6" aria-hidden="true" />
               <span>LEAD</span>
             </div>
-            <div className="hero-tile hero-float-lead-alt absolute left-[3%] top-[34%] size-[4.1rem]">
+            <div className="hero-tile hero-float-lead-alt absolute left-[3%] top-[21%] size-[4.1rem]">
               <TrendingUp className="size-6" aria-hidden="true" />
               <span>+VENDAS</span>
             </div>
-            <div className="hero-tile hero-float-contract absolute right-[5%] top-[17%] size-[4.4rem]">
+            <div className="hero-tile hero-float-contract absolute right-[5%] top-[5%] size-[4.4rem]">
               <FileCheck2 className="size-6" aria-hidden="true" />
               <span>CONTRATO</span>
             </div>
-            <div className="hero-tile hero-float-lead absolute -right-1 size-[4.6rem]" style={{ top: "40%" }}>
-              <BadgeDollarSign className="size-8" aria-hidden="true" />
+            <div className="hero-tile hero-float-lead absolute -right-1 size-[3.8rem]" style={{ top: "26%" }}>
+              <BadgeDollarSign className="size-6" aria-hidden="true" />
               <span>FECHADO</span>
             </div>
           </div>
 
           <div className="relative mx-auto w-full max-w-7xl px-5 md:px-6">
             <Reveal>
-              <h1 className="text-center text-[1.75rem] font-semibold leading-[1.15] tracking-tight sm:text-5xl md:max-w-2xl md:text-left lg:text-[3.6rem]">
-                Precisa destravar o <span className="text-glow">crescimento</span> da sua{" "}
-                <span className="text-glow">empresa?</span>
+              <p className="hero-badge mx-auto mb-5 w-fit md:mx-0">
+                Precisa destravar o crescimento da sua empresa?
+              </p>
+              <h1 className="text-center text-[1.55rem] font-semibold leading-[1.16] tracking-tight sm:text-[2.6rem] md:max-w-3xl md:text-left lg:text-[3.15rem]">
+                Destrave o <span className="text-glow">faturamento</span> da sua empresa com a assessoria de{" "}
+                <span className="text-glow">Marketing e Vendas</span> da Ultra Company.
               </h1>
+
               <p className="mx-auto mt-4 max-w-xl text-center text-[15px] leading-relaxed text-foreground/85 md:mx-0 md:mt-7 md:text-left md:text-base">
                 A Ultra Company é o lugar certo para o Empresário que está decidido a transformar seu negócio em uma máquina de vendas previsíveis. Método eficiente e validado, acompanhamento aproximado e uma comunidade de altíssimo valor agregado.
               </p>
@@ -115,10 +120,11 @@ function Home() {
                 </a>
                 <a
                   href="#metodologia"
-                  className="rounded-full border border-foreground/30 px-8 py-3 text-center text-sm font-medium text-glow transition-colors hover:border-foreground/60"
+                  className="rounded-full border border-foreground/30 px-8 py-3 text-center text-sm font-medium text-foreground/85 transition-colors hover:border-foreground/60"
                 >
                   Ver a metodologia
                 </a>
+
               </div>
             </Reveal>
           </div>
