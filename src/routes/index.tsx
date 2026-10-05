@@ -6,6 +6,8 @@ import { SiteNav, CTA, DIAGNOSTIC_FORM_URL, Logo } from "@/components/site/SiteN
 import { PhasesSection } from "@/components/site/Phases";
 import { ProofSection } from "@/components/site/Proof";
 import { NichesMarquee } from "@/components/site/Niches";
+import { StepsSection } from "@/components/site/Steps";
+
 import { CompareSection } from "@/components/site/Compare";
 import { FaqSection } from "@/components/site/Faq";
 import heroUrl from "@/assets/maquinario.jpg";
@@ -113,7 +115,10 @@ function Home() {
           </div>
         </section>
 
+        <StepsSection />
+
         <NichesMarquee />
+
 
         <PhasesSection />
 
